@@ -415,14 +415,14 @@ export default function App() {
                 <p className="mt-5 leading-8 text-white/75">
                   公式LINEでは、相談予約・オンライン面談の調整・資料のやり取りまで、スムーズに進められます。お電話でのご連絡も可能です。
                 </p>
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] transition hover:bg-[#e5c77d]">
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <a href="#" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#D8B46A] px-5 py-3 font-semibold text-[#0B1F3A] transition hover:bg-[#e5c77d]">
                     公式LINEを追加する <span>→</span>
                   </a>
-                  <a href="tel:0362402851" className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
-                    03-6240-2851
+                  <a href="tel:0120900984" className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/25 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
+                    0120-900-984
                   </a>
-                  <a href={googleMapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
+                  <a href={googleMapUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white/25 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
                     Google Map
                   </a>
                 </div>
