@@ -19,6 +19,7 @@ const services = [
     icon: "will",
     title: "遺言・相続・任意後見",
     text: "争族防止、認知症対策、親の資産管理など、家族が困らない準備をサポートします。",
+    href: "/inheritance/",
   },
   {
     icon: "realestate",
@@ -299,10 +300,18 @@ export default function App() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div key={service.title} className="group rounded-[2rem] bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <div key={service.title} className="group flex flex-col rounded-[2rem] bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                 <CircleIcon dark><ServiceIcon type={service.icon} /></CircleIcon>
                 <h4 className="mb-4 mt-6 text-2xl font-semibold text-[#0B1F3A]">{service.title}</h4>
                 <p className="leading-8 text-slate-600">{service.text}</p>
+                {service.href ? (
+                  <a
+                    href={service.href}
+                    className="mt-6 inline-flex items-center gap-2 self-start font-semibold text-[#B28A36] transition hover:gap-3"
+                  >
+                    詳しく見る <span>→</span>
+                  </a>
+                ) : null}
               </div>
             ))}
           </div>
