@@ -9,6 +9,7 @@ const services = [
     icon: "insurance",
     title: "保険相談・事業承継",
     text: "万一への備え、事業保障、役員退職金、福利厚生、事業承継まで、法人・個人を問わずお客様の安心を守る設計を行います。",
+    href: "/insurance/",
   },
   {
     icon: "asset",
