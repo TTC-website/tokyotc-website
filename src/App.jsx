@@ -15,6 +15,7 @@ const services = [
     icon: "asset",
     title: "資産形成・老後資金",
     text: "将来のキャッシュフローを見える化し、保険・積立・資産運用を含めて現実的に整理します。",
+    href: "/asset/",
   },
   {
     icon: "will",
