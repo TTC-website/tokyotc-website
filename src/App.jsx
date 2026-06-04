@@ -1,6 +1,6 @@
 import React from "react";
 
-const companyLogo = "https://cdn.peraichi.com/userData/59e83827-c838-41cb-a19f-61410a0000c5/img/616e9317d3f5a/original.png";
+const companyLogo = "/logo-horizontal.png";
 const officialLineQr = "https://qr-official.line.me/gs/M_sog7070i_BW.png?oat_content=qr";
 const googleMapUrl = "https://maps.app.goo.gl/WudMb6uoqz1r4xkBA";
 
@@ -170,7 +170,7 @@ function Logo({ size = "header" }) {
     <img
       src={companyLogo}
       alt="Tokyo Total Consulting"
-      className={`${height} w-auto object-contain brightness-[1.55] contrast-[1.12] saturate-[1.18] drop-shadow-[0_2px_8px_rgba(0,0,0,0.28)]`}
+      className={`${height} w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.28)]`}
     />
   );
 }
