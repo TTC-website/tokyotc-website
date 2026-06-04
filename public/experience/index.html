@@ -1,0 +1,1346 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>お金を、体験資産に変える。 | 東京トータルコンサルティング</title>
+    <meta name="description" content="東京トータルコンサルティングの体験メニュー入口ページです。保険を核に、不動産・遺言信託までを束ねる思想を語ります。">
+    <style>
+      :root {
+        --midnight: #081826;
+        --deep: #0d2030;
+        --blue: #132c3e;
+        --ink: #eef0ea;
+        --soft: #c6d0ca;
+        --muted: #8fa098;
+        --gold: #ad9256;
+        --gold-deep: #7b6435;
+        --line: rgba(173, 146, 86, 0.28);
+        --veil: rgba(238, 240, 234, 0.055);
+        --serif: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Noto Serif JP", serif;
+        --sans: "Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 18% 12%, rgba(173, 146, 86, 0.1), transparent 30rem),
+          linear-gradient(180deg, #071522 0%, var(--midnight) 42%, #101b1f 100%);
+        color: var(--ink);
+        font-family: var(--serif);
+        line-height: 2.05;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        opacity: 0.18;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: linear-gradient(180deg, black 0%, transparent 80%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .page {
+        overflow: hidden;
+      }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px clamp(20px, 4vw, 58px);
+        border-bottom: 1px solid rgba(173, 146, 86, 0.2);
+        background: rgba(8, 24, 38, 0.78);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        min-width: 132px;
+      }
+
+      .brand-mark {
+        display: block;
+        width: clamp(148px, 18vw, 260px);
+      }
+
+      .brand-mark img {
+        width: 100%;
+        height: auto;
+        mix-blend-mode: screen;
+        filter: sepia(1) saturate(0.82) brightness(1.06) contrast(1.08);
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 2.4vw, 30px);
+        color: var(--soft);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      .site-nav a {
+        opacity: 0.78;
+        transition: color 0.2s ease, opacity 0.2s ease;
+      }
+
+      .site-nav a:hover {
+        color: var(--gold);
+        opacity: 1;
+      }
+
+      main {
+        counter-reset: section;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        min-height: 100svh;
+        padding: 132px clamp(22px, 6vw, 96px) 78px;
+        isolation: isolate;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 15% 0 auto auto;
+        z-index: -1;
+        width: min(42vw, 600px);
+        height: min(42vw, 600px);
+        background: radial-gradient(circle, rgba(173, 146, 86, 0.13), transparent 68%);
+        content: "";
+        opacity: 0.72;
+        filter: blur(8px);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.12fr) minmax(330px, 0.64fr);
+        align-items: center;
+        gap: clamp(38px, 5.4vw, 82px);
+        width: min(1320px, 100%);
+        margin: 0 auto;
+      }
+
+      .hero-kicker {
+        margin: 0 0 16px;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        max-width: 850px;
+        margin: 0;
+        font-size: clamp(48px, 6vw, 92px);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.16;
+      }
+
+      .hero h1 .h1-line {
+        display: block;
+        white-space: nowrap;
+      }
+
+      .subtitle {
+        margin: 28px 0 0;
+        color: var(--soft);
+        font-size: clamp(16px, 2vw, 22px);
+        letter-spacing: 0.08em;
+      }
+
+      .hero-memory {
+        position: relative;
+        min-height: clamp(520px, 44vw, 610px);
+      }
+
+      .memory-collage {
+        position: absolute;
+        inset: clamp(216px, 18vw, 245px) 0 0;
+      }
+
+      .memory-photo {
+        position: absolute;
+        overflow: hidden;
+        border: 1px solid rgba(255, 246, 224, 0.2);
+        background: rgba(238, 240, 234, 0.06);
+        box-shadow:
+          0 18px 52px rgba(0, 0, 0, 0.34),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+      }
+
+      .memory-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.76;
+        filter: sepia(0.12) saturate(0.86) contrast(1.04) brightness(0.92);
+      }
+
+      .memory-photo.is-lodge img,
+      .memory-photo.is-marble img,
+      .memory-photo.is-shrine img,
+      .memory-photo.is-bar img {
+        opacity: 0.58;
+        filter: sepia(0.18) saturate(0.72) contrast(1.02) brightness(0.82);
+      }
+
+      .memory-photo::after {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, transparent 44%, rgba(8, 24, 38, 0.42)),
+          linear-gradient(90deg, rgba(173, 146, 86, 0.18), transparent 46%);
+        content: "";
+        pointer-events: none;
+      }
+
+      .memory-photo.is-wide {
+        top: 9%;
+        right: 3%;
+        width: min(68%, 374px);
+        aspect-ratio: 16 / 9;
+        transform: rotate(1.6deg);
+      }
+
+      .memory-photo.is-lodge {
+        top: 1%;
+        left: 11%;
+        z-index: 0;
+        width: min(29%, 160px);
+        aspect-ratio: 16 / 10;
+        transform: rotate(-3deg);
+      }
+
+      .memory-photo.is-garden {
+        top: 32%;
+        left: 2%;
+        z-index: 1;
+        width: min(46%, 248px);
+        aspect-ratio: 16 / 10;
+        transform: rotate(-4.2deg);
+      }
+
+      .memory-photo.is-room {
+        right: 14%;
+        bottom: 11%;
+        z-index: 2;
+        width: min(39%, 212px);
+        aspect-ratio: 16 / 10;
+        transform: rotate(3.2deg);
+      }
+
+      .memory-photo.is-pool {
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+        width: min(37%, 194px);
+        aspect-ratio: 16 / 10;
+        transform: rotate(-2.2deg);
+      }
+
+      .memory-photo.is-marble {
+        left: -1%;
+        bottom: 12%;
+        z-index: 1;
+        width: min(27%, 146px);
+        aspect-ratio: 16 / 10;
+        transform: rotate(-1.4deg);
+      }
+
+      .memory-photo.is-shrine {
+        right: -5%;
+        bottom: 27%;
+        z-index: 0;
+        width: min(26%, 142px);
+        aspect-ratio: 16 / 10;
+        transform: rotate(4deg);
+      }
+
+      .memory-photo.is-bar {
+        left: 42%;
+        bottom: -7%;
+        z-index: 4;
+        width: min(28%, 149px);
+        aspect-ratio: 16 / 10;
+        transform: rotate(1.6deg);
+      }
+
+      .memory-photo.is-walk {
+        left: 20%;
+        bottom: 2%;
+        z-index: 2;
+        width: min(34%, 188px);
+        aspect-ratio: 16 / 10;
+        transform: rotate(2.4deg);
+      }
+
+      .memory-caption {
+        position: absolute;
+        right: 1%;
+        bottom: -3%;
+        z-index: 5;
+        max-width: 220px;
+        margin: 0;
+        padding: 16px 0 0 20px;
+        border-left: 1px solid rgba(173, 146, 86, 0.72);
+        color: rgba(255, 247, 229, 0.86);
+        font-size: clamp(14px, 1.18vw, 16px);
+        line-height: 1.8;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.76);
+      }
+
+      .epigraph {
+        position: relative;
+        z-index: 4;
+        width: fit-content;
+        max-width: min(100%, 450px);
+        margin: 0;
+        padding: 28px 0 0 28px;
+        border-left: 1px solid var(--gold);
+        color: #f3eee0;
+        font-size: clamp(18px, 1.95vw, 29px);
+        line-height: 1.9;
+      }
+
+      .epigraph-line {
+        display: block;
+        white-space: normal;
+      }
+
+      .epigraph-line + .epigraph-line {
+        margin-top: 1.9em;
+      }
+
+      .epigraph::before {
+        position: absolute;
+        top: 0;
+        left: -7px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--gold);
+        content: "";
+      }
+
+      .scroll-cue {
+        display: none;
+      }
+
+      .section {
+        position: relative;
+        width: min(1100px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: clamp(78px, 12vw, 150px) 0;
+        border-top: 1px solid rgba(173, 146, 86, 0.18);
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: minmax(160px, 0.36fr) minmax(0, 1fr);
+        gap: clamp(32px, 7vw, 98px);
+      }
+
+      .section-label {
+        margin: 0;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .prose {
+        max-width: 760px;
+        color: var(--soft);
+        font-size: clamp(17px, 1.55vw, 22px);
+        letter-spacing: 0;
+      }
+
+      .prose p {
+        margin: 0;
+      }
+
+      .prose p + p {
+        margin-top: 1.55em;
+      }
+
+      .prose strong {
+        color: #fff7e6;
+        font-weight: 600;
+        background: linear-gradient(transparent 64%, rgba(173, 146, 86, 0.36) 64%);
+      }
+
+      .prose .mantra-line {
+        display: block;
+        margin: 0.16em 0;
+        color: var(--gold);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(25px, 3.2vw, 48px);
+        font-style: italic;
+        letter-spacing: 0.03em;
+        line-height: 1.25;
+      }
+
+      .inscription {
+        position: relative;
+        max-width: 820px;
+        margin-top: clamp(36px, 5vw, 58px);
+        padding: clamp(30px, 5vw, 58px);
+        border: 1px solid rgba(173, 146, 86, 0.46);
+        background:
+          linear-gradient(145deg, rgba(255, 244, 213, 0.08), transparent 22%),
+          linear-gradient(315deg, rgba(0, 0, 0, 0.32), transparent 42%),
+          repeating-linear-gradient(105deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 7px),
+          #17212a;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 245, 216, 0.16),
+          inset 0 -26px 48px rgba(0, 0, 0, 0.28),
+          0 22px 70px rgba(0, 0, 0, 0.32);
+        color: #fff6e0;
+        font-size: clamp(22px, 2.8vw, 42px);
+        line-height: 1.65;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+        transition: border-color 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
+        isolation: isolate;
+      }
+
+      .inscription::before {
+        position: absolute;
+        inset: -18px;
+        z-index: -1;
+        border-radius: 2px;
+        background:
+          radial-gradient(circle at 50% 32%, rgba(173, 146, 86, 0.32), transparent 58%),
+          radial-gradient(circle at 50% 70%, rgba(238, 240, 234, 0.12), transparent 52%);
+        content: "";
+        opacity: 0;
+        filter: blur(18px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+
+      .inscription::after {
+        position: absolute;
+        inset: 9px;
+        border: 1px solid rgba(173, 146, 86, 0.25);
+        content: "";
+        pointer-events: none;
+      }
+
+      .inscription:hover,
+      .inscription:focus-within {
+        border-color: rgba(208, 178, 105, 0.84);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 245, 216, 0.24),
+          inset 0 -26px 48px rgba(0, 0, 0, 0.25),
+          0 22px 70px rgba(0, 0, 0, 0.36),
+          0 0 70px rgba(173, 146, 86, 0.24);
+        transform: translateY(-2px);
+      }
+
+      .inscription:hover::before,
+      .inscription:focus-within::before {
+        opacity: 1;
+        transform: scale(1.03);
+      }
+
+      .inscription p {
+        margin: 0;
+      }
+
+      .inscription p + p {
+        margin-top: 1.2em;
+      }
+
+      .inscription-line {
+        display: block;
+      }
+
+      .work-statement {
+        display: grid;
+        grid-template-columns: minmax(160px, 0.36fr) minmax(0, 1fr);
+        gap: clamp(32px, 7vw, 98px);
+      }
+
+      .conviction {
+        position: relative;
+        max-width: 840px;
+        margin-top: clamp(32px, 4.8vw, 54px);
+        padding: clamp(28px, 4.2vw, 48px);
+        border-left: 2px solid var(--gold);
+        background:
+          linear-gradient(90deg, rgba(173, 146, 86, 0.16), transparent 68%),
+          rgba(255, 255, 255, 0.026);
+        color: #fff6e0;
+        font-size: clamp(25px, 3.1vw, 46px);
+        line-height: 1.55;
+      }
+
+      .conviction span {
+        display: block;
+      }
+
+      .work-illustration {
+        position: relative;
+        width: min(620px, 100%);
+        margin: clamp(32px, 4.5vw, 52px) 0 0 auto;
+        overflow: hidden;
+        border: 1px solid rgba(173, 146, 86, 0.22);
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 20px 66px rgba(0, 0, 0, 0.3);
+      }
+
+      .work-illustration img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        opacity: 0.88;
+        filter: saturate(0.95) contrast(1.04);
+      }
+
+      .work-illustration::after {
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(255, 246, 224, 0.06);
+        content: "";
+        pointer-events: none;
+      }
+
+      .movement {
+        display: grid;
+        grid-template-columns: minmax(150px, 0.34fr) minmax(0, 1fr);
+        gap: clamp(28px, 6vw, 88px);
+      }
+
+      .movement-head {
+        position: sticky;
+        top: 98px;
+        align-self: start;
+      }
+
+      .movement-number {
+        display: block;
+        color: rgba(173, 146, 86, 0.62);
+        font-size: clamp(54px, 9vw, 130px);
+        line-height: 0.82;
+      }
+
+      .movement h2 {
+        margin: 22px 0 0;
+        font-size: clamp(26px, 3.2vw, 46px);
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .movement-subtitle {
+        display: block;
+        margin-top: 18px;
+        color: var(--gold);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(18px, 2.3vw, 30px);
+        font-style: italic;
+        letter-spacing: 0.03em;
+      }
+
+      .movement-subtitle.gold-word {
+        font-size: clamp(21px, 2.8vw, 38px);
+        font-style: normal;
+      }
+
+      .movement-body {
+        display: grid;
+        gap: clamp(30px, 5vw, 58px);
+      }
+
+      .chapter-illustration {
+        position: relative;
+        width: min(520px, 100%);
+        margin: 0 0 clamp(4px, 1vw, 12px) auto;
+        overflow: hidden;
+        border: 1px solid rgba(173, 146, 86, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 18px 58px rgba(0, 0, 0, 0.28);
+      }
+
+      .chapter-illustration::after {
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(255, 246, 224, 0.06);
+        content: "";
+        pointer-events: none;
+      }
+
+      .chapter-illustration img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        opacity: 0.86;
+        filter: saturate(0.92) contrast(1.04);
+        transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+      }
+
+      .chapter-illustration:hover img {
+        opacity: 1;
+        filter: saturate(1.02) contrast(1.08);
+        transform: scale(1.025);
+      }
+
+      .pull-quote {
+        margin: 0;
+        padding: clamp(28px, 4.5vw, 52px);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(90deg, rgba(173, 146, 86, 0.11), transparent);
+        color: #fff6e0;
+        font-size: clamp(24px, 3.6vw, 52px);
+        line-height: 1.55;
+      }
+
+      .pull-quote small {
+        display: block;
+        margin-bottom: 16px;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .appendix-note {
+        margin: 0;
+        padding: clamp(22px, 3.4vw, 36px);
+        border-left: 1px solid rgba(173, 146, 86, 0.46);
+        color: var(--muted);
+        font-size: clamp(15px, 1.2vw, 18px);
+        line-height: 1.9;
+      }
+
+      .appendix-note p {
+        margin: 0;
+      }
+
+      .appendix-note p + p {
+        margin-top: 1.1em;
+      }
+
+      .closing {
+        width: min(920px, calc(100% - 44px));
+      }
+
+      .closing .prose {
+        margin-left: auto;
+      }
+
+      .closing-mark {
+        margin: 0 0 34px;
+        color: rgba(173, 146, 86, 0.48);
+        font-size: clamp(64px, 13vw, 180px);
+        line-height: 0.7;
+      }
+
+      .cta-band {
+        width: min(920px, calc(100% - 44px));
+        margin: 0 auto clamp(60px, 9vw, 110px);
+        padding: clamp(34px, 5.4vw, 64px) 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid rgba(173, 146, 86, 0.18);
+        background:
+          linear-gradient(90deg, rgba(173, 146, 86, 0.08), transparent 58%);
+      }
+
+      .cta-band h2 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 58px);
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .cta-band p {
+        max-width: 640px;
+        margin: 22px 0 0;
+        color: var(--soft);
+        font-size: clamp(16px, 1.5vw, 20px);
+      }
+
+      .cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 34px;
+        padding: 13px 0;
+        border-bottom: 1px solid var(--gold);
+        color: #fff7e5;
+        font-family: var(--sans);
+        font-size: 15px;
+        letter-spacing: 0.08em;
+      }
+
+      .cta-link::after {
+        content: ">";
+        color: var(--gold);
+        transition: transform 0.2s ease;
+      }
+
+      .cta-link:hover::after {
+        transform: translateX(6px);
+      }
+
+      .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 30px clamp(22px, 6vw, 70px);
+        border-top: 1px solid rgba(173, 146, 86, 0.22);
+        color: var(--muted);
+        font-family: var(--sans);
+        font-size: 12px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+      }
+
+      .fade-in {
+        opacity: 0;
+        animation: rise 0.9s ease forwards;
+      }
+
+      .fade-in:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media (max-width: 820px) {
+        .site-header {
+          position: absolute;
+          align-items: flex-start;
+          padding: 16px 18px;
+        }
+
+        .site-nav {
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          gap: 8px 14px;
+          max-width: 230px;
+          font-size: 10px;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 118px 22px 72px;
+        }
+
+        .hero-inner,
+        .intro,
+        .work-statement,
+        .movement {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-inner {
+          gap: 54px;
+        }
+
+        .hero-memory {
+          min-height: 540px;
+        }
+
+        .memory-photo.is-wide {
+          right: 0;
+          width: min(82%, 380px);
+        }
+
+        .memory-photo.is-lodge {
+          left: 7%;
+          width: min(28%, 140px);
+        }
+
+        .memory-photo.is-garden {
+          left: 0;
+          width: min(48%, 220px);
+        }
+
+        .memory-photo.is-room {
+          right: 12%;
+          width: min(39%, 185px);
+        }
+
+        .memory-photo.is-pool {
+          width: min(40%, 190px);
+        }
+
+        .memory-photo.is-marble {
+          left: 0;
+          width: min(26%, 130px);
+        }
+
+        .memory-photo.is-shrine {
+          right: -2%;
+          width: min(26%, 130px);
+        }
+
+        .memory-photo.is-bar {
+          left: 42%;
+          width: min(28%, 140px);
+        }
+
+        .memory-photo.is-walk {
+          left: 12%;
+          width: min(37%, 185px);
+        }
+
+        .memory-caption {
+          right: 4px;
+          bottom: -2%;
+          max-width: 200px;
+        }
+
+        .epigraph {
+          max-width: 320px;
+        }
+
+        .section {
+          width: calc(100% - 36px);
+          padding: 76px 0;
+        }
+
+        .movement-head {
+          position: static;
+        }
+
+        .movement h2 {
+          display: flex;
+          align-items: baseline;
+          gap: 16px;
+          margin-top: 14px;
+        }
+
+        .movement-subtitle {
+          margin-top: 10px;
+        }
+
+        .pull-quote {
+          padding-right: 0;
+          padding-left: 0;
+          background: transparent;
+        }
+
+        .closing,
+        .cta-band {
+          width: calc(100% - 36px);
+        }
+
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 520px) {
+        body {
+          line-height: 1.9;
+        }
+
+        .brand-mark {
+          width: 144px;
+        }
+
+        .site-nav a:nth-child(2),
+        .site-nav a:nth-child(3) {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: clamp(34px, 11.5vw, 46px);
+        }
+
+        .subtitle {
+          font-size: 14px;
+          letter-spacing: 0.03em;
+        }
+
+        .hero-memory {
+          min-height: 500px;
+        }
+
+        .memory-photo.is-wide {
+          top: 0;
+          width: 82%;
+        }
+
+        .memory-photo.is-lodge {
+          top: 1%;
+          left: 2%;
+          width: 26%;
+        }
+
+        .memory-photo.is-garden {
+          top: 34%;
+          width: 48%;
+        }
+
+        .memory-photo.is-room {
+          right: 10%;
+          bottom: 14%;
+          width: 39%;
+        }
+
+        .memory-photo.is-pool {
+          right: 0;
+          bottom: 1%;
+          width: 40%;
+        }
+
+        .memory-photo.is-marble {
+          left: 0;
+          bottom: 15%;
+          width: 25%;
+        }
+
+        .memory-photo.is-shrine {
+          right: -2%;
+          bottom: 29%;
+          width: 26%;
+        }
+
+        .memory-photo.is-bar {
+          left: 42%;
+          bottom: -5%;
+          width: 29%;
+        }
+
+        .memory-photo.is-walk {
+          left: 6%;
+          bottom: 4%;
+          width: 38%;
+        }
+
+        .memory-caption {
+          right: 0;
+          bottom: -2%;
+          max-width: 176px;
+          padding-left: 16px;
+          font-size: 13px;
+        }
+
+        .prose {
+          font-size: 17px;
+        }
+
+        .movement h2 {
+          display: block;
+        }
+
+        .pull-quote {
+          font-size: clamp(25px, 8vw, 36px);
+        }
+
+        .cta-band {
+          padding: 32px 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script>
+      const CONTENT = {
+        hero: {
+          h1: ["お金を、", "体験資産に変える"],
+          subtitle: "東京トータルコンサルティング ｜ 体験メニュー",
+          epigraph: ["貯める金は通帳に残るだけ", "資産になった体験は貴方を一生支え、一生活用できる。"]
+        },
+        intro: {
+          label: "Opening",
+          paragraphs: [
+            ["自分はもともと、物に執着がある方でした。ゼニアのスーツ、フェラガモの靴、ロレックス。そういうものに惹かれてきたし、今でも無価値だとはまったく思っていません。"],
+            ["良い物には、ちゃんと理由があります。仕立て、素材、歴史、佇まい。本物に触れることで、見えるようになる世界がある。欲しかった物を手にするまでに、頑張ったこと、工夫したこと、少し背伸びしたこと。その体験は、自分の人生を確かに作ってきました。"],
+            ["ただ、年齢を重ねるほど分かってきたことがあります。自分の人生を作ってきたのは、手にした物そのものではなく、そこに至るまでにくぐってきた体験の方だったのだと。"],
+            ["「俺もここまで来たんだ」。その感情は、とても大切なものです。だから、物に向かうことを否定するつもりはありません。ただ今は、少しだけ見方が変わりました。", { strong: "本当に投資価値があるのは、自分の中に基準と言葉を残してくれる体験なのだと。" }]
+          ],
+          inscription: [
+            ["人は、物そのものを欲しがっているようで、", "本当は、それを手にした時の", "感情を欲しがっている。"],
+            ["でも、体験資産になるものは、", "その感情が一瞬で終わらない。", "あとから自分の基準になり、", "言葉になり、", "人生の中で何度も使える。"]
+          ]
+        },
+        work: {
+          label: "Asset Work",
+          paragraphs: [
+            ["お客様の収入を、資産に変えていく。それは、自分の仕事の根本です。収入の一部を金融商品に組み替え、将来を支える金融資産にしていく。これは今でも、とても大切な仕事です。"],
+            ["ただ今は、金融資産だけでは足りない時代になってきたと感じています。人生を支える資産は、通帳や証券口座の中だけにあるわけではありません。"]
+          ],
+          image: {
+            src: "assets/illustration-asset-work.jpg",
+            alt: "収入を金融資産と体験資産に変えていく仕事を象徴する金色の光と二つの資産"
+          },
+          conviction: ["収入を金融資産に変えるだけでなく、", "体験資産にも変えていく仕事をしたい。"]
+        },
+        movements: [
+          {
+            number: "I",
+            verb: "見抜く",
+            subtitle: "Pay for Value, Not for Price",
+            image: {
+              src: "assets/illustration-value-loupe.jpg",
+              alt: "価格の下に眠る価値を見抜くことを象徴するルーペと金の鉱脈"
+            },
+            paragraphs: [
+              ["世の中には、値段で価値を判断する空気があります。"],
+              ["高いものは、きっと良いものだ。", "\n", "安いものは、きっと大したことがない。"],
+              ["もちろん、高いものには理由があることも多い。", "\n", "けれど、値段が高いことと、価値が高いことは同じではありません。"],
+              ["自分たちプライベートバンカーは、", "\n", "お金の置き場所を見る仕事をしています。"],
+              ["どこに置けば、守れるのか。", "\n", "どこに置けば、育つのか。", "\n", "どこに置けば、あとで効いてくるのか。"],
+              ["金融資産で ROI を見るように、", "\n", "体験にも ROI があると思っています。"],
+              ["支払った金額に対して、", "\n", "どれだけ自分の基準が育つのか。", "\n", "どれだけ言葉が残るのか。", "\n", "どれだけ家族や仲間に渡せるものになるのか。"],
+              ["それを見抜く眼が必要です。"],
+              ["高いから選ぶのではない。", "\n", "安いから避けるのでもない。"],
+              ["Pay for Value, Not for Price."],
+              ["値段ではなく、", "\n", "その下に眠っている本当の価値に払う。"]
+            ],
+            appendix: [
+              ["価値があれば、300円の銭湯にも、50万円のリゾートにも、同じ温度でお金を出す。逆に、お金を払わなければ価値がない、というわけでもない。公園の桜は、誰のためでもなく、毎年咲く。"],
+              ["本物に払うほど、それを見抜く眼が、研がれていく。買うことが、自分を研ぐことになる。"]
+            ]
+          },
+          {
+            number: "II",
+            verb: "組み替える",
+            subtitle: "Money to GOLD",
+            subtitleClass: "gold-word",
+            image: {
+              src: "assets/illustration-money-to-gold.jpg",
+              alt: "消えるお金を減らない金に組み替えることを象徴する金の静物"
+            },
+            leadQuote: ["消えるお金を、", "減らない金（GOLD）に。"],
+            paragraphs: [
+              ["自分が一貫して見ているのは、", "\n", "高いか安いかではありません。"],
+              ["それが、コストなのか。", "\n", "それとも、資産なのか。"],
+              ["コストなら、", "\n", "どれだけ安くても、使えば消える。"],
+              ["資産なら、", "\n", "どれだけ高く見えても、", "\n", "長い目で見れば安いことがある。"],
+              ["一万円札は、燃えてしまえば終わりです。物も、盗まれることがある。壊れることもある。時間とともに、価値が削られていくこともある。"],
+              ["だから自分は、何かを買う時に、それに資産性があるかどうかを見るようになりました。"],
+              ["使い捨てのペンではなく、長く使える一本の万年筆。", "\n", "ただ時間を知る時計ではなく、時代を越えて価値を持ち続ける時計。", "\n", "ただ移動するための車ではなく、乗るたびに自分の基準を育ててくれる車。"],
+              ["たとえば、モンブラン。", "\n", "たとえば、オーデマピゲ。", "\n", "たとえば、ポルシェ。"],
+              ["もちろん、高いものを買えという話ではありません。プリウスが悪くて、ポルシェが良いという話でもない。見るべきなのは、最初の価格ではなく、最後にどれだけ価値が残っているかです。"],
+              ["保険も同じです。"],
+              ["ただ消えていく保険料として払うのか。", "\n", "将来の安心や、資産性や、換金性を持つものに組み替えるのか。"],
+              ["同じお金でも、", "\n", "置き方で意味が変わります。"],
+              ["ゲーセンで使うお金が悪い、という話でもありません。子どもと本気で遊んだ時間や、あとで笑い話になる記憶が残るなら、それも体験資産になる。"],
+              ["逆に、高級な体験でも、ただその場で消えて終わるだけなら、資産にはならない。大事なのは、値段でも場所でもなく、あとに何が残るかです。"],
+              ["最初は高く見えるものが、", "\n", "長い目で見ると、いちばん安いことがある。"]
+            ]
+          },
+          {
+            number: "III",
+            verb: "渡す",
+            subtitle: "紙では渡せないもの",
+            image: {
+              src: "assets/illustration-pass-on.jpg",
+              alt: "親が知る多くの扉と子どもが自分の道を見つけることを象徴する光の挿画"
+            },
+            paragraphs: [
+              ["お金は、遺せる。", "\n", "土地も、名義を変えられる。", "\n", "保険も、受取人を決めれば渡せる。"],
+              ["でも、体験資産は、", "\n", "書類だけでは渡せません。"],
+              ["これからの時代、", "\n", "子どもの進路は「とりあえず大学」だけでは決められない。", "\n", "AI、専門職、実務、資格、起業。", "\n", "選択肢が増えた分だけ、", "\n", "子どもの適性や Want を見つける眼が必要になります。"],
+              ["その時に効いてくるのが、", "\n", "親の体験ボキャブラリーです。"],
+              ["親が知らない扉は、", "\n", "子どもに見せてやれない。", "\n", "親がくぐったことのない世界は、", "\n", "子どもがそこに反応した時にも気づきにくい。"],
+              ["だから、自分が先にくぐっておく。", "\n", "食べる。旅をする。学ぶ。人に会う。道具に触れる。", "\n", "失敗も含めて、自分の中に基準と言葉を増やしておく。"],
+              ["子どもが何かに足を止めた時、", "\n", "「それはこうだったよ」", "\n", "「こういう道もあるよ」", "\n", "と渡せるように。"],
+              ["無理に手を引かなくていい。", "\n", "子どもが別の扉を選んだら、それがその子の扉です。"],
+              ["ただ、扉を知らなければ、", "\n", "開けてやることもできない。"],
+              ["東京で子どもを育てるコストは、", "\n", "本当に重くなりました。"],
+              ["家を持つこと。", "\n", "塾に通わせること。", "\n", "私立に進ませること。", "\n", "大学まで送り出すこと。"],
+              ["どれも、かつては分かりやすい正解に見えました。", "\n", "でも今は、その一つひとつに、", "\n", "本当に投資対効果があるのかを考えなければいけない時代です。"],
+              ["もちろん、大学が悪いわけではありません。", "\n", "学力投資が無駄だという話でもありません。"],
+              ["ただ、", "\n", "「とりあえず大学へ」", "\n", "「とりあえず有名な塾へ」", "\n", "だけでは、", "\n", "子どもの人生の最適解には届かないことがある。"],
+              ["その子が何に反応するのか。", "\n", "何に夢中になるのか。", "\n", "どんな場所で力を発揮するのか。"],
+              ["そこに早く気づけることの方が、", "\n", "何千万円もの教育費より大きな価値を持つことがある。"],
+              ["だから親に必要なのは、", "\n", "正解を押しつけることではなく、", "\n", "子どもの反応に気づけるだけの体験ボキャブラリーを持つことだと思っています。"]
+            ]
+          }
+        ],
+        closing: {
+          paragraphs: [
+            ["このラインナップは、", "\n", "どこかから借りてきた流行のリストではありません。"],
+            ["20年以上、お客様と向き合いながら、", "\n", "自分自身も時間とお金と労力を注ぎ込んで、", "\n", "実際にくぐってきた扉です。"],
+            ["失敗したものもあります。", "\n", "背伸びしすぎたものもあります。", "\n", "でも、それも含めて、", "\n", "自分の中に基準と言葉を残してくれました。"],
+            ["その中から、", "\n", "今でもできるもの。", "\n", "再現性があるもの。", "\n", "誰かの0→1を助けられるもの。", "\n", "本当に自分の人生を変えてくれたもの。"],
+            ["それだけを、100に絞りました。"],
+            ["0→1には、少し勇気がいります。"],
+            ["初めての店。", "\n", "初めての場所。", "\n", "初めての作法。", "\n", "初めての人。"],
+            ["知ってしまえば何でもないことでも、", "\n", "最初の一歩だけは、少し重い。"],
+            ["だから、ご縁のあるお客様であれば、", "\n", "必要な時は、自分がアテンドします。"],
+            ["答えを渡すのではなく、", "\n", "最初の扉を、一緒にくぐるためです。"]
+          ]
+        },
+        cta: {
+          title: "体験の目録へ。",
+          body: "100の扉は、正解の一覧ではありません。最初の一歩を少し軽くするための、体験資産の目録です。",
+          label: "目録を見る",
+          href: "/experience/amanemu/"
+        }
+      };
+
+      const e = React.createElement;
+
+      function renderInline(parts) {
+        return parts.map((part, index) => {
+          if (typeof part === "string") {
+            return part.split("\n").map((piece, pieceIndex, arr) => (
+              e(React.Fragment, { key: `${index}-${pieceIndex}` },
+                piece === "Pay for Value, Not for Price."
+                  ? e("span", { className: "mantra-line" }, piece)
+                  : piece,
+                pieceIndex < arr.length - 1 ? e("br") : null
+              )
+            ));
+          }
+          if (part.strong) {
+            return e("strong", { key: index }, part.strong);
+          }
+          return null;
+        });
+      }
+
+      function Prose({ paragraphs }) {
+        return e("div", { className: "prose" },
+          paragraphs.map((paragraph, index) => e("p", { key: index }, renderInline(paragraph)))
+        );
+      }
+
+      function Header() {
+        return e("header", { className: "site-header" },
+          e("a", { className: "brand", href: "#top", "aria-label": "東京トータルコンサルティング トップへ" },
+            e("span", { className: "brand-mark" },
+              e("img", { src: "assets/logo-2026.png", alt: "Tokyo Total Consulting" })
+            )
+          ),
+          e("nav", { className: "site-nav", "aria-label": "ページ内ナビゲーション" },
+            e("a", { href: "#movement-1" }, "見抜く"),
+            e("a", { href: "#movement-2" }, "組み替える"),
+            e("a", { href: "#movement-3" }, "渡す"),
+            e("a", { href: "#cta" }, "声をかける")
+          )
+        );
+      }
+
+      function Hero() {
+        return e("section", { className: "hero", id: "top", "aria-labelledby": "page-title" },
+          e("div", { className: "hero-inner" },
+            e("div", { className: "fade-in" },
+              e("p", { className: "hero-kicker" }, "Experience Menu"),
+              e("h1", { id: "page-title" }, CONTENT.hero.h1.map((line) => e("span", { className: "h1-line", key: line }, line))),
+              e("p", { className: "subtitle" }, CONTENT.hero.subtitle)
+            ),
+            e("div", { className: "hero-memory fade-in", "aria-label": "印象深い体験の写真" },
+              e("div", { className: "memory-collage", "aria-hidden": "true" },
+                e("figure", { className: "memory-photo is-wide" },
+                  e("img", { src: "assets/travel-memory-01.jpg", alt: "" })
+                ),
+                e("figure", { className: "memory-photo is-lodge" },
+                  e("img", { src: "assets/travel-memory-06.jpg", alt: "" })
+                ),
+                e("figure", { className: "memory-photo is-garden" },
+                  e("img", { src: "assets/travel-memory-03.jpg", alt: "" })
+                ),
+                e("figure", { className: "memory-photo is-room" },
+                  e("img", { src: "assets/travel-memory-02.jpg", alt: "" })
+                ),
+                e("figure", { className: "memory-photo is-marble" },
+                  e("img", { src: "assets/travel-memory-10.jpg", alt: "" })
+                ),
+                e("figure", { className: "memory-photo is-shrine" },
+                  e("img", { src: "assets/travel-memory-13.jpg", alt: "" })
+                ),
+                e("figure", { className: "memory-photo is-walk" },
+                  e("img", { src: "assets/travel-memory-04.jpg", alt: "" })
+                ),
+                e("figure", { className: "memory-photo is-pool" },
+                  e("img", { src: "assets/travel-memory-05.jpg", alt: "" })
+                ),
+                e("figure", { className: "memory-photo is-bar" },
+                  e("img", { src: "assets/travel-memory-17.jpg", alt: "" })
+                )
+              ),
+              e("p", { className: "memory-caption" }, "訪ねた場所、学んだ言葉、味わった時間。五感で受け取ったものを、体験資産へ。"),
+              e("blockquote", { className: "epigraph" },
+                CONTENT.hero.epigraph.map((line) => e("span", { className: "epigraph-line", key: line }, line))
+              )
+            )
+          ),
+          null
+        );
+      }
+
+      function Intro() {
+        return e("section", { className: "section intro", "aria-labelledby": "intro-title" },
+          e("p", { className: "section-label", id: "intro-title" }, CONTENT.intro.label),
+          e("div", null,
+            e(Prose, { paragraphs: CONTENT.intro.paragraphs }),
+            e("blockquote", { className: "inscription" },
+              CONTENT.intro.inscription.map((paragraph, index) => e("p", { key: index },
+                paragraph.map((line) => e("span", { className: "inscription-line", key: line }, line))
+              ))
+            )
+          )
+        );
+      }
+
+      function WorkStatement() {
+        return e("section", { className: "section work-statement", "aria-labelledby": "work-title" },
+          e("p", { className: "section-label", id: "work-title" }, CONTENT.work.label),
+          e("div", null,
+            e(Prose, { paragraphs: CONTENT.work.paragraphs }),
+            e("figure", { className: "work-illustration" },
+              e("img", { src: CONTENT.work.image.src, alt: CONTENT.work.image.alt })
+            ),
+            e("blockquote", { className: "conviction" },
+              CONTENT.work.conviction.map((line) => e("span", { key: line }, line))
+            )
+          )
+        );
+      }
+
+      function Movement({ movement, index }) {
+        return e("section", { className: "section movement", id: `movement-${index + 1}`, "aria-labelledby": `movement-title-${index}` },
+          e("div", { className: "movement-head" },
+            e("span", { className: "movement-number", "aria-hidden": "true" }, movement.number),
+            e("h2", { id: `movement-title-${index}` },
+              movement.verb,
+              e("span", { className: `movement-subtitle ${movement.subtitleClass || ""}` }, movement.subtitle)
+            )
+          ),
+          e("div", { className: "movement-body" },
+            movement.image ? e("figure", { className: "chapter-illustration" },
+              e("img", { src: movement.image.src, alt: movement.image.alt })
+            ) : null,
+            movement.leadQuote ? e("blockquote", { className: "pull-quote" },
+              e("small", null, "Pull quote"),
+              Array.isArray(movement.leadQuote)
+                ? movement.leadQuote.map((line) => e("span", { className: "inscription-line", key: line }, line))
+                : movement.leadQuote
+            ) : null,
+            e(Prose, { paragraphs: movement.paragraphs }),
+            movement.appendix ? e("aside", { className: "appendix-note" },
+              movement.appendix.map((paragraph, appendixIndex) => e("p", { key: appendixIndex }, renderInline(paragraph)))
+            ) : null,
+            movement.pullQuote ? e("blockquote", { className: "pull-quote" },
+              e("small", null, "Pull quote"),
+              movement.pullQuote
+            ) : null
+          )
+        );
+      }
+
+      function Closing() {
+        return e("section", { className: "section closing", "aria-labelledby": "closing-title" },
+          e("p", { className: "closing-mark", "aria-hidden": "true" }, "扉"),
+          e("p", { className: "section-label", id: "closing-title" }, "Catalogue of Doors"),
+          e(Prose, { paragraphs: CONTENT.closing.paragraphs })
+        );
+      }
+
+      function Cta() {
+        return e("section", { className: "cta-band", id: "cta", "aria-labelledby": "cta-title" },
+          e("h2", { id: "cta-title" }, CONTENT.cta.title),
+          e("p", null, CONTENT.cta.body),
+          e("a", { className: "cta-link", href: CONTENT.cta.href }, CONTENT.cta.label)
+        );
+      }
+
+      function Footer() {
+        return e("footer", { className: "site-footer" },
+          e("small", null, "Tokyo Total Consulting"),
+          e("div", { className: "footer-links", "aria-label": "フッターリンク" },
+            e("a", { href: "/privacy/#sec03" }, "Privacy"),
+            e("a", { href: "/" }, "Company")
+          ),
+          e("small", null, "Experience Menu")
+        );
+      }
+
+      function App() {
+        return e("div", { className: "page" },
+          e(Header),
+          e("main", null,
+            e(Hero),
+            e(Intro),
+            e(WorkStatement),
+            CONTENT.movements.map((movement, index) => e(Movement, { key: movement.number, movement, index })),
+            e(Closing),
+            e(Cta)
+          ),
+          e(Footer)
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(e(App));
+    </script>
+  </body>
+</html>

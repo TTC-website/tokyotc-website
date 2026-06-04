@@ -29,6 +29,12 @@ const services = [
     text: "不動産を含む資産全体を把握し、売却・活用・承継の方向性を一緒に考えます。",
     href: "/property/",
   },
+  {
+    icon: "asset",
+    title: "体験メニュー",
+    text: "旅、学び、味わい、出会った空気。身体で覚えた景色を、人生や仕事の基準に変える体験資産の目録です。",
+    href: "/experience/",
+  },
 ];
 
 const strengths = [
