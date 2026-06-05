@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dialog in the Dark 外苑前編｜見えていなかったのは世界ではない。｜体験メニュー100</title>
+    <meta name="description" content="完全な暗闇の中で、恐怖、信頼、五感、人の価値を身体で学んだ約90分。Dialog in the Dark外苑前会場での体験記。">
+    <meta property="og:title" content="Dialog in the Dark 外苑前編｜見えていなかったのは世界ではない。">
+    <meta property="og:description" content="完全な暗闇の中で、恐怖、信頼、五感、人の価値を身体で学んだ約90分。Dialog in the Dark外苑前会場での体験記。">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <style>
+      :root {
+        --black: #020304;
+        --void: #050708;
+        --deep: #0a0d0f;
+        --charcoal: #11161a;
+        --ink: #f1eee4;
+        --soft: #d1cbbd;
+        --muted: #948e80;
+        --gold: #ad9256;
+        --warm: #c49b66;
+        --leaf: #9aa36f;
+        --water: #7aa8a7;
+        --plum: #b78d9f;
+        --line: rgba(173, 146, 86, 0.28);
+        --veil: rgba(255, 255, 255, 0.055);
+        --serif: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Noto Serif JP", serif;
+        --sans: "Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 78% 28%, rgba(122, 168, 167, 0.06), transparent 28rem),
+          radial-gradient(circle at 24% 70%, rgba(173, 146, 86, 0.09), transparent 32rem),
+          linear-gradient(180deg, #000 0%, var(--void) 25%, #090c0d 56%, #10140f 78%, #050607 100%);
+        color: var(--ink);
+        font-family: var(--serif);
+        line-height: 2.04;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        background-image:
+          radial-gradient(circle, rgba(255, 246, 218, 0.17) 0 1px, transparent 1.8px),
+          radial-gradient(circle, rgba(122, 168, 167, 0.13) 0 1px, transparent 1.7px);
+        background-position: 18% 24%, 72% 68%;
+        background-size: 180px 180px, 260px 260px;
+        opacity: 0.17;
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        background: radial-gradient(ellipse at center, transparent 0 42%, rgba(0, 0, 0, 0.78) 100%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--water);
+        outline-offset: 4px;
+      }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px clamp(20px, 4vw, 58px);
+        border-bottom: 1px solid rgba(173, 146, 86, 0.18);
+        background: rgba(2, 3, 4, 0.78);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: block;
+        width: clamp(148px, 18vw, 260px);
+      }
+
+      .brand img {
+        display: block;
+        width: 100%;
+        height: auto;
+        mix-blend-mode: screen;
+        filter: sepia(1) saturate(0.82) brightness(1.06) contrast(1.08);
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 2.4vw, 30px);
+        color: var(--soft);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      .site-nav a {
+        opacity: 0.78;
+        transition: color 0.2s ease, opacity 0.2s ease;
+      }
+
+      .site-nav a:hover {
+        color: var(--gold);
+        opacity: 1;
+      }
+
+      main {
+        padding-top: 78px;
+      }
+
+      .hero {
+        position: relative;
+        min-height: calc(100svh - 78px);
+        overflow: hidden;
+        padding: clamp(60px, 8vw, 108px) clamp(22px, 6vw, 96px) clamp(70px, 9vw, 116px);
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        background:
+          radial-gradient(circle at 50% 44%, rgba(255, 255, 255, 0.035), transparent 19rem),
+          linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.94) 38%, rgba(3, 5, 6, 0.88) 100%);
+      }
+
+      .hero-inner {
+        display: grid;
+        align-content: space-between;
+        width: min(1180px, 100%);
+        min-height: calc(100svh - 78px - clamp(130px, 17vw, 224px));
+        margin: 0 auto;
+      }
+
+      .dark-opening {
+        max-width: 500px;
+        color: rgba(241, 238, 228, 0.94);
+        font-size: clamp(24px, 4vw, 48px);
+        font-weight: 500;
+        line-height: 1.68;
+        text-shadow: 0 0 28px rgba(255, 247, 222, 0.2);
+      }
+
+      .dark-opening p {
+        margin: 0;
+      }
+
+      .dark-opening p + p {
+        margin-top: clamp(26px, 5vw, 54px);
+      }
+
+      .hero-title {
+        width: min(820px, 100%);
+        margin-top: clamp(80px, 12vw, 160px);
+      }
+
+      .eyebrow,
+      .section-label {
+        margin: 0;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        margin: 16px 0 0;
+        font-size: clamp(44px, 7vw, 94px);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.12;
+      }
+
+      .hero-copy {
+        margin: 22px 0 0;
+        color: var(--soft);
+        font-size: clamp(18px, 2vw, 25px);
+        line-height: 1.8;
+      }
+
+      .meta-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 34px;
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      .meta-strip li {
+        padding: 8px 12px;
+        border: 1px solid rgba(173, 146, 86, 0.24);
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .section {
+        position: relative;
+        width: min(1040px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: clamp(76px, 12vw, 154px) 0;
+        border-top: 1px solid rgba(173, 146, 86, 0.18);
+        scroll-margin-top: 104px;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: minmax(130px, 0.24fr) minmax(0, 1fr);
+        gap: clamp(28px, 6vw, 80px);
+      }
+
+      .threshold {
+        width: min(1120px, calc(100% - 44px));
+      }
+
+      .threshold-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.42fr);
+        gap: 1px;
+        border: 1px solid rgba(173, 146, 86, 0.22);
+        background: rgba(173, 146, 86, 0.22);
+      }
+
+      .threshold-photo {
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .threshold-photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: clamp(360px, 52vw, 620px);
+        object-fit: cover;
+        filter: saturate(0.78) contrast(1.08) brightness(0.72);
+      }
+
+      .threshold-photo.is-detail img {
+        min-height: clamp(240px, 34vw, 420px);
+        filter: saturate(0.42) contrast(1.15) brightness(0.58);
+      }
+
+      .threshold-photo figcaption {
+        position: absolute;
+        right: 14px;
+        bottom: 12px;
+        left: 14px;
+        color: rgba(255, 247, 229, 0.78);
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        line-height: 1.6;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.82);
+      }
+
+      .prose {
+        max-width: 760px;
+        color: var(--soft);
+        font-size: clamp(17px, 1.42vw, 21px);
+      }
+
+      .prose p {
+        margin: 0;
+      }
+
+      .prose p + p {
+        margin-top: 1.35em;
+      }
+
+      .chapters {
+        width: min(980px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .chapter {
+        position: relative;
+        min-height: 72svh;
+        padding: clamp(70px, 11vw, 132px) 0;
+        border-top: 1px solid rgba(173, 146, 86, 0.16);
+        scroll-margin-top: 104px;
+      }
+
+      .chapter::before {
+        position: absolute;
+        top: 18%;
+        right: min(-12vw, -40px);
+        z-index: -1;
+        width: clamp(180px, 34vw, 430px);
+        height: clamp(180px, 34vw, 430px);
+        border-radius: 999px;
+        content: "";
+        opacity: 0.3;
+        filter: blur(18px);
+      }
+
+      .chapter.is-fear::before {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.06), transparent 68%);
+      }
+
+      .chapter.is-trust::before {
+        background: radial-gradient(circle, rgba(196, 155, 102, 0.2), transparent 70%);
+      }
+
+      .chapter.is-sense::before {
+        background: radial-gradient(circle, rgba(122, 168, 167, 0.2), transparent 70%);
+      }
+
+      .chapter.is-play::before {
+        background: radial-gradient(circle, rgba(154, 163, 111, 0.2), transparent 70%);
+      }
+
+      .chapter.is-plum::before {
+        background: radial-gradient(circle, rgba(183, 141, 159, 0.2), transparent 70%);
+      }
+
+      .chapter-head {
+        display: grid;
+        grid-template-columns: minmax(92px, 0.18fr) minmax(0, 1fr);
+        gap: clamp(20px, 5vw, 64px);
+        margin-bottom: clamp(30px, 5vw, 58px);
+      }
+
+      .chapter-number {
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .chapter h2 {
+        margin: 0;
+        color: #fff8e6;
+        font-size: clamp(31px, 4.8vw, 64px);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.28;
+      }
+
+      .chapter-body {
+        max-width: 760px;
+        margin-left: clamp(112px, 18vw, 196px);
+      }
+
+      .chapter-body p {
+        margin: 0;
+        color: var(--soft);
+        font-size: clamp(17px, 1.32vw, 20px);
+      }
+
+      .chapter-body p + p {
+        margin-top: 1.36em;
+      }
+
+      .quote {
+        margin: clamp(34px, 5vw, 58px) 0;
+        padding: clamp(26px, 4vw, 44px);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(90deg, rgba(173, 146, 86, 0.13), transparent 70%);
+        color: #fff7df;
+        font-size: clamp(24px, 3.4vw, 44px);
+        line-height: 1.48;
+      }
+
+      .sensory-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        margin-top: clamp(42px, 6vw, 70px);
+        border: 1px solid rgba(173, 146, 86, 0.22);
+        background: rgba(173, 146, 86, 0.22);
+      }
+
+      .sense {
+        min-height: 150px;
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .sense span {
+        display: block;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .sense strong {
+        display: block;
+        margin-top: 16px;
+        color: #fff7e6;
+        font-size: clamp(20px, 2.2vw, 28px);
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .ratings {
+        display: grid;
+        gap: clamp(34px, 5vw, 56px);
+      }
+
+      .rating-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        border: 1px solid var(--line);
+        background: var(--line);
+      }
+
+      .rating-card {
+        padding: clamp(24px, 3vw, 36px);
+        background:
+          linear-gradient(145deg, rgba(255, 244, 213, 0.07), transparent 32%),
+          rgba(255, 255, 255, 0.04);
+      }
+
+      .rating-card span {
+        display: block;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .rating-card strong {
+        display: block;
+        margin-top: 16px;
+        color: #fff6df;
+        font-size: clamp(24px, 3.2vw, 42px);
+        font-weight: 500;
+        line-height: 1.08;
+      }
+
+      .rating-card h3 {
+        margin: 18px 0 0;
+        color: #fff6df;
+        font-size: clamp(19px, 1.9vw, 25px);
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .rating-card p {
+        margin: 14px 0 0;
+        color: var(--soft);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .key-phrase {
+        margin: 0;
+        padding: clamp(34px, 5vw, 58px);
+        border-left: 1px solid var(--gold);
+        background:
+          radial-gradient(circle at 12% 30%, rgba(122, 168, 167, 0.13), transparent 20rem),
+          rgba(255, 255, 255, 0.035);
+        color: #fff7e2;
+        font-size: clamp(27px, 4vw, 56px);
+        line-height: 1.42;
+      }
+
+      .cta {
+        width: min(920px, calc(100% - 44px));
+        margin: 0 auto clamp(58px, 8vw, 100px);
+        padding: clamp(42px, 6vw, 72px) 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid rgba(173, 146, 86, 0.18);
+      }
+
+      .cta h2 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 58px);
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      .cta p {
+        max-width: 680px;
+        margin: 22px 0 0;
+        color: var(--soft);
+        font-size: clamp(16px, 1.45vw, 20px);
+      }
+
+      .cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 34px;
+        padding: 13px 0;
+        border-bottom: 1px solid var(--gold);
+        color: #fff7e5;
+        font-family: var(--sans);
+        font-size: 15px;
+        letter-spacing: 0.08em;
+      }
+
+      .cta-link::after {
+        content: "↗";
+        color: var(--gold);
+        font-size: 15px;
+      }
+
+      .related-note {
+        margin-top: 34px;
+        padding-top: 22px;
+        border-top: 1px solid rgba(173, 146, 86, 0.16);
+        color: var(--muted);
+        font-family: var(--sans);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 30px clamp(22px, 6vw, 70px);
+        border-top: 1px solid rgba(173, 146, 86, 0.22);
+        color: var(--muted);
+        font-family: var(--sans);
+        font-size: 12px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: reveal 0.9s ease forwards;
+      }
+
+      .reveal:nth-child(2) {
+        animation-delay: 0.16s;
+      }
+
+      @keyframes reveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .site-header {
+          position: absolute;
+          align-items: flex-start;
+          padding: 16px 18px;
+        }
+
+        .site-nav {
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          gap: 8px 14px;
+          max-width: 240px;
+          font-size: 10px;
+        }
+
+        main {
+          padding-top: 68px;
+        }
+
+        .hero {
+          min-height: auto;
+          padding-top: 74px;
+        }
+
+        .hero-inner {
+          min-height: auto;
+        }
+
+        .intro,
+        .chapter-head,
+        .threshold-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .chapter-body {
+          margin-left: 0;
+        }
+
+        .sensory-row,
+        .rating-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section,
+        .threshold,
+        .chapters,
+        .cta {
+          width: calc(100% - 36px);
+        }
+
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .brand {
+          width: 144px;
+        }
+
+        .site-nav a:nth-child(2),
+        .site-nav a:nth-child(3) {
+          display: none;
+        }
+
+        .dark-opening {
+          font-size: clamp(23px, 8vw, 34px);
+        }
+
+        .hero h1 {
+          font-size: clamp(38px, 13vw, 58px);
+        }
+
+        .meta-strip {
+          font-size: 11px;
+        }
+
+        .prose,
+        .chapter-body p {
+          font-size: 16px;
+        }
+
+        .quote,
+        .key-phrase {
+          padding-right: 22px;
+          padding-left: 22px;
+        }
+
+        .threshold-photo img,
+        .threshold-photo.is-detail img {
+          min-height: 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/experience/" aria-label="東京トータルコンサルティング 体験メニュートップへ">
+        <img src="../assets/logo-2026.png" alt="Tokyo Total Consulting">
+      </a>
+      <nav class="site-nav" aria-label="ページ内ナビゲーション">
+        <a href="#darkness">暗闇</a>
+        <a href="#trust">信頼</a>
+        <a href="#senses">五感</a>
+        <a href="#ratings">評価</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top" aria-labelledby="page-title">
+        <div class="hero-inner">
+          <div class="dark-opening reveal" aria-label="暗闇の入口">
+            <p>目を開けても、<br>閉じても、<br>同じだった。</p>
+            <p>人生で初めて、<br>本当の暗闇を知った。</p>
+          </div>
+          <div class="hero-title reveal">
+            <p class="eyebrow">Experience Menu 100 / Hall of Fame</p>
+            <h1 id="page-title">Dialog in the Dark</h1>
+            <p class="hero-copy">見えていなかったのは、世界ではない。<br>人の価値と信頼を、暗闇の中で学んだ約90分。</p>
+            <ul class="meta-strip" aria-label="体験概要">
+              <li>2013年6月｜東京・外苑前</li>
+              <li>体験時間：約90分</li>
+              <li>人生を変えた体験</li>
+              <li>認知OSアップデート</li>
+              <li>人間理解・哲学</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" aria-labelledby="intro-title">
+        <p class="section-label" id="intro-title">Opening</p>
+        <div class="prose">
+          <p>人生には、楽しい体験と、人生を変える体験がある。</p>
+          <p>Dialog in the Darkは、私にとって間違いなく後者だった。</p>
+          <p>体験時間は、およそ90分。しかし、私の感覚では半日ほど過ごしたように感じられた。</p>
+          <p>それほど多くの「初めて」が、短い時間の中に詰まっていた。</p>
+        </div>
+      </section>
+
+      <section class="section threshold" aria-labelledby="threshold-title">
+        <p class="section-label" id="threshold-title">Threshold</p>
+        <div class="threshold-grid" aria-label="2013年当時の外苑前会場の写真">
+          <figure class="threshold-photo">
+            <img src="assets/dialog-dark-gaien-entrance.jpg" alt="竹と黒い看板が置かれたDialog in the Dark外苑前会場の入口">
+            <figcaption>外苑前会場の入口。ここから先で、見える世界を一度手放した。</figcaption>
+          </figure>
+          <figure class="threshold-photo is-detail">
+            <img src="assets/dialog-dark-gaien-sign.jpg" alt="Dialog in the Darkと白い文字で書かれた黒い看板">
+            <figcaption>暗闇へ入る前、まだ文字を読むことができた最後の場所。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <div class="chapters">
+        <article class="chapter is-fear" id="darkness" aria-labelledby="chapter-01">
+          <div class="chapter-head">
+            <span class="chapter-number">01</span>
+            <h2 id="chapter-01">本当の暗闇</h2>
+          </div>
+          <div class="chapter-body">
+            <p>入口のロッカーで、携帯電話や時計など、光るものをすべて預けた。</p>
+            <p>渡されたのは、一本の白杖。そして扉が開いた。</p>
+            <p>部屋へ一歩入った瞬間、私は言葉を失った。目を開けても、閉じても、何も変わらない。</p>
+            <p>夜の道とも違う。停電した部屋とも違う。星明かりも、街灯も、非常灯もない。</p>
+            <p>前も後ろも、右も左も分からない。人生で初めて経験する、完全な暗闇だった。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-fear" aria-labelledby="chapter-02">
+          <div class="chapter-head">
+            <span class="chapter-number">02</span>
+            <h2 id="chapter-02">へたり込む</h2>
+          </div>
+          <div class="chapter-body">
+            <p>最初の数分間、私は歯を食いしばって、何とか見ようとしていた。</p>
+            <p>しかし、どれだけ目を凝らしても何も見えない。ほんの少しの段差さえ怖かった。</p>
+            <p>転びたくない一心で、這いつくばり、手と指で床を探った。</p>
+            <p>やがて私は、その場にへたり込んでしまった。立つことすらできなかった。</p>
+            <p>あの瞬間、私は自分がどれほど視覚に依存して生きてきたのかを思い知らされた。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-trust" aria-labelledby="chapter-03">
+          <div class="chapter-head">
+            <span class="chapter-number">03</span>
+            <h2 id="chapter-03">暗闇の中を走る人</h2>
+          </div>
+          <div class="chapter-body">
+            <p>すると、前を進んでいた全盲の男性ガイドが、私の異変に気づいて戻ってきてくれた。</p>
+            <div class="quote">「コニタンさん、どうしたんですか？」</div>
+            <p>声が近づいてくる。私は安心すると同時に、信じられないほど驚いた。</p>
+            <p>彼は、走って戻ってきたのだ。</p>
+            <p>私は一歩も動けない。立つことすら怖い。それなのに彼は、漆黒の暗闇の中を自由に移動している。</p>
+            <p>見える人が強者で、見えない人が弱者なのではない。強さとは、その環境の中で人を導けることなのだ。</p>
+            <p>暗闇の中では、彼は圧倒的に頼もしい存在だった。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-trust" id="trust" aria-labelledby="chapter-04">
+          <div class="chapter-head">
+            <span class="chapter-number">04</span>
+            <h2 id="chapter-04">手をつないでもらう</h2>
+          </div>
+          <div class="chapter-body">
+            <p>私は、本当にすがる思いでお願いした。</p>
+            <div class="quote">「怖いので、手をつないでもらっていいですか？」</div>
+            <p>彼は、ためらうことなく手を差し出してくれた。その手を握った瞬間、驚くほど安心した。</p>
+            <p>何も見えるようになったわけではない。出口が分かったわけでもない。それでも歩けるようになった。</p>
+            <p>人は、光があるから安心するのではない。信頼できる人がそばにいるから、前へ進めるのだ。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-sense" id="senses" aria-labelledby="chapter-05">
+          <div class="chapter-head">
+            <span class="chapter-number">05</span>
+            <h2 id="chapter-05">五感が開く</h2>
+          </div>
+          <div class="chapter-body">
+            <p>気持ちが落ち着くと、不思議なことが起きた。視覚以外の感覚が、急に立ち上がった。</p>
+            <p>枯葉の匂いがする。ガイドに伝えると、「よく気づきましたね。ここは公園なんです」と答えてくれた。</p>
+            <p>耳を澄ますと、かすかに水の音も聞こえた。ちょろちょろと、水が流れている。</p>
+            <p>「水の音がします」「噴水があるんですよ」</p>
+            <p>見えていないのに、世界は消えていなかった。私は、匂いと音で公園を感じていた。</p>
+            <div class="sensory-row" aria-label="暗闇で立ち上がった感覚">
+              <div class="sense"><span>Smell</span><strong>枯葉の匂い</strong></div>
+              <div class="sense"><span>Sound</span><strong>噴水の水音</strong></div>
+              <div class="sense"><span>Touch</span><strong>手のぬくもり</strong></div>
+              <div class="sense"><span>Taste</span><strong>梅酒の香り</strong></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="chapter is-play" aria-labelledby="chapter-06">
+          <div class="chapter-head">
+            <span class="chapter-number">06</span>
+            <h2 id="chapter-06">暗闇でブランコに乗る</h2>
+          </div>
+          <div class="chapter-body">
+            <p>ガイドが言った。「コニタンさん、ブランコに乗りましょうよ」</p>
+            <p>何も見えないのに、ブランコに乗るのか。危ないのではないか。</p>
+            <p>しかし、ガイドがいる。その安心感があった。私は、やってみようと思った。</p>
+            <p>大人になってから、何十年ぶりかのブランコだった。揺れ始める。風を感じる。身体が浮く。</p>
+            <p>驚くほど爽快だった。本当に、馬鹿馬鹿しいほど楽しかった。</p>
+            <p>信頼があると、人は防御をやめ、挑戦できる。そして、忘れていた遊び心まで取り戻すことができる。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-play" aria-labelledby="chapter-07">
+          <div class="chapter-head">
+            <span class="chapter-number">07</span>
+            <h2 id="chapter-07">てるてる坊主</h2>
+          </div>
+          <div class="chapter-body">
+            <p>次は、真っ暗闇の中で、てるてる坊主を作った。</p>
+            <p>布をハサミで切る。手探りで形を整える。顔を描く。見えなければ無理だと思っていた作業ばかりだった。</p>
+            <p>出口で完成品を受け取ると、ちゃんと顔が描かれていた。</p>
+            <p>その時、私は思った。人間は、できるからやるのではない。</p>
+            <p>必要な状況に置かれた時、工夫しながら、できるようになっていくのだ。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-trust" aria-labelledby="chapter-08">
+          <div class="chapter-head">
+            <span class="chapter-number">08</span>
+            <h2 id="chapter-08">暗闇が安心に変わる</h2>
+          </div>
+          <div class="chapter-body">
+            <p>最初は、あれほど恐ろしかった暗闇。しかし途中から、暗闇は不思議なほど安心できる場所に変わっていた。</p>
+            <p>そこでは、誰も私を見ていない。顔も、服装も、体型も、肩書きも関係ない。</p>
+            <p>私は経営者でもなく、営業マンでもなく、誰かに良く見せる必要もなかった。ただそこにいる、一人の人間だった。</p>
+            <p>見た目で評価されないことは、想像以上の解放感だった。</p>
+            <p>暗闇の中で得た安心は、光のない安心ではない。評価のない安心だった。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-plum" aria-labelledby="chapter-09">
+          <div class="chapter-head">
+            <span class="chapter-number">09</span>
+            <h2 id="chapter-09">梅酒の香り</h2>
+          </div>
+          <div class="chapter-body">
+            <p>最後に、暗闇の中のカフェへ立ち寄った。お酒も注文できるというので、私は梅酒を頼んだ。</p>
+            <p>すると、面白いことが起きた。梅酒が運ばれてくる前に、その香りで自分の注文が近づいていると分かったのだ。</p>
+            <p>グラスに触れる前だった。声をかけられる前だった。梅の香りが、先に届いた。</p>
+            <p>グラスの冷たさ。梅の香り。氷がグラスを鳴らす音。</p>
+            <p>普段は気にも留めないことが、一つひとつ新鮮だった。視覚がなくても、世界はこんなにも豊かだった。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-trust" aria-labelledby="chapter-10">
+          <div class="chapter-head">
+            <span class="chapter-number">10</span>
+            <h2 id="chapter-10">チャーミングな人</h2>
+          </div>
+          <div class="chapter-body">
+            <p>カフェの女性スタッフが、とても魅力的だった。</p>
+            <p>顔は見えない。年齢も分からない。服装も分からない。</p>
+            <p>しかし、言葉、やり取り、気遣い、声の表情から、その人が本当にチャーミングな女性だと感じられた。</p>
+            <p>仮に明るい場所へ一緒に出て、その人の外見が自分の好みではなかったとしても、私が感じた魅力は変わらないだろう。</p>
+            <p>人の価値は、見た目だけでは決まらない。当たり前の言葉ではある。しかし私はあの日、初めてそれを身体で理解した。</p>
+          </div>
+        </article>
+
+        <article class="chapter is-sense" aria-labelledby="chapter-11">
+          <div class="chapter-head">
+            <span class="chapter-number">11</span>
+            <h2 id="chapter-11">約90分が、半日だった</h2>
+          </div>
+          <div class="chapter-body">
+            <p>体験時間は、およそ90分だったと思う。しかし私の感覚では、半日ほど過ごしたように感じられた。</p>
+            <p>暗闇に入る。怖くてへたり込む。暗闇の中を走るガイドに驚く。手をつないでもらい、人のぬくもりに安心する。</p>
+            <p>枯葉の匂いと噴水の音に気づく。ブランコに乗る。てるてる坊主を作る。梅酒の香りを感じる。</p>
+            <p>見た目が分からない人の魅力に気づく。短い時間の中で、何年分もの「当たり前」が壊れた。</p>
+            <p>人生でここまで濃密な体験は、ほとんどない。</p>
+          </div>
+        </article>
+      </div>
+
+      <section class="section intro" aria-labelledby="reflection-title">
+        <p class="section-label">Final Reflection</p>
+        <div class="prose">
+          <h2 id="reflection-title" style="margin: 0 0 28px; color: #fff8e6; font-size: clamp(31px, 4.5vw, 58px); font-weight: 500; line-height: 1.32;">最後に残ったもの</h2>
+          <p>Dialog in the Darkで、見えなくなったのは視覚だった。</p>
+          <p>しかし、本当に消えたのは、それだけではない。肩書き。外見。評価。思い込み。「見える人が強く、見えない人が弱い」という前提。</p>
+          <p>それらが、暗闇の中で一度リセットされた。そして最後に残ったのは、人間そのものだった。</p>
+          <p>人は弱い。しかし、人は驚くほど適応する。人は一人では怖い。しかし、信頼できる誰かがいれば前へ進める。</p>
+          <p>人生で一つだけ、価値観を変える体験を薦めるなら、私は迷わずDialog in the Darkを挙げる。</p>
+        </div>
+      </section>
+
+      <section class="section ratings" id="ratings" aria-labelledby="ratings-title">
+        <p class="section-label">Experience Score</p>
+        <h2 id="ratings-title" style="margin: 0; color: #fff8e6; font-size: clamp(32px, 4.8vw, 62px); font-weight: 500; line-height: 1.3;">体験メニュー100 評価</h2>
+        <div class="rating-grid" aria-label="三軸評価">
+          <article class="rating-card">
+            <span>見抜く</span>
+            <strong>★★★★★＋</strong>
+            <h3>殿堂入り</h3>
+            <p>強さ、人の価値、信頼、評価という概念を身体で見直す。価値判断そのものが変わる。</p>
+          </article>
+          <article class="rating-card">
+            <span>組み替える</span>
+            <strong>★★★★★</strong>
+            <h3>認知の中心が変わる</h3>
+            <p>視覚中心の認知と、強者・弱者の固定観念が書き換わる。安心が能力を引き出す理解も残る。</p>
+          </article>
+          <article class="rating-card">
+            <span>渡す</span>
+            <strong>★★★★★</strong>
+            <h3>誰かと語りたくなる</h3>
+            <p>子どもだけでなく、社員、後輩、友人、仲間と共有したい。体験後の対話そのものにも価値がある。</p>
+          </article>
+        </div>
+        <div class="rating-grid" aria-label="AAA評価">
+          <article class="rating-card">
+            <span>Analog</span>
+            <strong>★★★★★</strong>
+            <h3>身体でしか受け取れない</h3>
+            <p>暗闇、人の手、声、香り、空気。デジタルでは代替できない。</p>
+          </article>
+          <article class="rating-card">
+            <span>Alive</span>
+            <strong>★★★★★</strong>
+            <h3>その場で変化する</h3>
+            <p>その時の恐怖、安心、対話によって体験が変化する。再現不能のライブ体験。</p>
+          </article>
+          <article class="rating-card">
+            <span>Authentic</span>
+            <strong>★★★★★</strong>
+            <h3>人間そのものに触れる</h3>
+            <p>外見と肩書きが消え、人間そのものに触れる。</p>
+          </article>
+        </div>
+        <blockquote class="key-phrase">
+          暗闇の中で失ったのは、視覚だった。<br>
+          そして手に入れたのは、人間への信頼だった。
+        </blockquote>
+      </section>
+
+      <section class="cta" aria-labelledby="cta-title">
+        <h2 id="cta-title">この体験は、説明を読むだけでは分からない。</h2>
+        <p>開催内容や会場は変わることがあります。最新情報は、Dialog in the Darkの公式サイトで確認してください。</p>
+        <a class="cta-link" href="https://did.dialogue.or.jp/" target="_blank" rel="noopener noreferrer">Dialog in the Dark 公式サイトを見る</a>
+        <p class="related-note">このページは2013年の外苑前会場での個人的な体験記です。竹芝編は、社員全員で参加したチームビルディング体験として、将来別ページで扱います。</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>Tokyo Total Consulting</small>
+      <a href="/experience/">体験メニュー入口へ戻る</a>
+      <small>Dialog in the Dark / Gaienmae 2013</small>
+    </footer>
+  </body>
+</html>

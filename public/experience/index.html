@@ -697,11 +697,17 @@
         font-size: clamp(16px, 1.5vw, 20px);
       }
 
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px 28px;
+        margin-top: 34px;
+      }
+
       .cta-link {
         display: inline-flex;
         align-items: center;
         gap: 14px;
-        margin-top: 34px;
         padding: 13px 0;
         border-bottom: 1px solid var(--gold);
         color: #fff7e5;
@@ -1308,7 +1314,10 @@
         return e("section", { className: "cta-band", id: "cta", "aria-labelledby": "cta-title" },
           e("h2", { id: "cta-title" }, CONTENT.cta.title),
           e("p", null, CONTENT.cta.body),
-          e("a", { className: "cta-link", href: CONTENT.cta.href }, CONTENT.cta.label)
+          e("div", { className: "cta-actions" },
+            e("a", { className: "cta-link", href: "/experience/dialog-in-the-dark-gaien/" }, "Dialog in the Dark を読む"),
+            e("a", { className: "cta-link", href: CONTENT.cta.href }, "アマネムを読む")
+          )
         );
       }
 
