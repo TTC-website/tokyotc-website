@@ -468,6 +468,7 @@ export default function App() {
         <div className="mx-auto max-w-7xl">
           <div>
             <Logo size="footer" />
+            <p className="mt-4 text-sm font-semibold tracking-[0.08em] text-white/80">有限会社 東京トータルコンサルティング</p>
             <p className="mt-3 text-sm text-white/60">生命保険代理業 / 損害保険代理業 / ファイナンシャルプランニング / 遺言書作成サポート</p>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-4 text-sm text-white/60">
