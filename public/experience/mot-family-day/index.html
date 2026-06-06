@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>東京都現代美術館と100本のスプーン | 体験資産レポート</title>
+    <meta name="description" content="美術館と博物館は、最もコストパフォーマンスの高い遊び場である。東京都現代美術館、100本のスプーン、木場公園、周辺レストランを組み合わせ、親子で無理なく楽しめる一日を紹介します。">
+    <meta name="keywords" content="東京都現代美術館,MOT,100本のスプーン,木場公園,親子,子連れ,美術館,博物館,清澄白河,ナンディニ,清澄白河フジマル醸造所,体験メニュー100">
+    <meta property="og:title" content="東京都現代美術館と100本のスプーン | 体験資産レポート">
+    <meta property="og:description" content="子どものために、大人が楽しむことを諦めなくてよい。展示、食事、公園を家族の状態に合わせて組み替える、低コストで豊かな親子の休日。">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <style>
+      :root {
+        --midnight: #081826;
+        --deep: #0d2030;
+        --paper: #eef0ea;
+        --soft: #c7d1cb;
+        --muted: #8d9d96;
+        --gold: #ad9256;
+        --line: rgba(173, 146, 86, 0.28);
+        --serif: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Noto Serif JP", serif;
+        --sans: "Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 82% 10%, rgba(173, 146, 86, 0.14), transparent 30rem),
+          linear-gradient(180deg, #071522 0%, var(--midnight) 46%, #101b1f 100%);
+        color: var(--paper);
+        font-family: var(--serif);
+        line-height: 1.9;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        opacity: 0.16;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: linear-gradient(180deg, black 0%, transparent 76%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 4px;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 40;
+        padding: 10px 14px;
+        background: var(--gold);
+        color: var(--midnight);
+        font-family: var(--sans);
+        font-size: 13px;
+        transform: translateY(-160%);
+        transition: transform 0.2s ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px clamp(20px, 4vw, 58px);
+        border-bottom: 1px solid rgba(173, 146, 86, 0.2);
+        background: rgba(8, 24, 38, 0.78);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: block;
+        width: clamp(148px, 18vw, 260px);
+      }
+
+      .brand img {
+        width: 100%;
+        mix-blend-mode: screen;
+        filter: sepia(1) saturate(0.82) brightness(1.06) contrast(1.08);
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 2.4vw, 30px);
+        color: var(--soft);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      .site-nav a {
+        opacity: 0.78;
+      }
+
+      .site-nav a:hover {
+        opacity: 1;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        padding: 130px clamp(22px, 6vw, 96px) 76px;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(8, 24, 38, 0.99) 0%, rgba(8, 24, 38, 0.79) 45%, rgba(8, 24, 38, 0.28) 100%),
+          linear-gradient(180deg, transparent 52%, var(--midnight) 100%);
+        content: "";
+      }
+
+      .hero-photo {
+        position: absolute;
+        inset: 0 0 0 auto;
+        z-index: -2;
+        width: min(68vw, 1080px);
+        height: 100%;
+      }
+
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 44% center;
+        opacity: 0.82;
+        filter: saturate(0.82) contrast(1.08) brightness(0.78);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+        align-items: end;
+        gap: clamp(42px, 6vw, 92px);
+        width: min(1320px, 100%);
+        min-height: calc(100svh - 206px);
+        margin: 0 auto;
+      }
+
+      .eyebrow,
+      .section-label,
+      .mini-label {
+        margin: 0;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow {
+        margin-bottom: 16px;
+        letter-spacing: 0.22em;
+      }
+
+      .hero h1 {
+        max-width: 890px;
+        margin: 0;
+        font-size: clamp(40px, 5vw, 76px);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.2;
+        word-break: keep-all;
+      }
+
+      .hero h1 span {
+        display: block;
+      }
+
+      .lead {
+        max-width: 780px;
+        margin: 30px 0 0;
+        color: var(--soft);
+        font-size: clamp(17px, 1.55vw, 22px);
+      }
+
+      .meta-panel {
+        padding: 26px 0 0 26px;
+        border-left: 1px solid var(--gold);
+      }
+
+      .meta-panel dl {
+        display: grid;
+        grid-template-columns: 88px 1fr;
+        gap: 8px 16px;
+        margin: 0;
+        color: var(--soft);
+        font-family: var(--sans);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .meta-panel dt {
+        color: var(--gold);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .meta-panel dd {
+        margin: 0;
+      }
+
+      .section {
+        width: min(1120px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: clamp(76px, 11vw, 138px) 0;
+        border-top: 1px solid rgba(173, 146, 86, 0.18);
+        scroll-margin-top: 110px;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(150px, 0.28fr) minmax(0, 1fr);
+        gap: clamp(28px, 6vw, 78px);
+        margin-bottom: clamp(28px, 5vw, 54px);
+      }
+
+      .section h2 {
+        margin: 0;
+        font-size: clamp(28px, 3.6vw, 52px);
+        font-weight: 500;
+        line-height: 1.36;
+        word-break: keep-all;
+      }
+
+      .prose {
+        max-width: 780px;
+        color: var(--soft);
+        font-size: clamp(16px, 1.32vw, 20px);
+      }
+
+      .prose p {
+        margin: 0;
+      }
+
+      .prose p + p {
+        margin-top: 1.35em;
+      }
+
+      .prose strong {
+        color: #fff7e6;
+        font-weight: 600;
+        background: linear-gradient(transparent 64%, rgba(173, 146, 86, 0.34) 64%);
+      }
+
+      .impact-line {
+        margin: clamp(34px, 5vw, 54px) 0 0;
+        padding: clamp(28px, 4vw, 46px);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(90deg, rgba(173, 146, 86, 0.14), transparent);
+        color: #fff6df;
+        font-size: clamp(30px, 5vw, 64px);
+        line-height: 1.2;
+      }
+
+      .story-grid,
+      .choice-layout,
+      .info-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.82fr) minmax(300px, 0.62fr);
+        align-items: start;
+        gap: clamp(34px, 6vw, 86px);
+      }
+
+      .photo-stack {
+        position: sticky;
+        top: 108px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .photo-card {
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid rgba(173, 146, 86, 0.24);
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: 0 20px 66px rgba(0, 0, 0, 0.28);
+      }
+
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        filter: saturate(0.88) contrast(1.05) brightness(0.92);
+      }
+
+      .photo-card figcaption {
+        padding: 10px 12px 12px;
+        color: rgba(255, 247, 229, 0.78);
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+      }
+
+      .route-grid,
+      .score-grid,
+      .support-grid,
+      .info-grid,
+      .link-grid {
+        display: grid;
+        gap: 1px;
+        border: 1px solid var(--line);
+        background: var(--line);
+      }
+
+      .route-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .score-grid,
+      .support-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .info-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .link-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .route-card,
+      .score-card,
+      .support-card,
+      .info-card,
+      .link-card {
+        padding: clamp(24px, 3vw, 36px);
+        background:
+          linear-gradient(145deg, rgba(255, 244, 213, 0.07), transparent 32%),
+          rgba(255, 255, 255, 0.035);
+      }
+
+      .route-card h3,
+      .score-card h3,
+      .support-card h3,
+      .info-card h3,
+      .link-card h3 {
+        margin: 0;
+        color: #fff6df;
+        font-size: clamp(19px, 1.8vw, 25px);
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .route-card p,
+      .score-card p,
+      .support-card p,
+      .info-card p,
+      .link-card p {
+        margin: 14px 0 0;
+        color: var(--soft);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .route-card ol {
+        margin: 16px 0 0;
+        padding-left: 1.35em;
+        color: var(--soft);
+        font-size: 15px;
+      }
+
+      .route-card li + li {
+        margin-top: 6px;
+      }
+
+      .route-figure {
+        margin: calc(-1 * clamp(24px, 3vw, 36px));
+        margin-bottom: clamp(22px, 2.6vw, 30px);
+        overflow: hidden;
+      }
+
+      .route-figure img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        filter: saturate(0.88) contrast(1.05) brightness(0.92);
+      }
+
+      .route-figure--focus-low img {
+        object-position: center 66%;
+      }
+
+      .score-card span,
+      .support-card span,
+      .info-card span {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .score-card strong,
+      .support-card strong {
+        display: block;
+        margin: 16px 0 0;
+        color: #fff6df;
+        font-size: clamp(24px, 3.2vw, 42px);
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .scenes-section {
+        display: grid;
+        grid-template-columns: minmax(110px, 0.24fr) minmax(0, 1fr);
+        grid-template-areas:
+          "label title"
+          "gallery gallery";
+        gap: clamp(34px, 4.5vw, 58px) clamp(34px, 6vw, 86px);
+      }
+
+      .scenes-section .section-label {
+        grid-area: label;
+        margin: 12px 0 0;
+      }
+
+      .scenes-section h2 {
+        grid-area: title;
+        margin: 0;
+        color: var(--paper);
+        font-size: clamp(30px, 3.2vw, 44px);
+        font-weight: 500;
+        line-height: 1.28;
+        word-break: keep-all;
+      }
+
+      .gallery {
+        grid-area: gallery;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        min-height: 0;
+      }
+
+      .gallery figure {
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.03);
+        aspect-ratio: 4 / 3;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.88) contrast(1.05) brightness(0.9);
+      }
+
+      .gallery-feature {
+        grid-column: 1 / -1;
+        aspect-ratio: auto;
+      }
+
+      .gallery-feature img {
+        height: auto;
+        object-fit: contain;
+      }
+
+      .gallery figcaption {
+        position: absolute;
+        right: 10px;
+        bottom: 8px;
+        left: 10px;
+        color: rgba(255, 247, 229, 0.84);
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+      }
+
+      .verification {
+        margin-top: 28px;
+        padding: 18px 20px;
+        border-left: 1px solid var(--gold);
+        background: rgba(173, 146, 86, 0.1);
+        color: var(--soft);
+        font-family: var(--sans);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .external-link {
+        display: inline-flex;
+        gap: 10px;
+        margin-top: 18px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--gold);
+        color: #fff7e6;
+        font-family: var(--sans);
+        font-size: 14px;
+        letter-spacing: 0.06em;
+      }
+
+      .external-link span {
+        color: var(--gold);
+        font-size: 12px;
+      }
+
+      .cta {
+        width: min(920px, calc(100% - 44px));
+        margin: 0 auto clamp(58px, 8vw, 100px);
+        padding: clamp(34px, 5.4vw, 64px) 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid rgba(173, 146, 86, 0.18);
+        background: linear-gradient(90deg, rgba(173, 146, 86, 0.08), transparent 58%);
+      }
+
+      .cta h2 {
+        margin: 0;
+        font-size: clamp(30px, 4vw, 58px);
+        font-weight: 500;
+        line-height: 1.35;
+        word-break: keep-all;
+      }
+
+      .cta p {
+        max-width: 680px;
+        margin: 22px 0 0;
+        color: var(--soft);
+        font-size: clamp(16px, 1.45vw, 20px);
+      }
+
+      .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 30px clamp(22px, 6vw, 70px);
+        border-top: 1px solid rgba(173, 146, 86, 0.22);
+        color: var(--muted);
+        font-family: var(--sans);
+        font-size: 12px;
+      }
+
+      @media (max-width: 860px) {
+        .site-header {
+          position: absolute;
+          align-items: flex-start;
+          padding: 16px 18px;
+        }
+
+        .site-nav {
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          gap: 8px 14px;
+          max-width: 240px;
+          font-size: 10px;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 110px 18px 58px;
+        }
+
+        .hero-photo {
+          inset: 0;
+          width: 100%;
+          opacity: 0.62;
+        }
+
+        .hero-photo img {
+          object-position: 52% center;
+        }
+
+        .hero::after {
+          background:
+            linear-gradient(180deg, rgba(8, 24, 38, 0.48), rgba(8, 24, 38, 0.96) 43%, var(--midnight) 100%);
+        }
+
+        .hero-inner,
+        .section-head,
+        .story-grid,
+        .choice-layout,
+        .info-layout,
+        .scenes-section {
+          display: block;
+        }
+
+        .hero-inner {
+          min-height: 0;
+        }
+
+        .hero h1 {
+          font-size: clamp(30px, 8vw, 42px);
+        }
+
+        .lead {
+          font-size: 16px;
+        }
+
+        .meta-panel {
+          margin-top: 34px;
+        }
+
+        .section {
+          width: calc(100% - 36px);
+          padding: 70px 0;
+        }
+
+        .section-label {
+          margin-bottom: 14px;
+        }
+
+        .photo-stack {
+          position: static;
+          margin-top: 30px;
+        }
+
+        .route-grid,
+        .score-grid,
+        .support-grid,
+        .info-grid,
+        .link-grid,
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          grid-template-rows: none;
+          min-height: 0;
+        }
+
+        .gallery figure {
+          min-height: 250px;
+        }
+
+        .gallery-feature {
+          grid-column: auto;
+          min-height: 0;
+        }
+
+        .site-footer {
+          display: block;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+    <header class="site-header">
+      <a class="brand" href="/experience/" aria-label="東京トータルコンサルティング 体験メニュー一覧へ">
+        <img src="assets/logo-2026.png" alt="Tokyo Total Consulting">
+      </a>
+      <nav class="site-nav" aria-label="ページ内ナビゲーション">
+        <a href="#story">体験記</a>
+        <a href="#routes">モデルコース</a>
+        <a href="#scores">評価</a>
+        <a href="#info">施設情報</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="page-title">
+        <figure class="hero-photo" aria-hidden="true">
+          <img src="assets/mot-family-hero.jpeg" alt="">
+        </figure>
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Experience Menu 100 / Family Day</p>
+            <h1 id="page-title">
+              <span>東京都現代美術館と</span>
+              <span>100本のスプーン</span>
+            </h1>
+            <p class="lead">子どものために、大人が楽しむことを諦めなくてよい。塗り絵、展示、公園、食事を組み替えて、親子の休日を少し広くする。</p>
+          </div>
+
+          <aside class="meta-panel" aria-label="体験メニュー概要">
+            <dl>
+              <dt>Category</dt>
+              <dd>家族 / 親子 / 美術館・博物館</dd>
+              <dt>Place</dt>
+              <dd>東京都現代美術館、100本のスプーン、木場公園</dd>
+              <dt>Visited</dt>
+              <dd>2019年8月3日の記録をもとに構成</dd>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="opening-title">
+        <div class="section-head">
+          <p class="section-label">Premise</p>
+          <h2 id="opening-title">お金をかけなくても、世界を広げられる場所。</h2>
+        </div>
+        <div class="prose">
+          <p><strong>美術館と博物館は、最もコストパフォーマンスの高い遊び場である。</strong></p>
+          <p>子どもがいると、休日はどうしても「子どもが退屈しない場所」を探しがちになる。けれど、本当にほしいのは、子どもだけが楽しむ場所ではない。大人も自分の興味を手放さず、子どもも自分のペースで世界に触れられる場所だ。</p>
+          <p>東京都現代美術館は、その条件を満たしやすい。展示を見て、館内で食べて、疲れたら木場公園へ逃げる。予定通りでなくても、失敗にはならない。</p>
+          <p>しかも、子連れの現実にやさしい。美術館には駐車場があり、天気や荷物に左右されにくい。館内ではベビーカーを無料で借りられる。家族で遊園地や企画展へ行くと、人数分の入場券だけで想像以上に高く感じることがある。けれど、MOTコレクションは中学生以下無料なので、その負担を避けながら、まず一度連れていってみることができる。ここに、この場所を休日の選択肢として見抜く価値がある。</p>
+        </div>
+        <p class="impact-line">高価な体験でなくても、世界は十分に広がる。</p>
+      </section>
+
+      <section class="section story-grid" id="story" aria-labelledby="story-title">
+        <div>
+          <p class="section-label">Origin</p>
+          <h2 id="story-title">大学生の頃、一番の遊び場は上野だった。</h2>
+          <div class="prose">
+            <p>大学生の頃、一番の遊び場は上野だった。国立科学博物館や上野動物園へ行けば、入館料や入園料は高くないのに、朝から夕方までいられる。恐竜、動物、剥製、標本、よくわからない展示。長く過ごすほど、自分の知見が少しずつ広がり、知らなかったものに出会う感覚があった。</p>
+            <p>だから、美術館や博物館を「高い場所」「特別な日に行く場所」とだけ見たくなかった。安く、長く、何度でも行けて、行くたびに発見がある。そういう場所を見抜けるかどうかで、休日の豊かさはかなり変わる。</p>
+            <p>一方で、美術館は動物園や博物館とは少し違うと思っていた。展示物には触れない。静かに見る。子どもが身体を動かして遊べる余地は少ない。現代美術館は、子連れにはまだ早い場所かもしれない、という感覚があった。</p>
+            <p>その認識を変えたのが、2019年の「あそびのじかん」だった。子どもが作品に近づき、登り、触り、つくり、遊びながら見る。美術館が、静かに鑑賞する場所だけではなく、身体で考えるプレイグラウンドになっていた。</p>
+            <p>「ポジティブな呪いのつみき」や「タノニマス」のような作品は、子どもの反応を通して、大人側の見方もほどいてくれる。美術館もまた、子どもの遊び場になり得る。そのことに気づけたのは大きかった。</p>
+            <p><strong>2019年の「あそびのじかん」は過去の企画展です。</strong>当時の条件を現在の展示内容としては扱わず、過去の体験記として記載しています。</p>
+          </div>
+        </div>
+
+        <div class="photo-stack" aria-label="2019年の展示写真">
+          <figure class="photo-card">
+            <img src="assets/mot-family-play-wall.jpeg" alt="家具を組み合わせた壁面作品に子どもたちが近づいている展示室" loading="lazy" decoding="async">
+            <figcaption>あそびのじかん。作品が、子どもの身体を受け止める場所になっていた。</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/mot-family-blocks.jpeg" alt="小さな子どもが色とりどりの積み木を積んでいる" loading="lazy" decoding="async">
+            <figcaption>色、形、高さ。作品と遊びの境目がゆるむ。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="routes" aria-labelledby="routes-title">
+        <div class="section-head">
+          <p class="section-label">Model Course</p>
+          <h2 id="routes-title">親子向けモデルコース。</h2>
+        </div>
+        <div class="route-grid">
+          <article class="route-card">
+            <figure class="route-figure route-figure--focus-low">
+              <img src="assets/mot-family-climbing.jpeg" alt="美術館の展示で、子どもが家具の壁面作品によじ登ろうと手を伸ばしている" loading="lazy" decoding="async">
+            </figure>
+            <h3>親子で気軽に楽しむ日</h3>
+            <ol>
+              <li>車または清澄白河・木場から来館</li>
+              <li>短めに展示を見る</li>
+              <li>100本のスプーンで昼食</li>
+              <li>疲れたら木場公園か館内休憩へ</li>
+            </ol>
+          </article>
+          <article class="route-card">
+            <figure class="route-figure">
+              <img src="assets/mot-family-kiba-sakura.jpeg" alt="木場公園の桜並木と広場" loading="lazy" decoding="async">
+            </figure>
+            <h3>木場公園でピクニックする日</h3>
+            <ol>
+              <li>展示を一つに絞る</li>
+              <li>二階のサンドイッチをテイクアウト</li>
+              <li>木場公園で食べる</li>
+              <li>子どもの体力に合わせて終了</li>
+            </ol>
+          </article>
+          <article class="route-card">
+            <figure class="route-figure">
+              <img src="assets/mot-family-nandhini-meal.jpeg" alt="ナンディニの南インド料理。ナン、カレー、ライスのプレート" loading="lazy" decoding="async">
+            </figure>
+            <h3>南インド料理へ寄り道する日</h3>
+            <ol>
+              <li>午前中に美術館</li>
+              <li>混雑を見て館内ランチを判断</li>
+              <li>清澄白河のナンディニへ移動</li>
+              <li>スパイス料理で大人も満足する</li>
+            </ol>
+          </article>
+          <article class="route-card">
+            <figure class="route-figure">
+              <img src="assets/mot-family-fujimaru-wine.jpeg" alt="清澄白河フジマル醸造所で供された白ワインのボトルとグラス" loading="lazy" decoding="async">
+            </figure>
+            <h3>大人の時間を少し足す日</h3>
+            <ol>
+              <li>展示と食事を短くまとめる</li>
+              <li>子どもの様子を見て休憩</li>
+              <li>余裕があれば清澄白河フジマル醸造所へ</li>
+              <li>無理なら次回に回す</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section scenes-section" aria-labelledby="photos-title">
+        <p class="section-label">Museum Walk</p>
+        <h2 id="photos-title">中庭、地下、外周をぐるっと回るだけで、小さな探検になる。</h2>
+        <div class="gallery">
+          <figure class="gallery-feature">
+            <img src="assets/mot-family-courtyard.jpeg" alt="東京都現代美術館の中庭を子どもが歩いている" loading="lazy" decoding="async">
+            <figcaption>中庭は、展示室に入る前から歩幅が変わる場所。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/mot-family-sign-day.jpeg" alt="東京都現代美術館のMOTサインと建物外観" loading="lazy" decoding="async">
+            <figcaption>MOTのサインは、子どもにも「着いた」が伝わる目印。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/mot-family-glass-underground.jpeg" alt="東京都現代美術館のガラス越しに見える地下へ続く通路" loading="lazy" decoding="async">
+            <figcaption>地下へ続く光や反射は、通路そのものを発見にする。</figcaption>
+          </figure>
+          <figure class="gallery-feature">
+            <img src="assets/mot-family-evening-exterior.jpeg" alt="夕方の東京都現代美術館の外観と広い外周" loading="lazy" decoding="async">
+            <figcaption>外周を回るだけでも、建物の見え方が変わっていく。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section choice-layout" aria-labelledby="food-title">
+        <div>
+          <p class="section-label">Food Choices</p>
+          <h2 id="food-title">昼食は、その日の気分で組み替える。</h2>
+          <div class="prose">
+            <p>東京都現代美術館が家族向けに良い理由は、展示だけではない。館内に100本のスプーンがある。ここは、単に子ども用メニューがある店ではなく、大人もちゃんと行きたくなるレストランでありながら、子どもを歓迎する設計になっている。</p>
+            <p>公式のコンセプトは「コドモがオトナに憧れて、オトナがコドモゴコロを思い出す。」というもの。子どもは、大人と同じ料理をハーフサイズで食べることで、少しだけ大人の世界へ踏み出せる。親は、子どものために自分の食事を諦めなくていい。</p>
+            <p>月齢に合わせた離乳食が無料なのも大きい。家族全員分の外食費が積み上がる場面で、赤ちゃんの食事が無料で用意されることは、コスト面でも心理面でも効く。しかも、席では塗り絵と色鉛筆が用意され、メニューを待つ時間そのものが子どもの遊びになる。</p>
+            <p>料理を待つ時間に、子どもが塗り絵をしている。大人は少しだけグラスを傾ける。スタッフも親子が来ることを前提に動いているから、子ども連れで肩身が狭い感じになりにくい。親は親で楽しみ、子どもは子どもで少し大人へのステップを味わう。その同居が、この店の強さだと思う。</p>
+            <p>混んでいる日は、二階のサンドイッチを持って木場公園へ行けばいい。もう少し大人寄りにするなら、ナンディニ清澄白河店や清澄白河フジマル醸造所を候補にできる。</p>
+          </div>
+        </div>
+
+        <div class="photo-stack">
+          <figure class="photo-card">
+            <img src="assets/mot-family-hero.jpeg" alt="100本のスプーンで塗り絵をする子どもとグラス" loading="lazy" decoding="async">
+            <figcaption>100本のスプーン。子どもの時間と大人の時間が同じテーブルにある。</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/mot-family-100spoons-meal.jpeg" alt="100本のスプーンで食べた肉料理とご飯のプレート" loading="lazy" decoding="async">
+            <figcaption>100本のスプーン。子ども向けに閉じず、大人もちゃんと食べたい料理がある。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="scores" aria-labelledby="scores-title">
+        <div class="section-head">
+          <p class="section-label">Evaluation</p>
+          <h2 id="scores-title">この体験を、三つの視点で見てみる。</h2>
+        </div>
+        <div class="score-grid">
+          <article class="score-card">
+            <span>Insight</span>
+            <strong>★★★★☆</strong>
+            <h3>自分が何を面白いと感じるかを知る</h3>
+            <p>子どもの反応を通して、大人自身の興味も見える。美術館は静かな鑑賞だけではないと気づける。</p>
+          </article>
+          <article class="score-card">
+            <span>Reframe</span>
+            <strong>★★★★☆</strong>
+            <h3>美術館、食事、公園を組み替える</h3>
+            <p>展示、100本のスプーン、二階のサンドイッチ、木場公園、清澄白河の食事を状況で組み替えられる。</p>
+          </article>
+          <article class="score-card">
+            <span>Pass On</span>
+            <strong>★★★★★</strong>
+            <h3>身近な遊び場として次世代へ渡す</h3>
+            <p>美術館や博物館を、特別な場所ではなく、日常の選択肢として子どもに渡せる。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="support-title">
+        <div class="section-head">
+          <p class="section-label">Family Support</p>
+          <h2 id="support-title">生活に取り入れやすいか。</h2>
+        </div>
+        <div class="support-grid">
+          <article class="support-card">
+            <span>Cost</span>
+            <strong>★★★★☆</strong>
+            <h3>低コストで一日を作りやすい</h3>
+            <p>MOTコレクションは中学生以下無料。公園を組み合わせると、支出を抑えながら過ごしやすい。</p>
+          </article>
+          <article class="support-card">
+            <span>Access</span>
+            <strong>★★★★☆</strong>
+            <h3>車でも公共交通でも行ける</h3>
+            <p>駐車場があり、清澄白河・木場からもアクセスできる。小さな子ども連れでも計画を立てやすい。</p>
+          </article>
+          <article class="support-card">
+            <span>Backup</span>
+            <strong>★★★★★</strong>
+            <h3>予定変更に強い</h3>
+            <p>館内レストラン、カフェ、ベビーカー貸出、授乳室、木場公園があり、疲れたらすぐ切り替えられる。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section info-layout" id="info" aria-labelledby="info-title">
+        <div>
+          <p class="section-label">Before You Go</p>
+          <h2 id="info-title">行く前に、知っておきたいこと。</h2>
+          <div class="prose">
+            <p>このページの料金や営業時間、ベビーカーの貸出数などは、2026年6月時点の情報。変わることがあるので、お出かけ前に各施設の公式サイトで最新を確かめておくと安心。</p>
+          </div>
+        </div>
+
+        <div class="photo-stack">
+          <figure class="photo-card">
+            <img src="assets/mot-family-entrance.jpeg" alt="東京都現代美術館の外観とMOTのサイン" loading="lazy" decoding="async">
+            <figcaption>東京都現代美術館の外観。清澄白河・木場から歩いて向かう。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="info-details-title">
+        <div class="section-head">
+          <p class="section-label">Information</p>
+          <h2 id="info-details-title">施設の基本情報</h2>
+        </div>
+        <div class="info-grid">
+          <article class="info-card">
+            <span>Museum</span>
+            <h3>東京都現代美術館</h3>
+            <p>所在地は東京都江東区三好4-1-1。開館は10:00〜18:00、展示室への入場は閉館30分前まで。休館日は月曜（祝日の場合は翌平日）。</p>
+          </article>
+          <article class="info-card">
+            <span>Ticket</span>
+            <h3>観覧料</h3>
+            <p>MOTコレクションは中学生以下無料。企画展は展示ごとに料金が異なる。</p>
+          </article>
+          <article class="info-card">
+            <span>Parking</span>
+            <h3>駐車場</h3>
+            <p>美術館地下に約90台。料金は1時間300円、以降30分ごとに150円で現金のみ。車高は2.1m以下まで。</p>
+          </article>
+          <article class="info-card">
+            <span>Family</span>
+            <h3>ベビーカー・授乳室</h3>
+            <p>ベビーカーは6台を無料で貸出。授乳室はB1Fと1F、おむつ替え台は2F。館内3か所に100円リターン式のロッカー。</p>
+          </article>
+          <article class="info-card">
+            <span>Restaurant</span>
+            <h3>100本のスプーン</h3>
+            <p>B1F。11:00〜18:00（ラストオーダー17:00）、月曜定休。離乳食は無料、塗り絵と色鉛筆の貸出もある。</p>
+          </article>
+          <article class="info-card">
+            <span>Cafe</span>
+            <h3>二階のサンドイッチ</h3>
+            <p>2Fカフェ＆ラウンジ。店内利用とテイクアウトに対応。木場公園への切り替えに使いやすい。</p>
+          </article>
+          <article class="info-card">
+            <span>Detour</span>
+            <h3>ナンディニ</h3>
+            <p>清澄白河の南インド料理店。2015年創業で、美術館のすぐそば。大人も満足するスパイス料理がそろう。</p>
+          </article>
+          <article class="info-card">
+            <span>Wine</span>
+            <h3>清澄白河フジマル醸造所</h3>
+            <p>江東区三好のワイナリー併設レストラン。ランチ11:30〜14:00、ディナー17:00〜（L.O.21:30）。月・火休、予約可。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="links-title">
+        <div class="section-head">
+          <p class="section-label">Links</p>
+          <h2 id="links-title">公式サイトへのリンク。</h2>
+        </div>
+        <div class="link-grid">
+          <article class="link-card">
+            <h3>東京都現代美術館</h3>
+            <p>開館時間、観覧料、展示情報を確認する。</p>
+            <a class="external-link" href="https://www.mot-art-museum.jp/guide/museum-info/" target="_blank" rel="noopener noreferrer">開館時間・観覧料 <span>外部サイト</span></a>
+          </article>
+          <article class="link-card">
+            <h3>アクセス・駐車場</h3>
+            <p>駅からのルート、車での来館、駐車場の台数や料金を確認する。</p>
+            <a class="external-link" href="https://www.mot-art-museum.jp/guide/access/" target="_blank" rel="noopener noreferrer">アクセスを見る <span>外部サイト</span></a>
+          </article>
+          <article class="link-card">
+            <h3>バリアフリー</h3>
+            <p>ベビーカー貸出、授乳室、ロッカーなどを確認する。</p>
+            <a class="external-link" href="https://www.mot-art-museum.jp/guide/barrier-free/" target="_blank" rel="noopener noreferrer">設備を見る <span>外部サイト</span></a>
+          </article>
+          <article class="link-card">
+            <h3>ショップ・レストラン等</h3>
+            <p>100本のスプーン、二階のサンドイッチ、ミュージアムショップを確認する。</p>
+            <a class="external-link" href="https://www.mot-art-museum.jp/guide/shop/" target="_blank" rel="noopener noreferrer">館内施設を見る <span>外部サイト</span></a>
+          </article>
+          <article class="link-card">
+            <h3>100本のスプーン</h3>
+            <p>店舗営業時間、子ども向けサービス、メニューを確認する。</p>
+            <a class="external-link" href="https://100spoons.com/mot/" target="_blank" rel="noopener noreferrer">店舗ページを見る <span>外部サイト</span></a>
+          </article>
+          <article class="link-card">
+            <h3>ナンディニ</h3>
+            <p>営業時間、メニュー、店舗情報を確認する。</p>
+            <a class="external-link" href="https://www.nandhini.jp/" target="_blank" rel="noopener noreferrer">公式サイトを見る <span>外部サイト</span></a>
+          </article>
+          <article class="link-card">
+            <h3>清澄白河フジマル醸造所</h3>
+            <p>営業日、営業時間、予約可否を確認する。</p>
+            <a class="external-link" href="https://www.papilles.net/shop_restaurants/" target="_blank" rel="noopener noreferrer">店舗一覧を見る <span>外部サイト</span></a>
+          </article>
+          <article class="link-card">
+            <h3>あそびのじかん</h3>
+            <p>2019年の過去企画展として確認する。</p>
+            <a class="external-link" href="https://www.mot-art-museum.jp/exhibitions/time-to-play/" target="_blank" rel="noopener noreferrer">過去展を見る <span>外部サイト</span></a>
+          </article>
+          <article class="link-card">
+            <h3>体験メニュー一覧</h3>
+            <p>ほかの体験資産レポートへ戻る。</p>
+            <a class="external-link" href="/experience/">一覧へ戻る <span>内部リンク</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="closing-title">
+        <h2 id="closing-title">少ない支出で、持ち帰れるものは多い。</h2>
+        <p>美術館、食事、公園。どれか一つだけでも成立するし、全部できなくても失敗ではない。親が楽しむ姿も、子どもに渡せる体験の一部になる。</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Tokyo Total Consulting</span>
+      <span>Experience Menu 100 / MOT Family Day</span>
+    </footer>
+  </body>
+</html>
