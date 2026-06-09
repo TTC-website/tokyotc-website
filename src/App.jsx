@@ -35,6 +35,12 @@ const services = [
     text: "旅、学び、味わい、出会った空気。身体で覚えた景色を、人生や仕事の基準に変える体験資産の目録です。",
     href: "/experience/",
   },
+  {
+    icon: "event",
+    title: "イベント",
+    text: "TTC 日本酒の会をはじめ、セミナーや体験の催しを通じて、人とのつながりや学びの場をつくっています。",
+    href: "/events/",
+  },
 ];
 
 const strengths = [
@@ -94,6 +100,28 @@ function ServiceIcon({ type }) {
         <path d="M47 20H50V23" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M18 54C23.5 54 28 51.8 28 49C28 46.2 23.5 44 18 44C12.5 44 8 46.2 8 49C8 51.8 12.5 54 18 54Z" fill="currentColor" opacity="0.22" />
         <path d="M46 54C51.5 54 56 51.8 56 49C56 46.2 51.5 44 46 44C40.5 44 36 46.2 36 49C36 51.8 40.5 54 46 54Z" fill="currentColor" opacity="0.22" />
+      </svg>
+    );
+  }
+
+  if (type === "sake") {
+    return (
+      <svg className={common} viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M28 7H36V15L38 19C41 23 42 27 42 32V50C42 53 40 55 37 55H27C24 55 22 53 22 50V32C22 27 23 23 26 19L28 15V7Z" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />
+        <path d="M26 7H38" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+        <path d="M22 38H42" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "event") {
+    return (
+      <svg className={common} viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <rect x="10" y="14" width="44" height="42" rx="5" stroke="currentColor" strokeWidth="4" />
+        <path d="M10 26H54" stroke="currentColor" strokeWidth="4" />
+        <path d="M22 8V18" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+        <path d="M42 8V18" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+        <path d="M22 38L28 44L42 31" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     );
   }
@@ -312,7 +340,10 @@ export default function App() {
             {services.map((service) => (
               <div key={service.title} className="group flex flex-col rounded-[2rem] bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                 <CircleIcon dark><ServiceIcon type={service.icon} /></CircleIcon>
-                <h4 className="mb-4 mt-6 text-2xl font-semibold text-[#0B1F3A]">{service.title}</h4>
+                {service.tag ? (
+                  <p className="mt-5 text-xs font-semibold tracking-[0.22em] text-[#B28A36]">{service.tag}</p>
+                ) : null}
+                <h4 className={`mb-4 text-2xl font-semibold text-[#0B1F3A] ${service.tag ? "mt-1" : "mt-6"}`}>{service.title}</h4>
                 <p className="leading-8 text-slate-600">{service.text}</p>
                 {service.href ? (
                   <a

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>イベント | 東京トータルコンサルティング</title>
+    <meta name="description" content="東京トータルコンサルティングのイベント一覧。TTC 日本酒の会をはじめ、セミナーや体験の催しを通じて、人とのつながりや学びの場をつくっています。">
+    <meta property="og:title" content="イベント | 東京トータルコンサルティング">
+    <meta property="og:description" content="TTC 日本酒の会をはじめ、人とのつながりや学びの場をつくる催しの一覧です。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://tokyotc.com/events/">
+    <link rel="canonical" href="https://tokyotc.com/events/">
+    <style>
+      :root {
+        --navy: #0B1F3A;
+        --gold: #B28A36;
+        --gold-light: #D8B46A;
+        --cream: #F7F3EA;
+        --ink: #0B1F3A;
+        --muted: #5b6573;
+        --line: #e7e2d6;
+        --sans: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+        --header-h: 64px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: #fff; color: var(--ink); font-family: var(--sans); line-height: 1.9; -webkit-font-smoothing: antialiased; }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+
+      .skip-link { position: absolute; left: -999px; top: 0; background: #fff; padding: 8px 14px; z-index: 100; }
+      .skip-link:focus { left: 8px; top: 8px; }
+
+      .site-header {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+        display: flex; align-items: center; justify-content: space-between;
+        height: var(--header-h); padding: 0 clamp(16px, 4vw, 48px);
+        background: rgba(11, 31, 58, 0.92); backdrop-filter: blur(8px); color: #fff;
+      }
+      .brand img { height: 30px; width: auto; }
+      .site-nav { display: flex; align-items: center; gap: clamp(12px, 2.4vw, 26px); font-size: 14px; }
+      .site-nav a { color: #fff; opacity: 0.9; }
+      .site-nav a:hover { opacity: 1; color: var(--gold-light); }
+      .site-nav .line-btn { background: var(--gold-light); color: var(--navy); font-weight: 700; padding: 8px 16px; border-radius: 999px; opacity: 1; }
+      .site-nav .line-btn:hover { background: #e5c77d; color: var(--navy); }
+      @media (max-width: 640px) { .site-nav .hide-sp { display: none; } }
+
+      .hero { background: var(--navy); color: #fff; padding: calc(var(--header-h) + clamp(48px, 8vw, 96px)) clamp(16px, 4vw, 48px) clamp(48px, 8vw, 88px); }
+      .hero-inner { width: min(1100px, 100%); margin: 0 auto; }
+      .hero .eyebrow { margin: 0 0 12px; color: var(--gold-light); font-size: 13px; letter-spacing: 0.26em; }
+      .hero h1 { margin: 0 0 18px; font-size: clamp(34px, 6vw, 60px); font-weight: 700; letter-spacing: 0.04em; }
+      .hero p { margin: 0; max-width: 640px; color: rgba(255,255,255,0.82); }
+
+      .section { width: min(1100px, 100%); margin: 0 auto; padding: clamp(48px, 7vw, 84px) clamp(16px, 4vw, 32px); }
+      .section-label { margin: 0 0 8px; color: var(--gold); font-size: 13px; letter-spacing: 0.22em; font-weight: 600; }
+      .section h2 { margin: 0 0 28px; font-size: clamp(24px, 3.2vw, 34px); font-weight: 700; }
+
+      .event-grid { display: grid; gap: clamp(20px, 3vw, 32px); }
+      .event-card { display: grid; overflow: hidden; border-radius: 24px; background: #fff; box-shadow: 0 10px 30px rgba(11,31,58,0.08); border: 1px solid var(--line); transition: transform .2s ease, box-shadow .2s ease; }
+      .event-card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(11,31,58,0.14); }
+      @media (min-width: 720px) { .event-card { grid-template-columns: 1.05fr 0.95fr; } }
+      .event-card figure { margin: 0; overflow: hidden; }
+      .event-card img { width: 100%; height: 100%; object-fit: cover; min-height: 240px; }
+      .event-card .body { padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; justify-content: center; }
+      .event-card .tag { margin: 0 0 10px; color: var(--gold); font-size: 12px; letter-spacing: 0.2em; font-weight: 700; }
+      .event-card h3 { margin: 0 0 14px; font-size: clamp(22px, 2.6vw, 30px); font-weight: 700; }
+      .event-card p { margin: 0 0 20px; color: var(--muted); }
+      .btn { display: inline-block; align-self: flex-start; padding: 12px 26px; border: 1px solid var(--gold); color: var(--gold); font-weight: 600; font-size: 15px; border-radius: 999px; transition: background .2s ease, color .2s ease; }
+      .btn:hover { background: var(--gold); color: #fff; }
+
+      .upcoming { background: var(--cream); border-radius: 24px; padding: clamp(24px, 4vw, 40px); text-align: center; color: var(--muted); }
+      .upcoming h3 { margin: 0 0 8px; color: var(--ink); font-size: 18px; }
+      .upcoming p { margin: 0; }
+
+      .site-footer { border-top: 1px solid var(--line); padding: 28px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; color: var(--muted); font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="東京トータルコンサルティング トップへ">
+        <img src="/logo-horizontal.png" alt="Tokyo Total Consulting">
+      </a>
+      <nav class="site-nav" aria-label="サイト内ナビゲーション">
+        <a class="hide-sp" href="/">ホーム</a>
+        <a class="hide-sp" href="/#service">相談できること</a>
+        <a href="/experience/">体験メニュー</a>
+        <a class="line-btn" href="/#contact">公式LINEで相談</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-inner">
+          <p class="eyebrow">EVENT</p>
+          <h1 id="page-title">イベント</h1>
+          <p>保険や事業のご相談とは少し離れて、人とのつながりや学びの場づくりも行っています。日本酒の会をはじめ、セミナーや体験の催しを、ここに集めていきます。</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="open-title">
+        <p class="section-label">OPEN</p>
+        <h2 id="open-title">開催している催し</h2>
+        <div class="event-grid">
+          <article class="event-card">
+            <figure>
+              <img src="/sake/assets/sake-bottles-blue.jpg" alt="清澄庭園 涼亭に持ち寄られた日本酒の瓶が並んでいる" loading="lazy" decoding="async">
+            </figure>
+            <div class="body">
+              <p class="tag">日本酒の会</p>
+              <h3>TTC 日本酒の会</h3>
+              <p>清澄庭園の涼亭で、今いちばんの推しの日本酒を一本持ち寄る。飲み比べてその日のチャンピオンを選び、飲んだ酒を日本酒図鑑に記録していく会です。</p>
+              <a class="btn" href="/sake/">日本酒の会へ →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="upcoming-title">
+        <p class="section-label">UPCOMING</p>
+        <h2 id="upcoming-title">これからの催し</h2>
+        <div class="upcoming">
+          <h3>新しい催しは、こちらで随時ご案内します</h3>
+          <p>セミナーや、体験メニュー発の催し（ピクニックなど）も、これからこのページでご案内していきます。気になる方は、ときどき覗いてみてください。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>東京トータルコンサルティング</span>
+      <span>イベント / Events</span>
+    </footer>
+  </body>
+</html>
