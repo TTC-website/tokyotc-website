@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>開催レポート | TTC 日本酒の会</title>
+    <meta name="description" content="TTC 日本酒の会の開催レポート一覧。清澄庭園 涼亭で開いた各回の様子、その日のチャンピオン、持ち寄った日本酒を記録しています。">
+    <meta property="og:title" content="開催レポート | TTC 日本酒の会">
+    <meta property="og:description" content="清澄庭園 涼亭で開いた各回の様子・チャンピオン・持ち寄った日本酒の記録です。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://tokyotc.com/sake/reports/">
+    <link rel="canonical" href="https://tokyotc.com/sake/reports/">
+    <style>
+      :root {
+        --ink: #303030; --muted: #6b6b6b; --bg: #ffffff; --soft: #f6f5f2;
+        --line: #e5e7eb; --accent: #3a4a3a; --gold: #9a7b3f;
+        --sans: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+        --header-h: 64px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.9; -webkit-font-smoothing: antialiased; }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      .skip-link { position: absolute; left: -999px; top: 0; background: #fff; padding: 8px 14px; z-index: 100; }
+      .skip-link:focus { left: 8px; top: 8px; }
+
+      .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; height: var(--header-h); padding: 0 clamp(16px, 4vw, 48px); background: rgba(24, 26, 24, 0.42); backdrop-filter: blur(8px); color: #fff; }
+      .brand { font-size: clamp(15px, 2vw, 18px); font-weight: 600; letter-spacing: 0.04em; color: #fff; }
+      .site-nav { display: flex; align-items: center; gap: clamp(14px, 2.6vw, 30px); font-size: 14px; }
+      .site-nav a { color: #fff; opacity: 0.92; padding: 6px 0; border-bottom: 2px solid transparent; }
+      .site-nav a[aria-current="page"] { font-weight: 700; border-bottom-color: #fff; }
+
+      .page-hero { padding: calc(var(--header-h) + clamp(40px, 7vw, 84px)) clamp(16px, 4vw, 48px) clamp(36px, 5vw, 56px); background: var(--soft); text-align: center; }
+      .page-hero .kicker { margin: 0 0 10px; color: var(--gold); font-size: 13px; letter-spacing: 0.24em; }
+      .page-hero h1 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 48px); font-weight: 700; letter-spacing: 0.05em; }
+      .page-hero p { margin: 0 auto; max-width: 600px; color: var(--muted); }
+
+      .wrap { width: min(1040px, 100%); margin: 0 auto; padding: clamp(40px, 6vw, 72px) clamp(16px, 4vw, 32px); }
+      .report-grid { display: grid; gap: clamp(20px, 3vw, 30px); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+      .report-card { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fff; display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease; }
+      .report-card:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(11,31,58,0.1); }
+      .report-card .thumb { aspect-ratio: 16 / 10; overflow: hidden; background: #eee; }
+      .report-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+      .report-card .body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+      .report-card .round { color: var(--gold); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; }
+      .report-card h2 { margin: 0; font-size: 20px; font-weight: 700; }
+      .report-card .meta { margin: 0; color: var(--muted); font-size: 13px; }
+      .report-card .champ { margin: 4px 0 0; font-size: 14px; }
+      .report-card .more { margin-top: auto; padding-top: 12px; color: var(--accent); font-weight: 600; font-size: 14px; }
+
+      .site-footer { padding: 30px clamp(16px, 4vw, 48px); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; color: var(--muted); font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <a class="brand" href="/sake/">TTC 日本酒の会</a>
+      <nav class="site-nav" aria-label="サイト内ナビゲーション">
+        <a href="/sake/">ホーム</a>
+        <a href="/sake/sake-list/">日本酒図鑑</a>
+        <a href="/sake/reports/" aria-current="page">開催レポート</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <p class="kicker">REPORTS</p>
+        <h1>開催レポート</h1>
+        <p>清澄庭園 涼亭で開いた各回の様子、その日のチャンピオン、持ち寄った日本酒の記録です。</p>
+      </section>
+
+      <div class="wrap">
+        <div class="report-grid">
+
+          <a class="report-card" href="/sake/reports/2026-01-09/">
+            <div class="thumb"><img src="../assets/reports/2026-01-09/lineup.jpg" alt="第3回に持ち寄られた六本の日本酒" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <span class="round">第3回</span>
+              <h2>2026年1月9日（金）</h2>
+              <p class="meta">清澄庭園 涼亭 ／ 弁当：銀座割烹 里仙</p>
+              <p class="champ">👑 上川大雪 しぼり生（90.5点）</p>
+              <span class="more">レポートを見る →</span>
+            </div>
+          </a>
+
+          <a class="report-card" href="/sake/reports/2025-12-17/">
+            <div class="thumb"><img src="../assets/reports/2025-12-17/kawatsuru.jpg" alt="第2回チャンピオンの川鶴 讃岐くらうでぃ" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <span class="round">第2回</span>
+              <h2>2025年12月17日（水）</h2>
+              <p class="meta">清澄庭園 涼亭 ／ 弁当：人形町今半</p>
+              <p class="champ">👑 川鶴 讃岐くらうでぃ（86.8点）</p>
+              <span class="more">レポートを見る →</span>
+            </div>
+          </a>
+
+          <a class="report-card" href="/sake/reports/2025-10-29/">
+            <div class="thumb"><img src="../assets/reports/2025-10-29/garden-1.jpg" alt="第1回開催日の夕暮れの清澄庭園" loading="lazy" decoding="async"></div>
+            <div class="body">
+              <span class="round">第1回</span>
+              <h2>2025年10月29日（水）</h2>
+              <p class="meta">清澄庭園 涼亭 ／ はじまりの会</p>
+              <p class="champ">日本酒の会のはじまり</p>
+              <span class="more">レポートを見る →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>TTC 日本酒の会 / 清澄庭園 涼亭</span>
+      <span>東京トータルコンサルティング</span>
+    </footer>
+  </body>
+</html>
