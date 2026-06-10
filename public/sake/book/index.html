@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>御酒帳 | TTC 日本酒の会</title>
+    <meta name="description" content="TTC 日本酒の会の当日採点アプリ「御酒帳」。持ち寄った一本を撮って登録し、五軸と推し度で採点。その日の主役をその場で。">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://tokyotc.com/sake/book/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --indigo: #141821; --indigo-2: #1c212e; --indigo-3: #232a3a;
+        --washi: #f3eddd; --washi-dim: #d9d2bf;
+        --shu: #c0392b; --kin: #b98f3e; --kin-light: #d8b46a;
+        --line: rgba(243,237,221,0.14);
+        --mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+        --num: "Helvetica Neue", "Avenir Next", system-ui, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; height: 100%; }
+      body {
+        background: var(--indigo); color: var(--washi);
+        font-family: var(--mincho); line-height: 1.8;
+        -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent;
+      }
+      img { display: block; max-width: 100%; }
+      button { font-family: inherit; cursor: pointer; }
+      .num { font-family: var(--num); font-variant-numeric: tabular-nums; }
+      .hidden { display: none !important; }
+
+      /* ===== Entry ===== */
+      #entry {
+        position: fixed; inset: 0; z-index: 50;
+        display: grid; place-items: center; text-align: center;
+        background: #0c0e14;
+      }
+      #entry .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+      #entry::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,12,18,0.45), rgba(10,12,18,0.82)); }
+      #entry .inner { position: relative; z-index: 1; width: min(440px, 88vw); padding: 24px; }
+      #entry .kicker { margin: 0 0 14px; color: var(--kin-light); letter-spacing: 0.4em; font-size: 12px; }
+      #entry h1 { margin: 0 0 6px; font-size: clamp(54px, 16vw, 88px); font-weight: 800; letter-spacing: 0.12em; }
+      #entry .sub { margin: 0 0 36px; color: var(--washi-dim); font-size: 14px; letter-spacing: 0.12em; }
+      .field-label { display: block; text-align: left; font-size: 12px; color: var(--washi-dim); letter-spacing: 0.1em; margin: 0 0 6px; }
+      .text-input {
+        width: 100%; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--line);
+        background: rgba(243,237,221,0.06); color: var(--washi); font-family: var(--mincho); font-size: 17px;
+      }
+      .text-input:focus { outline: none; border-color: var(--kin); }
+      .btn-primary {
+        display: inline-block; width: 100%; margin-top: 18px; padding: 15px; border: none; border-radius: 10px;
+        background: var(--shu); color: #fff; font-size: 16px; font-weight: 700; letter-spacing: 0.1em;
+      }
+      .btn-primary:active { transform: translateY(1px); }
+      .btn-ghost { background: transparent; border: 1px solid var(--line); color: var(--washi); padding: 12px 18px; border-radius: 10px; font-size: 14px; }
+      .btn-kin { background: var(--kin); color: var(--indigo); border: none; padding: 13px 18px; border-radius: 10px; font-weight: 700; font-size: 14px; }
+
+      /* ===== App shell ===== */
+      #app { max-width: 760px; margin: 0 auto; min-height: 100%; padding-bottom: 40px; }
+      .topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between;
+        padding: 14px clamp(16px, 5vw, 28px); background: rgba(20,24,33,0.82); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+      .topbar .brand { display: flex; align-items: baseline; gap: 10px; }
+      .topbar .title { font-size: 22px; font-weight: 800; letter-spacing: 0.1em; }
+      .topbar .event { font-size: 12px; color: var(--washi-dim); letter-spacing: 0.08em; }
+      .topbar .me { font-size: 12px; color: var(--washi-dim); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; background: transparent; }
+
+      .tabs { display: flex; gap: 6px; padding: 12px clamp(16px, 5vw, 28px) 0; }
+      .tab { flex: 1; padding: 10px; border: 1px solid var(--line); background: transparent; color: var(--washi-dim);
+        border-radius: 10px 10px 0 0; font-size: 14px; font-weight: 600; letter-spacing: 0.06em; }
+      .tab.is-active { color: var(--washi); border-color: var(--kin); border-bottom-color: transparent; background: rgba(185,143,62,0.08); }
+
+      .view { padding: 18px clamp(16px, 5vw, 28px); }
+      .view h2 { font-size: 16px; font-weight: 600; letter-spacing: 0.1em; color: var(--washi-dim); margin: 0 0 14px; }
+
+      .add-bar { margin-bottom: 18px; }
+      .add-bar .btn-kin { width: 100%; }
+
+      /* ===== Sake cards ===== */
+      .sake { display: flex; gap: 14px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--indigo-2); margin-bottom: 14px; }
+      .sake .photo { flex: 0 0 84px; width: 84px; height: 105px; border-radius: 8px; overflow: hidden; background: var(--indigo-3); }
+      .sake .photo img { width: 100%; height: 100%; object-fit: cover; }
+      .sake .photo.empty { display: grid; place-items: center; color: var(--washi-dim); font-size: 11px; text-align: center; }
+      .sake .meta { flex: 1; min-width: 0; }
+      .sake .name { font-size: 18px; font-weight: 700; margin: 0 0 2px; }
+      .sake .by { font-size: 12px; color: var(--washi-dim); margin: 0 0 10px; }
+      .sake .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+      .sake .oshi { font-family: var(--num); font-size: 26px; font-weight: 600; color: var(--kin-light); }
+      .sake .oshi small { font-size: 12px; color: var(--washi-dim); }
+      .sake .raters { font-size: 11px; color: var(--washi-dim); }
+      .sake .actions { margin-top: 10px; display: flex; gap: 8px; }
+      .sake .actions button { font-size: 13px; }
+
+      /* ===== Radar ===== */
+      .radar-wrap { display: flex; gap: 16px; align-items: center; }
+      .radar { flex: 0 0 132px; }
+      .axes { font-size: 11px; color: var(--washi-dim); }
+      .axes div { display: flex; justify-content: space-between; gap: 10px; padding: 1px 0; }
+      .axes b { font-family: var(--num); color: var(--washi); font-weight: 600; }
+
+      /* ===== Modal ===== */
+      .modal { position: fixed; inset: 0; z-index: 60; display: grid; place-items: end center; }
+      .modal::before { content: ""; position: absolute; inset: 0; background: rgba(8,10,15,0.7); }
+      .sheet { position: relative; width: 100%; max-width: 760px; max-height: 92vh; overflow-y: auto;
+        background: var(--indigo-2); border-radius: 18px 18px 0 0; border-top: 2px solid var(--kin);
+        padding: 20px clamp(16px,5vw,28px) calc(28px + env(safe-area-inset-bottom)); }
+      .sheet h3 { margin: 4px 0 18px; font-size: 22px; font-weight: 800; letter-spacing: 0.08em; }
+      .sheet .close { position: absolute; top: 14px; right: 16px; background: transparent; border: none; color: var(--washi-dim); font-size: 24px; }
+      .form-row { margin-bottom: 16px; }
+      .photo-pick { width: 100%; aspect-ratio: 4/3; border: 1px dashed var(--line); border-radius: 12px; background: rgba(243,237,221,0.04);
+        display: grid; place-items: center; color: var(--washi-dim); overflow: hidden; }
+      .photo-pick img { width: 100%; height: 100%; object-fit: cover; }
+
+      /* ===== Sliders ===== */
+      .slider-row { margin-bottom: 14px; }
+      .slider-row .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+      .slider-row .label { font-size: 14px; }
+      .slider-row .val { font-family: var(--num); font-size: 18px; font-weight: 600; color: var(--kin-light); }
+      .slider-row .note { font-size: 10px; color: var(--washi-dim); }
+      input[type=range] { width: 100%; accent-color: var(--kin); }
+      .oshi-big { text-align: center; font-family: var(--num); font-size: 44px; font-weight: 600; color: var(--shu); }
+
+      .empty-note { color: var(--washi-dim); font-size: 14px; text-align: center; padding: 40px 0; }
+      .footer-note { text-align: center; color: var(--washi-dim); font-size: 11px; padding: 24px; letter-spacing: 0.08em; }
+      @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+    </style>
+  </head>
+  <body>
+    <!-- ===== Entry ===== -->
+    <section id="entry">
+      <img class="bg" src="assets/venue-night.jpg" alt="">
+      <div class="inner">
+        <p class="kicker">TTC 日本酒の会</p>
+        <h1>御酒帳</h1>
+        <p class="sub">持ち寄った一本を、その場で。</p>
+        <label class="field-label" for="name-input">お名前</label>
+        <input id="name-input" class="text-input" type="text" placeholder="例：小西" autocomplete="name">
+        <button id="enter-btn" class="btn-primary">入場する</button>
+      </div>
+    </section>
+
+    <!-- ===== App ===== -->
+    <main id="app" class="hidden">
+      <header class="topbar">
+        <div class="brand">
+          <span class="title">御酒帳</span>
+          <span class="event" id="event-label">第3回</span>
+        </div>
+        <button class="me" id="me-btn"></button>
+      </header>
+
+      <nav class="tabs">
+        <button class="tab is-active" data-tab="list">銘柄帳</button>
+        <button class="tab" data-tab="result">集計</button>
+      </nav>
+
+      <!-- 銘柄帳 -->
+      <section class="view" id="view-list">
+        <div class="add-bar"><button class="btn-kin" id="add-sake-btn">＋ 銘柄を登録する</button></div>
+        <div id="sake-list"></div>
+      </section>
+
+      <!-- 集計 -->
+      <section class="view hidden" id="view-result">
+        <h2>推し度ランキング</h2>
+        <div id="result-list"></div>
+      </section>
+
+      <p class="footer-note">お酒は20歳になってから。飲酒運転は法律で禁止されています。</p>
+    </main>
+
+    <!-- ===== Modal root ===== -->
+    <div id="modal-root"></div>
+
+    <script>
+    (function () {
+      "use strict";
+
+      // ===== Store (localStorage; swappable for Firebase later) =====
+      var KEY = "sakebook.v2";
+      function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+      function save(d) { localStorage.setItem(KEY, JSON.stringify(d)); }
+      var db = load();
+      db.event = db.event || { title: "第3回", date: "" };
+      db.sakes = db.sakes || [];          // {id, name, by, photo}
+      db.ratings = db.ratings || {};       // ratings[sakeId][user] = {sweet,aroma,body,acidity,finish,oshi,memo}
+      function persist() { save(db); }
+
+      function uid() { return "s" + Date.now().toString(36) + Math.floor(Math.random()*1e4).toString(36); }
+      var user = localStorage.getItem("sakebook.user") || "";
+
+      var AXES = [
+        { k: "sweet", label: "甘辛", note: "高いほど辛口" },
+        { k: "aroma", label: "香り", note: "" },
+        { k: "body", label: "濃淡", note: "旨味・コク" },
+        { k: "acidity", label: "酸味", note: "" },
+        { k: "finish", label: "余韻", note: "後味" }
+      ];
+
+      var $ = function (s, r) { return (r || document).querySelector(s); };
+      var modalRoot = $("#modal-root");
+
+      // ===== Entry =====
+      function showApp() {
+        $("#entry").classList.add("hidden");
+        $("#app").classList.remove("hidden");
+        $("#event-label").textContent = db.event.title;
+        $("#me-btn").textContent = "✎ " + user;
+        renderList();
+      }
+      $("#enter-btn").addEventListener("click", function () {
+        var v = $("#name-input").value.trim();
+        if (!v) { $("#name-input").focus(); return; }
+        user = v; localStorage.setItem("sakebook.user", user); showApp();
+      });
+      $("#name-input").addEventListener("keydown", function (e) { if (e.key === "Enter") $("#enter-btn").click(); });
+      if (user) { $("#name-input").value = user; showApp(); }
+
+      $("#me-btn").addEventListener("click", function () {
+        var v = prompt("お名前を変更", user);
+        if (v && v.trim()) { user = v.trim(); localStorage.setItem("sakebook.user", user); $("#me-btn").textContent = "✎ " + user; renderList(); }
+      });
+
+      // ===== Tabs =====
+      Array.prototype.forEach.call(document.querySelectorAll(".tab"), function (t) {
+        t.addEventListener("click", function () {
+          document.querySelectorAll(".tab").forEach(function (x) { x.classList.remove("is-active"); });
+          t.classList.add("is-active");
+          var tab = t.getAttribute("data-tab");
+          $("#view-list").classList.toggle("hidden", tab !== "list");
+          $("#view-result").classList.toggle("hidden", tab !== "result");
+          if (tab === "result") renderResult();
+        });
+      });
+
+      // ===== Helpers: aggregation =====
+      function avgAxes(sakeId) {
+        var rs = db.ratings[sakeId] || {};
+        var users = Object.keys(rs);
+        var out = { count: users.length };
+        AXES.forEach(function (a) {
+          var sum = 0, n = 0;
+          users.forEach(function (u) { if (typeof rs[u][a.k] === "number") { sum += rs[u][a.k]; n++; } });
+          out[a.k] = n ? sum / n : 0;
+        });
+        var os = 0, on = 0;
+        users.forEach(function (u) { if (typeof rs[u].oshi === "number") { os += rs[u].oshi; on++; } });
+        out.oshi = on ? os / on : 0;
+        return out;
+      }
+
+      // ===== Radar (pentagon) =====
+      function radarSVG(vals) {
+        var size = 132, cx = size/2, cy = size/2, R = 52;
+        var pts = AXES.map(function (a, i) {
+          var ang = -Math.PI/2 + i * (2*Math.PI/5);
+          var v = Math.max(0, Math.min(5, vals[a.k] || 0)) / 5;
+          return [cx + Math.cos(ang)*R*v, cy + Math.sin(ang)*R*v];
+        });
+        var grid = "";
+        [1,0.75,0.5,0.25].forEach(function (g) {
+          var gp = AXES.map(function (a, i) { var ang=-Math.PI/2+i*(2*Math.PI/5); return (cx+Math.cos(ang)*R*g).toFixed(1)+","+(cy+Math.sin(ang)*R*g).toFixed(1); }).join(" ");
+          grid += '<polygon points="'+gp+'" fill="none" stroke="rgba(243,237,221,0.12)" stroke-width="1"/>';
+        });
+        var poly = pts.map(function (p) { return p[0].toFixed(1)+","+p[1].toFixed(1); }).join(" ");
+        return '<svg class="radar" viewBox="0 0 '+size+' '+size+'" width="132" height="132" aria-hidden="true">'+grid+
+          '<polygon points="'+poly+'" fill="rgba(192,57,43,0.35)" stroke="#c0392b" stroke-width="1.5"/>'+
+          pts.map(function(p){return '<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="2" fill="#d8b46a"/>';}).join("")+
+          '</svg>';
+      }
+
+      // ===== Render: list =====
+      function renderList() {
+        var el = $("#sake-list");
+        if (!db.sakes.length) { el.innerHTML = '<p class="empty-note">まだ登録がありません。<br>持ち寄った一本を撮って登録しましょう。</p>'; return; }
+        el.innerHTML = db.sakes.map(function (s) {
+          var ag = avgAxes(s.id);
+          var mine = (db.ratings[s.id] || {})[user];
+          var photo = s.photo ? '<div class="photo"><img src="'+s.photo+'" alt=""></div>' : '<div class="photo empty">写真<br>なし</div>';
+          return '<article class="sake">'+photo+
+            '<div class="meta"><p class="name">'+esc(s.name)+'</p>'+
+            '<p class="by">'+(s.by?('持参：'+esc(s.by)):'&nbsp;')+'</p>'+
+            '<div class="row"><span class="oshi">'+(ag.count?Math.round(ag.oshi):'—')+'<small> 推し</small></span>'+
+            '<span class="raters">'+ag.count+'人が採点</span></div>'+
+            '<div class="actions"><button class="btn-primary" style="width:auto;margin:0;padding:8px 16px" data-rate="'+s.id+'">'+(mine?'採点を編集':'採点する')+'</button>'+
+            ((s.regby===user)?('<button class="btn-ghost" data-edit="'+s.id+'">編集</button><button class="btn-ghost" data-del="'+s.id+'">削除</button>'):'')+
+            '</div></div></article>';
+        }).join("");
+        el.querySelectorAll("[data-rate]").forEach(function(b){ b.onclick=function(){ openRate(b.getAttribute("data-rate")); }; });
+        el.querySelectorAll("[data-del]").forEach(function(b){ b.onclick=function(){ if(confirm("この銘柄を削除しますか？")){ db.sakes=db.sakes.filter(function(x){return x.id!==b.getAttribute("data-del");}); delete db.ratings[b.getAttribute("data-del")]; persist(); renderList(); } }; });
+        el.querySelectorAll("[data-edit]").forEach(function(b){ b.onclick=function(){ openAddEdit(b.getAttribute("data-edit")); }; });
+      }
+
+      // ===== Render: result =====
+      function renderResult() {
+        var el = $("#result-list");
+        var rated = db.sakes.map(function(s){ return { s:s, ag:avgAxes(s.id) }; }).filter(function(x){ return x.ag.count>0; });
+        if (!rated.length) { el.innerHTML = '<p class="empty-note">まだ採点がありません。</p>'; return; }
+        rated.sort(function(a,b){ return b.ag.oshi - a.ag.oshi; });
+        el.innerHTML = rated.map(function(x, i){
+          var ag = x.ag;
+          var axesHtml = AXES.map(function(a){ return '<div><span>'+a.label+'</span><b>'+ag[a.k].toFixed(1)+'</b></div>'; }).join("");
+          return '<article class="sake"><div class="meta">'+
+            '<p class="name">'+(i+1)+'位　'+esc(x.s.name)+(i===0?' 👑':'')+'</p>'+
+            '<p class="by">推し度 <span class="num" style="color:var(--kin-light);font-size:18px">'+Math.round(ag.oshi)+'</span>　/　'+ag.count+'人</p>'+
+            '<div class="radar-wrap">'+radarSVG(ag)+'<div class="axes">'+axesHtml+'</div></div>'+
+            '</div></article>';
+        }).join("");
+      }
+
+      // ===== Add / Edit sake =====
+      $("#add-sake-btn").addEventListener("click", function () { openAddEdit(null); });
+      function openAddEdit(editId) {
+        var editing = editId ? db.sakes.filter(function(s){return s.id===editId;})[0] : null;
+        var photoData = editing ? editing.photo : "";
+        modalRoot.innerHTML =
+          '<div class="modal"><div class="sheet"><button class="close">×</button>'+
+          '<h3>'+(editing?'銘柄を編集':'銘柄を登録')+'</h3>'+
+          '<div class="form-row"><label class="field-label">写真</label>'+
+          '<label class="photo-pick" id="pp">'+(photoData?'<img src="'+photoData+'">':'タップして撮影 / 選択')+
+          '<input type="file" accept="image/*" id="photo-input" class="hidden"></label></div>'+
+          '<div class="form-row"><label class="field-label">銘柄名</label><input class="text-input" id="f-name" value="'+(editing?escAttr(editing.name):'')+'" placeholder="例：上川大雪 しぼり生"></div>'+
+          '<div class="form-row"><label class="field-label">持ってきた人（空欄ならあなた）</label><input class="text-input" id="f-by" value="'+(editing?escAttr(editing.by||''):'')+'" placeholder="'+escAttr(user)+'"></div>'+
+          '<button class="btn-primary" id="save-sake">'+(editing?'更新する':'登録する')+'</button>'+
+          '</div></div>';
+        var modal = $(".modal", modalRoot);
+        modal.querySelector(".close").onclick = closeModal;
+        modal.addEventListener("click", function(e){ if(e.target===modal) closeModal(); });
+        var pInput = $("#photo-input", modal);
+        $("#pp", modal).onclick = function(e){ if(e.target.tagName!=="INPUT") pInput.click(); };
+        pInput.onchange = function(){ var f=pInput.files[0]; if(!f) return; compress(f, function(d){ photoData=d; $("#pp",modal).innerHTML='<img src="'+d+'">'; }); };
+        $("#save-sake", modal).onclick = function () {
+          var name = $("#f-name", modal).value.trim();
+          if (!name) { $("#f-name", modal).focus(); return; }
+          var by = $("#f-by", modal).value.trim() || user;
+          if (editing) { editing.name=name; editing.by=by; if(photoData) editing.photo=photoData; }
+          else { db.sakes.push({ id: uid(), name: name, by: by, photo: photoData, regby: user }); }
+          persist(); closeModal(); renderList();
+        };
+      }
+
+      // ===== Rate =====
+      function openRate(sakeId) {
+        var s = db.sakes.filter(function(x){return x.id===sakeId;})[0]; if(!s) return;
+        var mine = (db.ratings[sakeId]||{})[user] || { sweet:3, aroma:3, body:3, acidity:3, finish:3, oshi:70, memo:"" };
+        var sliders = AXES.map(function(a){
+          return '<div class="slider-row"><div class="head"><span class="label">'+a.label+(a.note?' <span class="note">'+a.note+'</span>':'')+'</span><span class="val" id="v-'+a.k+'">'+mine[a.k].toFixed(1)+'</span></div>'+
+            '<input type="range" min="1" max="5" step="0.5" value="'+mine[a.k]+'" data-axis="'+a.k+'"></div>';
+        }).join("");
+        modalRoot.innerHTML =
+          '<div class="modal"><div class="sheet"><button class="close">×</button>'+
+          '<h3>'+esc(s.name)+'</h3>'+
+          sliders+
+          '<div class="form-row" style="margin-top:8px"><div class="head" style="display:flex;justify-content:space-between"><span class="label">推し度</span></div>'+
+          '<div class="oshi-big" id="oshi-val">'+Math.round(mine.oshi)+'</div>'+
+          '<input type="range" min="0" max="100" step="1" value="'+mine.oshi+'" id="oshi-range"></div>'+
+          '<div class="form-row"><label class="field-label">ひとことメモ</label><input class="text-input" id="memo" value="'+escAttr(mine.memo||'')+'" placeholder="例：白ワインのような飲み口"></div>'+
+          '<button class="btn-primary" id="save-rate">採点を保存</button>'+
+          '<button class="btn-ghost" id="del-rate" style="width:100%;margin-top:10px">この採点を取り消す</button>'+
+          '</div></div>';
+        var modal = $(".modal", modalRoot);
+        modal.querySelector(".close").onclick = closeModal;
+        modal.addEventListener("click", function(e){ if(e.target===modal) closeModal(); });
+        modal.querySelectorAll('input[data-axis]').forEach(function(r){ r.oninput=function(){ $("#v-"+r.getAttribute("data-axis"),modal).textContent=parseFloat(r.value).toFixed(1); }; });
+        $("#oshi-range",modal).oninput=function(){ $("#oshi-val",modal).textContent=this.value; };
+        $("#save-rate",modal).onclick=function(){
+          var rec = { memo: $("#memo",modal).value.trim() };
+          modal.querySelectorAll('input[data-axis]').forEach(function(r){ rec[r.getAttribute("data-axis")]=parseFloat(r.value); });
+          rec.oshi = parseInt($("#oshi-range",modal).value,10);
+          db.ratings[sakeId] = db.ratings[sakeId] || {}; db.ratings[sakeId][user]=rec; persist(); closeModal(); renderList();
+        };
+        $("#del-rate",modal).onclick=function(){ if(db.ratings[sakeId]) delete db.ratings[sakeId][user]; persist(); closeModal(); renderList(); };
+      }
+
+      function closeModal() { modalRoot.innerHTML = ""; }
+
+      // ===== Image compression (long edge 1200, JPEG 0.75) =====
+      function compress(file, cb) {
+        var img = new Image();
+        var url = URL.createObjectURL(file);
+        img.onload = function () {
+          var max = 1200, w = img.width, h = img.height;
+          if (w > h && w > max) { h = h*max/w; w = max; } else if (h >= w && h > max) { w = w*max/h; h = max; }
+          var c = document.createElement("canvas"); c.width = w; c.height = h;
+          c.getContext("2d").drawImage(img, 0, 0, w, h);
+          URL.revokeObjectURL(url);
+          cb(c.toDataURL("image/jpeg", 0.75));
+        };
+        img.src = url;
+      }
+
+      // ===== escape =====
+      function esc(s){ return String(s).replace(/[&<>]/g, function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];}); }
+      function escAttr(s){ return String(s).replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+    })();
+    </script>
+  </body>
+</html>
