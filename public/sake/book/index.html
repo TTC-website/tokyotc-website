@@ -316,8 +316,8 @@
           '<div class="modal"><div class="sheet"><button class="close">×</button>'+
           '<h3>'+(editing?'銘柄を編集':'銘柄を登録')+'</h3>'+
           '<div class="form-row"><label class="field-label">写真</label>'+
-          '<label class="photo-pick" id="pp">'+(photoData?'<img src="'+photoData+'">':'タップして撮影 / 選択')+
-          '<input type="file" accept="image/*" id="photo-input" class="hidden"></label></div>'+
+          '<div class="photo-pick" id="pp">'+(photoData?'<img src="'+photoData+'">':'タップして撮影 / 選択')+'</div>'+
+          '<input type="file" accept="image/*" id="photo-input" class="hidden"></div>'+
           '<div class="form-row"><label class="field-label">銘柄名</label><input class="text-input" id="f-name" value="'+(editing?escAttr(editing.name):'')+'" placeholder="例：上川大雪 しぼり生"></div>'+
           '<div class="form-row"><label class="field-label">持ってきた人（空欄ならあなた）</label><input class="text-input" id="f-by" value="'+(editing?escAttr(editing.by||''):'')+'" placeholder="'+escAttr(user)+'"></div>'+
           '<button class="btn-primary" id="save-sake">'+(editing?'更新する':'登録する')+'</button>'+
@@ -326,7 +326,7 @@
         modal.querySelector(".close").onclick = closeModal;
         modal.addEventListener("click", function(e){ if(e.target===modal) closeModal(); });
         var pInput = $("#photo-input", modal);
-        $("#pp", modal).onclick = function(e){ if(e.target.tagName!=="INPUT") pInput.click(); };
+        $("#pp", modal).onclick = function(){ pInput.click(); };
         pInput.onchange = function(){ var f=pInput.files[0]; if(!f) return; compress(f, function(d){ photoData=d; $("#pp",modal).innerHTML='<img src="'+d+'">'; }); };
         $("#save-sake", modal).onclick = function () {
           var name = $("#f-name", modal).value.trim();
@@ -377,14 +377,19 @@
       function compress(file, cb) {
         var img = new Image();
         var url = URL.createObjectURL(file);
+        function fallback() { var fr = new FileReader(); fr.onload = function(){ cb(fr.result); }; fr.onerror = function(){ alert("写真を読み込めませんでした。別の写真でお試しください。"); }; fr.readAsDataURL(file); }
         img.onload = function () {
-          var max = 1200, w = img.width, h = img.height;
-          if (w > h && w > max) { h = h*max/w; w = max; } else if (h >= w && h > max) { w = w*max/h; h = max; }
-          var c = document.createElement("canvas"); c.width = w; c.height = h;
-          c.getContext("2d").drawImage(img, 0, 0, w, h);
-          URL.revokeObjectURL(url);
-          cb(c.toDataURL("image/jpeg", 0.75));
+          try {
+            var max = 1200, w = img.width, h = img.height;
+            if (!w || !h) { URL.revokeObjectURL(url); return fallback(); }
+            if (w > h && w > max) { h = h*max/w; w = max; } else if (h >= w && h > max) { w = w*max/h; h = max; }
+            var c = document.createElement("canvas"); c.width = Math.round(w); c.height = Math.round(h);
+            c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+            URL.revokeObjectURL(url);
+            cb(c.toDataURL("image/jpeg", 0.75));
+          } catch (e) { URL.revokeObjectURL(url); fallback(); }
         };
+        img.onerror = function () { URL.revokeObjectURL(url); fallback(); };
         img.src = url;
       }
 
