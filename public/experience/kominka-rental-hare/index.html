@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>古い日本家屋を借りて、家にハレの日をつくる｜体験メニュー｜東京トータルコンサルティング</title>
+    <meta name="description" content="家は買わなくても体験できる。古い日本家屋を借りて、庭・畳・障子・外空間のある暮らしを味わい、日常の中にハレの日をつくる住まいの体験メニューです。">
+    <link rel="canonical" href="https://tokyotc.com/experience/kominka-rental-hare/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="古い日本家屋を借りて、家にハレの日をつくる">
+    <meta property="og:description" content="所有しなくても、記憶に残る家は持てる。庭と歴史のある暮らしを、賃貸で体験する住まいの選択肢。">
+    <meta property="og:image" content="https://tokyotc.com/experience/kominka-rental-hare/assets/kominka-rental-hare-ogp.jpg">
+    <meta property="og:url" content="https://tokyotc.com/experience/kominka-rental-hare/">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+      :root {
+        --midnight: #081826;
+        --deep: #0c1f2e;
+        --paper: #eef0ea;
+        --soft: #c8d0c5;
+        --muted: #8c9b91;
+        --gold: #ad9256;
+        --moss: #6c7a58;
+        --line: rgba(173, 146, 86, 0.28);
+        --serif: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Noto Serif JP", serif;
+        --sans: "Avenir Next", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(180deg, rgba(7, 21, 34, 0.98) 0%, var(--midnight) 48%, #111b1b 100%);
+        color: var(--paper);
+        font-family: var(--serif);
+        line-height: 1.92;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        opacity: 0.14;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: linear-gradient(180deg, black 0%, transparent 76%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px 58px;
+        border-bottom: 1px solid rgba(173, 146, 86, 0.2);
+        background: rgba(8, 24, 38, 0.86);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: block;
+        width: 210px;
+      }
+
+      .brand img {
+        width: 100%;
+        height: auto;
+        mix-blend-mode: screen;
+        filter: sepia(1) saturate(0.82) brightness(1.06) contrast(1.08);
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        color: var(--soft);
+        font-family: var(--sans);
+        font-size: 12px;
+      }
+
+      .site-nav a {
+        opacity: 0.82;
+        transition: color 0.2s ease, opacity 0.2s ease;
+      }
+
+      .site-nav a:hover {
+        color: var(--gold);
+        opacity: 1;
+      }
+
+      main {
+        padding-top: 78px;
+      }
+
+      .hero {
+        position: relative;
+        min-height: calc(96svh - 78px);
+        padding: 94px 72px 64px;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .hero::after {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(8, 24, 38, 0.98) 0%, rgba(8, 24, 38, 0.82) 48%, rgba(8, 24, 38, 0.28) 100%),
+          linear-gradient(180deg, transparent 52%, var(--midnight) 100%);
+        content: "";
+      }
+
+      .hero-photo {
+        position: absolute;
+        inset: 0 0 0 auto;
+        z-index: -2;
+        width: min(66vw, 1020px);
+        height: 100%;
+      }
+
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.88;
+        filter: saturate(0.9) contrast(1.07) brightness(0.82);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(286px, 0.38fr);
+        align-items: end;
+        gap: 72px;
+        width: min(1230px, 100%);
+        min-height: calc(96svh - 236px);
+        margin: 0 auto;
+      }
+
+      .eyebrow,
+      .section-label {
+        margin: 0;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 12px;
+      }
+
+      .eyebrow {
+        margin-bottom: 16px;
+      }
+
+      .hero h1 {
+        max-width: 830px;
+        margin: 0;
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 1.24;
+      }
+
+      .hero h1 span {
+        display: block;
+      }
+
+      .lead {
+        max-width: 720px;
+        margin: 28px 0 0;
+        color: var(--soft);
+        font-size: 20px;
+      }
+
+      .meta-panel {
+        padding: 26px 0 0 26px;
+        border-left: 1px solid var(--gold);
+      }
+
+      .meta-panel dl {
+        display: grid;
+        grid-template-columns: 82px 1fr;
+        gap: 8px 16px;
+        margin: 0;
+        color: var(--soft);
+        font-family: var(--sans);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .meta-panel dt {
+        color: var(--gold);
+      }
+
+      .meta-panel dd {
+        margin: 0;
+      }
+
+      .section,
+      .score-section {
+        width: min(1120px, calc(100% - 56px));
+        margin: 0 auto;
+        padding: 96px 0;
+        border-top: 1px solid rgba(173, 146, 86, 0.18);
+        scroll-margin-top: 100px;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(150px, 0.28fr) minmax(0, 1fr);
+        gap: 64px;
+        margin-bottom: 42px;
+      }
+
+      .section h2,
+      .score-section h2 {
+        margin: 0;
+        color: var(--paper);
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1.38;
+      }
+
+      .prose {
+        max-width: 780px;
+        color: var(--soft);
+        font-size: 18px;
+      }
+
+      .prose p {
+        margin: 0;
+      }
+
+      .prose p + p {
+        margin-top: 1.32em;
+      }
+
+      .prose strong {
+        color: #fff7e6;
+        font-weight: 600;
+        background: linear-gradient(transparent 64%, rgba(173, 146, 86, 0.34) 64%);
+      }
+
+      .impact-line {
+        margin: 44px 0 0;
+        padding: 30px 34px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(90deg, rgba(173, 146, 86, 0.13), transparent 70%),
+          rgba(255, 255, 255, 0.025);
+        color: #fff6df;
+        font-size: 36px;
+        line-height: 1.36;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.86fr) minmax(300px, 0.48fr);
+        gap: 64px;
+        align-items: start;
+      }
+
+      .story-photo {
+        position: sticky;
+        top: 112px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .story-photo figure,
+      .section-feature-photo,
+      .photo-card,
+      .gallery figure {
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid rgba(173, 146, 86, 0.22);
+        background: rgba(255, 255, 255, 0.035);
+        box-shadow: 0 20px 62px rgba(0, 0, 0, 0.24);
+      }
+
+      .story-photo img,
+      .section-feature-photo img,
+      .photo-card img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        filter: saturate(0.88) contrast(1.05) brightness(0.92);
+      }
+
+      .section-feature-photo {
+        margin: -10px 0 54px;
+      }
+
+      .section-feature-photo img {
+        display: block;
+        object-position: center;
+      }
+
+      .section-feature-photo figcaption {
+        padding: 14px 18px 16px;
+      }
+
+      figcaption {
+        padding: 10px 12px 12px;
+        color: rgba(255, 247, 229, 0.78);
+        font-family: var(--sans);
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      .memory-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        margin-top: 38px;
+        border: 1px solid var(--line);
+        background: var(--line);
+      }
+
+      .memory-list article {
+        padding: 26px;
+        background:
+          linear-gradient(145deg, rgba(255, 244, 213, 0.07), transparent 36%),
+          rgba(255, 255, 255, 0.035);
+      }
+
+      .memory-list h3 {
+        margin: 0;
+        color: #fff6df;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .memory-list p {
+        margin: 12px 0 0;
+        color: var(--soft);
+        font-size: 15px;
+      }
+
+      .score-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        border: 1px solid var(--line);
+        background: var(--line);
+      }
+
+      .score-card {
+        padding: clamp(24px, 3vw, 36px);
+        background:
+          linear-gradient(145deg, rgba(255, 244, 213, 0.07), transparent 32%),
+          rgba(255, 255, 255, 0.035);
+      }
+
+      .score-card span {
+        display: block;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .score-card strong {
+        display: block;
+        margin-top: 16px;
+        color: #fff6df;
+        font-size: clamp(24px, 3.2vw, 42px);
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .score-card h3 {
+        margin: 20px 0 0;
+        color: #fff6df;
+        font-size: clamp(19px, 1.8vw, 24px);
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      .score-card p {
+        margin: 14px 0 0;
+        color: var(--soft);
+        font-size: 15px;
+        line-height: 1.82;
+      }
+
+      .gallery-section {
+        display: grid;
+        grid-template-columns: minmax(120px, 0.24fr) minmax(0, 1fr);
+        grid-template-areas:
+          "label title"
+          "gallery gallery";
+        gap: 42px 72px;
+      }
+
+      .gallery-section .section-label {
+        grid-area: label;
+        margin-top: 12px;
+      }
+
+      .gallery-section h2 {
+        grid-area: title;
+      }
+
+      .gallery {
+        grid-area: gallery;
+        display: grid;
+        grid-template-columns: 1.36fr 1fr 1fr;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        min-height: 430px;
+      }
+
+      .gallery figure {
+        position: relative;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .gallery figure:first-child {
+        grid-row: span 2;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.88) contrast(1.05) brightness(0.9);
+      }
+
+      .gallery figcaption {
+        position: absolute;
+        right: 10px;
+        bottom: 8px;
+        left: 10px;
+        color: rgba(255, 247, 229, 0.88);
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+      }
+
+      .cta {
+        width: min(920px, calc(100% - 56px));
+        margin: 0 auto 86px;
+        padding: 54px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid rgba(173, 146, 86, 0.18);
+        background: linear-gradient(90deg, rgba(173, 146, 86, 0.08), transparent 58%);
+      }
+
+      .cta h2 {
+        margin: 0;
+        color: var(--paper);
+        font-size: 44px;
+        font-weight: 500;
+        line-height: 1.36;
+      }
+
+      .cta p {
+        max-width: 700px;
+        margin: 22px 0 0;
+        color: var(--soft);
+        font-size: 18px;
+      }
+
+      .cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 48px;
+        margin-top: 34px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--gold);
+        color: #fff7e5;
+        font-family: var(--sans);
+        font-size: 15px;
+      }
+
+      .cta-link::after {
+        color: var(--gold);
+        content: ">";
+      }
+
+      .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 30px 58px;
+        border-top: 1px solid rgba(173, 146, 86, 0.22);
+        color: var(--muted);
+        font-family: var(--sans);
+        font-size: 12px;
+      }
+
+      @media (max-width: 920px) {
+        .site-header {
+          position: absolute;
+          align-items: flex-start;
+          padding: 16px 18px;
+        }
+
+        .brand {
+          width: 148px;
+        }
+
+        .site-nav {
+          justify-content: flex-end;
+          flex-wrap: wrap;
+          gap: 8px 14px;
+          max-width: 250px;
+          font-size: 10px;
+        }
+
+        main {
+          padding-top: 66px;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 78px 22px 66px;
+        }
+
+        .hero-photo {
+          inset: 0 0 auto;
+          width: 100%;
+          height: 48%;
+          opacity: 0.72;
+        }
+
+        .hero::after {
+          background:
+            linear-gradient(180deg, rgba(8, 24, 38, 0.52), rgba(8, 24, 38, 0.98) 45%, var(--midnight) 100%);
+        }
+
+        .hero-inner,
+        .section-head,
+        .split,
+        .gallery-section {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-inner {
+          min-height: auto;
+          gap: 42px;
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .lead {
+          font-size: 17px;
+        }
+
+        .section,
+        .score-section,
+        .cta {
+          width: calc(100% - 36px);
+          padding: 70px 0;
+        }
+
+        .section-head {
+          gap: 18px;
+        }
+
+        .section h2,
+        .score-section h2,
+        .cta h2 {
+          font-size: 32px;
+        }
+
+        .prose,
+        .cta p {
+          font-size: 16px;
+        }
+
+        .impact-line {
+          padding: 24px 22px;
+          font-size: 28px;
+        }
+
+        .story-photo {
+          position: static;
+          width: min(540px, 100%);
+        }
+
+        .memory-list {
+          grid-template-columns: 1fr;
+        }
+
+        .score-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          min-height: 0;
+        }
+
+        .gallery figure,
+        .gallery figure:first-child {
+          aspect-ratio: 16 / 10;
+        }
+
+        .gallery figure:first-child {
+          grid-column: span 2;
+          grid-row: auto;
+        }
+
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 26px 22px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .site-nav a:nth-child(2),
+        .site-nav a:nth-child(3) {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 31px;
+        }
+
+        .meta-panel dl {
+          grid-template-columns: 74px 1fr;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery figure:first-child {
+          grid-column: auto;
+        }
+
+        .gallery figure,
+        .gallery figure:first-child {
+          aspect-ratio: 4 / 3;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/experience/" aria-label="東京トータルコンサルティング 体験メニュートップへ">
+        <img src="assets/logo-2026.png" alt="Tokyo Total Consulting">
+      </a>
+      <nav class="site-nav" aria-label="ページ内ナビゲーション">
+        <a href="#start">はじめに</a>
+        <a href="#garden">庭の暮らし</a>
+        <a href="#scores">三軸評価</a>
+        <a href="#gallery">写真</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top" aria-labelledby="page-title">
+        <figure class="hero-photo" aria-hidden="true">
+          <img src="assets/kominka-rental-hare-hero.jpg" alt="">
+        </figure>
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Experience Menu / Living</p>
+            <h1 id="page-title">
+              <span>古い日本家屋を借りて、</span>
+              <span>家にハレの日をつくる</span>
+            </h1>
+            <p class="lead">家にいながら、ハレの日をつくる。古い日本家屋を借りて、庭と時間のある暮らしを体験する住まいの選択肢です。</p>
+          </div>
+          <aside class="meta-panel" aria-label="体験メニュー概要">
+            <dl>
+              <dt>Category</dt><dd>暮らし・住まい</dd>
+              <dt>Theme</dt><dd>戸建て賃貸、古民家、日本家屋</dd>
+              <dt>Point</dt><dd>家は、買わなくても体験できる</dd>
+              <dt>Axes</dt><dd>気づく 5 / 変える 5 / つなぐ 5</dd>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="start" aria-labelledby="start-title">
+        <div class="section-head">
+          <p class="section-label">Start</p>
+          <h2 id="start-title">家は、買わなくても体験できる</h2>
+        </div>
+        <div class="split">
+          <div class="prose">
+            <p>家を買うか、借りるか。</p>
+            <p>住まいの話になると、どうしてもこの二択で考えがちです。持ち家が得なのか、賃貸が得なのか。資産になるのか、ならないのか。老後はどうするのか。</p>
+            <p>もちろん、それはとても大切な問いです。住居は、教育費・老後資金と並ぶ人生の大きな支出です。特に都内では、住まい方をどう設計するかが、人生全体の自由度を左右します。</p>
+            <p>けれど、もうひとつ別の問いがあります。</p>
+            <p>それは、<strong>「自分は、どんな暮らしに反応するのか」</strong>という問いです。</p>
+            <p>庭がある暮らし。畳の部屋がある暮らし。障子越しに光が入る暮らし。古い木の建具や、年月を重ねた柱に囲まれる暮らし。友人を呼び、外で食事をし、子どもが家の中と外を行き来する暮らし。</p>
+            <p>そういう暮らしは、家を買わなければ手に入らない。そう思い込んでいる人は、少なくないかもしれません。</p>
+            <p>でも、そうとは限りません。戸建てを借りて暮らす。古い日本家屋を、所有せずに体験してみる。そんな選択肢もあります。私は実際に18年間試してみました。</p>
+          </div>
+          <aside class="story-photo">
+            <figure>
+              <img src="assets/kominka-entrance.jpg" alt="古い木建具と石敷きの玄関">
+              <figcaption>古い木建具と土間に、時間の厚みが残っている。</figcaption>
+            </figure>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="time-title">
+        <div class="section-head">
+          <p class="section-label">Time</p>
+          <h2 id="time-title">新しく建てられない時間に住む</h2>
+        </div>
+        <div class="split">
+          <div class="prose">
+            <p>新しい家は、建てることができます。</p>
+            <p>けれど、古い家は新しく建てられません。</p>
+            <p>築60年、70年と時間を重ねた日本家屋には、新築では再現できない空気があります。柱の色、建具の重さ、畳の匂い、庭の石、障子越しの光。それはデザインではなく、時間そのものです。</p>
+            <p>もちろん、古い家には不便もあります。冬は寒いかもしれない。虫も出るかもしれない。設備は最新ではないかもしれない。メンテナンスにも気を使います。</p>
+            <p>それでも、そこには便利さだけでは測れない価値があります。</p>
+            <p>家を、単なる設備や資産としてではなく、<strong>歴史と暮らしの器として味わう。</strong></p>
+            <p>古い日本家屋を借りて暮らすことは、日本の住まいの記憶に、生活者として触れる体験でもあります。</p>
+          </div>
+          <aside class="story-photo">
+            <figure>
+              <img src="assets/kominka-washitsu-garden.jpg" alt="畳と障子のある和室">
+              <figcaption>畳、障子、古い柱。新築では作れない時間に住む。</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/kominka-kamidana.jpg" alt="古い日本家屋に祀られた神棚">
+              <figcaption>神棚を祀る。古い家だからこそ、暮らしの中に節目が生まれる。</figcaption>
+            </figure>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="garden" aria-labelledby="garden-title">
+        <div class="section-head">
+          <p class="section-label">Garden</p>
+          <h2 id="garden-title">買わずに、庭のある暮らしを試す</h2>
+        </div>
+        <figure class="section-feature-photo">
+          <img src="assets/kominka-garden-view-hero.jpg" alt="縁側から見える古い日本家屋の庭">
+          <figcaption>庭が見えるだけで、家の中と外の距離が変わる。</figcaption>
+        </figure>
+        <div class="split">
+          <div class="prose">
+            <p>戸建ての魅力は、建物の広さだけではありません。</p>
+            <p>庭がある。外に出られる。火を囲める。人を呼べる。家の中と外の境目が、少しゆるくなる。</p>
+            <p>庭で友人とバーベキューをする。ベランダで日光浴をする。夏にはビニールプールを出す。夜にはテントを張って、家で小さなキャンプをする。</p>
+            <p>遠くへ行かなくても、家の中に小さな非日常をつくることができます。</p>
+            <p>これは、特に子どもが小さい時期には大きな価値になります。旅行や外食に行くのが大変な時期でも、家に余白があれば、暮らしの中に遊びをつくることができる。</p>
+            <p>ただの休日が、少し特別な日になる。いつもの家が、子どもにとっての遊び場になる。外出しなくても、家族の記憶に残る時間が生まれる。</p>
+            <p class="impact-line">家にいながら、ハレの日をつくる。</p>
+            <p>それが、庭や外空間のある住まいの力です。</p>
+          </div>
+          <aside class="story-photo">
+            <figure>
+              <img src="assets/kominka-garden-bbq.jpg" alt="庭のテーブルに料理とワインが並ぶ外ごはんの風景">
+              <figcaption>外の空気を吸いながら食べるだけで、休日の質感が変わる。</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/kominka-terrace-pool-wide.jpg" alt="広さのある庭に置いたビニールプールと遊具">
+              <figcaption>庭にプールを広げると、家の外がそのまま遊び場になる。</figcaption>
+            </figure>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="airpocket-title">
+        <div class="section-head">
+          <p class="section-label">Air Pocket</p>
+          <h2 id="airpocket-title">住まいの思考のエアポケット</h2>
+        </div>
+        <figure class="section-feature-photo">
+          <img src="assets/kominka-airpocket-tools.jpg" alt="庭先に置いた火鉢と急須">
+          <figcaption>道具を外に出すだけで、住まいの使い方が少し変わる。</figcaption>
+        </figure>
+        <div class="prose">
+          <p>多くの人は、戸建ての暮らしを所有と結びつけて考えます。</p>
+          <p>庭のある家に住みたい。広い家に住みたい。人を呼べる家に住みたい。だから、家を買う。</p>
+          <p>もちろん、それもひとつの正解です。</p>
+          <p>けれど、戸建ての暮らしそのものは、必ずしも購入しなければ得られないわけではありません。</p>
+          <p>買うには重い。でも、借りれば体験できる。</p>
+          <p>ここに、住まいの思考のエアポケットがあります。</p>
+          <p>所有権を持つことと、暮らしの効用を味わうことは、同じではありません。土地や建物を所有しなくても、庭のある暮らし、古い家の空気、人を招ける余白を体験できる場合があります。</p>
+          <p>むしろ、賃貸だからこそ試せることもあります。</p>
+          <p>買ってしまえば、修繕、税金、売却、相続、将来の流動性まで背負うことになります。けれど賃貸であれば、所有の重さを背負わずに、暮らしの体験だけを先に味わうことができます。</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="wide-life-title">
+        <div class="section-head">
+          <p class="section-label">Trade Off</p>
+          <h2 id="wide-life-title">便利さを少し手放すと、暮らしは広くなる</h2>
+        </div>
+        <figure class="section-feature-photo">
+          <img src="assets/kominka-wide-tatami-room.jpg" alt="広さのある古い日本家屋の畳の和室">
+          <figcaption>駅近や新築ではなく、広さと余白を選ぶという考え方。</figcaption>
+        </figure>
+        <div class="split">
+          <div class="prose">
+            <p>都内で住まいを探すと、駅近、新築、設備、セキュリティ、利便性に目が向きます。それらはもちろん大切です。</p>
+            <p>ただ、そのすべてを取ろうとすると、家賃も購入価格も高くなります。特にマンションでは、利便性にお金を払う感覚が強くなります。</p>
+            <p>一方で、戸建て賃貸には別の可能性があります。</p>
+            <p>駅から少し離れる。築年数を受け入れる。最新設備にこだわりすぎない。少し手間のかかる暮らしを許容する。</p>
+            <p>そうすると、同じ家賃でも、より広い空間や、庭や、部屋数や、外とのつながりを得られることがあります。</p>
+            <p><strong>便利さを少し手放すと、暮らしは広くなる。</strong></p>
+            <p>これは、住居費を下げるためだけの話ではありません。お金の使い方を、利便性から体験価値へ振り替えるという考え方です。</p>
+          </div>
+          <aside class="story-photo">
+            <figure>
+              <img src="assets/kominka-garden-veranda.jpg" alt="庭に面した縁側で過ごす休日の風景">
+              <figcaption>便利さの外側に、暮らしの余白が残っている。</figcaption>
+            </figure>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="rare-title">
+        <div class="section-head">
+          <p class="section-label">Reality</p>
+          <h2 id="rare-title">出会えたら、暮らしの見方が少し変わる</h2>
+        </div>
+        <figure class="section-feature-photo">
+          <img src="assets/kominka-encounter-evening.jpg" alt="夜の外空間に置かれた飲み物と道具">
+          <figcaption>出会いは偶然でも、暮らしを見る視点は次の選択に残っていく。</figcaption>
+        </figure>
+        <div class="prose">
+          <p>こうした物件は、今の都内では決して多くありません。</p>
+          <p>庭があり、畳の部屋があり、古い日本家屋の空気があり、人を迎えられる余白がある。そういう戸建て賃貸に出会えるかどうかは、タイミングにも大きく左右されます。</p>
+          <p>だから、この体験をそのまま簡単に再現できるとは思っていません。</p>
+          <p>ただ、こういう選択肢があると知っているだけで、住まいの探し方は変わります。</p>
+          <p>所有する前に、暮らしを試してみる。便利さだけでなく、余白や時間の質で住まいを見てみる。</p>
+          <p>その視点は、たとえ同じ物件に出会わなくても、次の選択に残っていきます。</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="notice-title">
+        <div class="section-head">
+          <p class="section-label">What Changes</p>
+          <h2 id="notice-title">この体験で気づくこと</h2>
+        </div>
+        <figure class="section-feature-photo">
+          <img src="assets/kominka-open-gate.jpg" alt="開いた木の門から見える古い日本家屋の玄関">
+          <figcaption>新しい扉を開くと、住まいの見方も少し変わる。</figcaption>
+        </figure>
+        <div class="prose">
+          <p>古い日本家屋を借りて暮らすと、家を見る目が変わります。</p>
+          <p>新しさだけが価値ではない。駅近だけが価値ではない。所有だけが価値ではない。便利さだけが暮らしの豊かさではない。</p>
+          <p>庭で過ごす時間。畳に座る感覚。障子越しの光。家に人が集まる空気。子どもが家の中で遊びを見つける姿。</p>
+          <p>そうしたものは、住宅情報の数字には出てきません。</p>
+          <p>でも、人生の記憶には残ります。</p>
+          <p>住まいは、単に寝る場所ではありません。暮らしの余白をつくる器です。そしてその器は、必ずしも買わなくても体験できます。</p>
+        </div>
+        <div class="memory-list" aria-label="この体験で残るもの">
+          <article>
+            <h3>暮らしの反応を知る</h3>
+            <p>自分や家族が、庭・畳・古い建具・外時間にどう反応するかを、所有の前に確かめられます。</p>
+          </article>
+          <article>
+            <h3>支出の意味を変える</h3>
+            <p>利便性だけではなく、記憶に残る時間へ住居費を振り向ける感覚が生まれます。</p>
+          </article>
+          <article>
+            <h3>家族の時間を増やす</h3>
+            <p>外出しなくても、家の中と外を行き来しながら、特別な休日をつくれます。</p>
+          </article>
+          <article>
+            <h3>次の人へ伝える</h3>
+            <p>日本家屋の空気や庭のある暮らしを、言葉ではなく生活の中で手渡せます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="score-section" id="scores" aria-labelledby="scores-title">
+        <div class="section-head">
+          <p class="section-label">Three Axes</p>
+          <h2 id="scores-title">この体験を、三つの視点で見てみる。</h2>
+        </div>
+        <div class="score-grid">
+          <article class="score-card">
+            <span>気づく</span>
+            <strong>★★★★★</strong>
+            <h3>住まいを、暮らしの器として見る</h3>
+            <p>戸建ての豊かさや歴史ある家の空気は、所有しなくても体験できると気づけます。住まいを資産や利便性だけでなく、暮らしの器として見る視点が生まれます。</p>
+          </article>
+          <article class="score-card">
+            <span>変える</span>
+            <strong>★★★★★</strong>
+            <h3>日常の中に、ハレの日をつくる</h3>
+            <p>庭、外時間、畳、古い建具、人を招く余白によって、休日や子育て、住居費の使い方が変わります。家そのものが、日常の中にハレの日をつくる場になります。</p>
+          </article>
+          <article class="score-card">
+            <span>つなぐ</span>
+            <strong>★★★★★</strong>
+            <h3>家族や友人へ、空気ごと手渡す</h3>
+            <p>家族、子ども、友人との記憶が生まれます。日本家屋の空気や庭のある暮らしを、言葉だけではなく、生活の中で次の人に伝えられます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="gallery" aria-labelledby="gallery-title">
+        <p class="section-label">Scenes</p>
+        <h2 id="gallery-title">庭と畳のあいだに、休日の余白がある。</h2>
+        <div class="gallery">
+          <figure>
+            <img src="assets/kominka-garden-veranda.jpg" alt="庭を眺める縁側と木の建具">
+            <figcaption>庭に面した縁側</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/kominka-gallery-entrance-7966.jpg" alt="庭と石敷きから見える古い日本家屋の玄関">
+            <figcaption>古い木建具の玄関</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/kominka-gallery-nagahibachi.jpg" alt="畳の部屋に置かれた長火鉢">
+            <figcaption>長火鉢のある畳の時間</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/kominka-gallery-balcony-tent.jpg" alt="ベランダに張ったテントで過ごす子ども">
+            <figcaption>ベランダでキャンプ</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/kominka-home-camp-night.jpg" alt="夜の外空間に置かれた椅子とテーブル">
+            <figcaption>家の中の小さなキャンプ</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="closing-title">
+        <p class="eyebrow">Closing</p>
+        <h2 id="closing-title">所有しなくても、記憶に残る家は持てるのかもしれない。</h2>
+        <p>家は、買うもの。戸建ては、所有するもの。庭のある暮らしは、特別な人だけのもの。そう思っていると、見落としてしまう選択肢があります。</p>
+        <p>古い日本家屋を借りて暮らす。所有せずに、歴史ある住まいの時間を味わう。庭やベランダで、家族や友人とのハレの日をつくる。</p>
+        <p>それは、住まいを買う前に、暮らしの価値を試す体験です。買えない暮らしも、借りれば体験できる。そして、所有しなくても、記憶に残る家は持てるのかもしれません。</p>
+        <a class="cta-link" href="/experience/">体験メニュー一覧へ戻る</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>Tokyo Total Consulting</small>
+      <small>Experience Menu / Kominka Rental Hare</small>
+    </footer>
+  
+
+</body></html>
