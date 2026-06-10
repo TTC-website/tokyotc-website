@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>日本酒図鑑 | TTC 日本酒の会</title>
+    <meta name="description" content="TTC 日本酒の会で出会った日本酒の図鑑。清澄庭園 涼亭で開いた各回に持ち寄られた一本を、写真とともに記録しています。">
+    <meta property="og:title" content="日本酒図鑑 | TTC 日本酒の会">
+    <meta property="og:description" content="会で出会った日本酒を、写真とともに記録した図鑑です。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://tokyotc.com/sake/sake-list/">
+    <link rel="canonical" href="https://tokyotc.com/sake/sake-list/">
+    <style>
+      :root {
+        --ink: #303030; --muted: #6b6b6b; --bg: #ffffff; --soft: #f6f5f2;
+        --line: #e5e7eb; --accent: #3a4a3a; --gold: #9a7b3f;
+        --sans: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+        --header-h: 64px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.9; -webkit-font-smoothing: antialiased; }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      .skip-link { position: absolute; left: -999px; top: 0; background: #fff; padding: 8px 14px; z-index: 100; }
+      .skip-link:focus { left: 8px; top: 8px; }
+
+      .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; height: var(--header-h); padding: 0 clamp(16px, 4vw, 48px); background: rgba(24, 26, 24, 0.42); backdrop-filter: blur(8px); color: #fff; }
+      .brand { font-size: clamp(15px, 2vw, 18px); font-weight: 600; letter-spacing: 0.04em; color: #fff; }
+      .site-nav { display: flex; align-items: center; gap: clamp(14px, 2.6vw, 30px); font-size: 14px; }
+      .site-nav a { color: #fff; opacity: 0.92; padding: 6px 0; border-bottom: 2px solid transparent; }
+      .site-nav a[aria-current="page"] { font-weight: 700; border-bottom-color: #fff; }
+
+      .page-hero { padding: calc(var(--header-h) + clamp(40px, 7vw, 84px)) clamp(16px, 4vw, 48px) clamp(28px, 4vw, 44px); background: var(--soft); text-align: center; }
+      .page-hero .kicker { margin: 0 0 10px; color: var(--gold); font-size: 13px; letter-spacing: 0.24em; }
+      .page-hero h1 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 48px); font-weight: 700; letter-spacing: 0.05em; }
+      .page-hero p { margin: 0 auto; max-width: 620px; color: var(--muted); }
+
+      .filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: clamp(20px, 3vw, 28px) clamp(16px, 4vw, 32px) 0; }
+      .filter-btn { padding: 8px 18px; border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all .15s ease; }
+      .filter-btn:hover { border-color: var(--accent); }
+      .filter-btn.is-active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+      .wrap { width: min(1100px, 100%); margin: 0 auto; padding: clamp(28px, 4vw, 44px) clamp(16px, 4vw, 32px) clamp(48px, 7vw, 80px); }
+      .sake-grid { display: grid; gap: clamp(14px, 2.2vw, 22px); grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+      .sake-card { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease; }
+      .sake-card:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(11,31,58,0.1); }
+      .sake-card .thumb { aspect-ratio: 4 / 5; overflow: hidden; background: #f0ede6; }
+      .sake-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+      .sake-card .body { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+      .sake-card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+      .sake-card .round-tag { color: var(--muted); font-size: 12px; font-weight: 600; }
+      .sake-card .champ-tag { color: var(--gold); font-size: 12px; font-weight: 700; }
+      .sake-card h3 { margin: 0; font-size: 15px; font-weight: 700; line-height: 1.5; }
+      .count-note { margin: 0 0 18px; color: var(--muted); font-size: 13px; text-align: center; }
+
+      .site-footer { padding: 30px clamp(16px, 4vw, 48px); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; color: var(--muted); font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <a class="brand" href="/sake/">TTC 日本酒の会</a>
+      <nav class="site-nav" aria-label="サイト内ナビゲーション">
+        <a href="/sake/">ホーム</a>
+        <a href="/sake/sake-list/" aria-current="page">日本酒図鑑</a>
+        <a href="/sake/reports/">開催レポート</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <p class="kicker">SAKE ENCYCLOPEDIA</p>
+        <h1>日本酒図鑑</h1>
+        <p>会で出会った一本を、写真とともに記録しています。気になるお酒は、その回の開催レポートからどうぞ。</p>
+      </section>
+
+      <div class="filter-bar" role="group" aria-label="開催回でしぼり込む">
+        <button class="filter-btn is-active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="3">第3回</button>
+        <button class="filter-btn" data-filter="2">第2回</button>
+        <button class="filter-btn" data-filter="1">第1回</button>
+      </div>
+
+      <div class="wrap">
+        <p class="count-note" id="count-note"></p>
+        <div class="sake-grid" id="grid">
+
+          <a class="sake-card" href="/sake/reports/2026-01-09/" data-round="3"><div class="thumb"><img src="../assets/reports/2026-01-09/shibori-1.jpg" alt="上川大雪 しぼり生" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第3回</span><span class="champ-tag">👑 最人気</span></div><h3>上川大雪 しぼり生</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2026-01-09/" data-round="3"><div class="thumb"><img src="../assets/reports/2026-01-09/neko-1.jpg" alt="ネコと和解せよ" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第3回</span></div><h3>ネコと和解せよ</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2026-01-09/" data-round="3"><div class="thumb"><img src="../assets/reports/2026-01-09/ginpu-1.jpg" alt="上川大雪 吟風" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第3回</span></div><h3>上川大雪 吟風</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2026-01-09/" data-round="3"><div class="thumb"><img src="../assets/reports/2026-01-09/toyobijin-1.jpg" alt="東陽美人 醇道一途 直汲み" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第3回</span></div><h3>東陽美人 醇道一途 直汲み</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2026-01-09/" data-round="3"><div class="thumb"><img src="../assets/reports/2026-01-09/harushika-1.jpg" alt="春鹿 しろみき" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第3回</span></div><h3>春鹿 しろみき</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2026-01-09/" data-round="3"><div class="thumb"><img src="../assets/reports/2026-01-09/hatsumago-1.jpg" alt="初孫 一徹生酛" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第3回</span></div><h3>初孫 一徹生酛</h3></div></a>
+
+          <a class="sake-card" href="/sake/reports/2025-12-17/" data-round="2"><div class="thumb"><img src="../assets/reports/2025-12-17/kawatsuru.jpg" alt="川鶴 讃岐くらうでぃ" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第2回</span><span class="champ-tag">👑 チャンピオン</span></div><h3>川鶴 讃岐くらうでぃ</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-12-17/" data-round="2"><div class="thumb"><img src="../assets/reports/2025-12-17/senkin-1.jpg" alt="仙禽 モダン オリガラミ" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第2回</span></div><h3>仙禽 モダン（オリガラミ）</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-12-17/" data-round="2"><div class="thumb"><img src="../assets/reports/2025-12-17/tenbi.jpg" alt="天美 新酒純米吟醸 にごり生" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第2回</span></div><h3>天美 新酒純米吟醸 にごり生</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-12-17/" data-round="2"><div class="thumb"><img src="../assets/reports/2025-12-17/gakki.jpg" alt="楽器正宗 alternative2025" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第2回</span></div><h3>楽器正宗 alternative2025</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-12-17/" data-round="2"><div class="thumb"><img src="../assets/reports/2025-12-17/edokaijo-1.jpg" alt="江戸開城" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第2回</span></div><h3>江戸開城</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-12-17/" data-round="2"><div class="thumb"><img src="../assets/reports/2025-12-17/shichu-1.jpg" alt="紫宙 3.0 純米大吟醸" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第2回</span></div><h3>紫宙 3.0 純米大吟醸</h3></div></a>
+
+          <a class="sake-card" href="/sake/reports/2025-10-29/" data-round="1"><div class="thumb"><img src="../assets/reports/2025-10-29/takachiyo-nama.jpg" alt="高千代 純米吟醸 生酒" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第1回</span></div><h3>高千代 純米吟醸 生酒</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-10-29/" data-round="1"><div class="thumb"><img src="../assets/reports/2025-10-29/takachiyo-akiagari.jpg" alt="高千代 純米大吟醸 AKIAGARI" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第1回</span></div><h3>高千代 純米大吟醸 AKIAGARI</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-10-29/" data-round="1"><div class="thumb"><img src="../assets/reports/2025-10-29/nito.jpg" alt="二兎" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第1回</span></div><h3>二兎（にと）</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-10-29/" data-round="1"><div class="thumb"><img src="../assets/reports/2025-10-29/nue.jpg" alt="NUE" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第1回</span></div><h3>NUE（ヌエ）</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-10-29/" data-round="1"><div class="thumb"><img src="../assets/reports/2025-10-29/kazenomori.jpg" alt="風の森" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第1回</span></div><h3>風の森</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-10-29/" data-round="1"><div class="thumb"><img src="../assets/reports/2025-10-29/hyakumoku.jpg" alt="百黙" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第1回</span></div><h3>百黙</h3></div></a>
+          <a class="sake-card" href="/sake/reports/2025-10-29/" data-round="1"><div class="thumb"><img src="../assets/reports/2025-10-29/blue7.jpg" alt="DATE SEVEN SEASON2 episode4" loading="lazy" decoding="async"></div><div class="body"><div class="tags"><span class="round-tag">第1回</span></div><h3>DATE SEVEN SEASON2 episode4</h3></div></a>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>TTC 日本酒の会 / 清澄庭園 涼亭</span>
+      <span>東京トータルコンサルティング</span>
+    </footer>
+
+    <script>
+      (function () {
+        var grid = document.getElementById('grid');
+        var cards = Array.prototype.slice.call(grid.querySelectorAll('.sake-card'));
+        var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
+        var note = document.getElementById('count-note');
+        function apply(filter) {
+          var shown = 0;
+          cards.forEach(function (c) {
+            var ok = filter === 'all' || c.getAttribute('data-round') === filter;
+            c.style.display = ok ? '' : 'none';
+            if (ok) shown++;
+          });
+          note.textContent = shown + ' 本';
+        }
+        buttons.forEach(function (b) {
+          b.addEventListener('click', function () {
+            buttons.forEach(function (x) { x.classList.remove('is-active'); });
+            b.classList.add('is-active');
+            apply(b.getAttribute('data-filter'));
+          });
+        });
+        apply('all');
+      })();
+    </script>
+  </body>
+</html>
