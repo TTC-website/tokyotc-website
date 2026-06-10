@@ -200,22 +200,45 @@
     <!-- ===== Modal root ===== -->
     <div id="modal-root"></div>
 
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
     <script>
     (function () {
       "use strict";
 
-      // ===== Store (localStorage; swappable for Firebase later) =====
-      var KEY = "sakebook.v2";
-      function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
-      function save(d) { localStorage.setItem(KEY, JSON.stringify(d)); }
-      var db = load();
-      db.event = db.event || { title: "第3回", date: "" };
-      db.sakes = db.sakes || [];          // {id, name, by, photo}
-      db.ratings = db.ratings || {};       // ratings[sakeId][user] = {sweet,aroma,body,acidity,finish,oshi,memo}
-      function persist() { save(db); }
+      // ===== Firebase Realtime DB =====
+      var firebaseConfig = {
+        apiKey: "AIzaSyBDwYAyyZ8UZyp2gLx9FY8k_ncsx33Jas0",
+        authDomain: "ttc-sake-book.firebaseapp.com",
+        databaseURL: "https://ttc-sake-book-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "ttc-sake-book",
+        storageBucket: "ttc-sake-book.firebasestorage.app",
+        messagingSenderId: "76506755109",
+        appId: "1:76506755109:web:aeb09657b817d7905b4fcc"
+      };
+      firebase.initializeApp(firebaseConfig);
+      var rtdb = firebase.database();
 
-      function uid() { return "s" + Date.now().toString(36) + Math.floor(Math.random()*1e4).toString(36); }
+      // local cache, kept in sync by realtime listeners
+      var db = { event: { title: "第3回", date: "" }, sakes: [], ratings: {} };
+      var booted = false;
+      function uid() { return "s" + Date.now().toString(36) + Math.floor(Math.random() * 1e4).toString(36); }
+      function ukey(name) { return String(name).replace(/[.#$/\[\]]/g, "_"); }
       var user = localStorage.getItem("sakebook.user") || "";
+
+      rtdb.ref("event").on("value", function (s) {
+        db.event = s.val() || { title: "第3回", date: "" };
+        var el = document.getElementById("event-label"); if (el) el.textContent = db.event.title;
+      });
+      rtdb.ref("sakes").on("value", function (s) {
+        var v = s.val() || {}; db.sakes = Object.keys(v).map(function (k) { return v[k]; });
+        if (booted) { renderList(); refreshResultIfOpen(); }
+      });
+      rtdb.ref("ratings").on("value", function (s) {
+        db.ratings = s.val() || {};
+        if (booted) { renderList(); refreshResultIfOpen(); }
+      });
+      function refreshResultIfOpen() { var rv = document.getElementById("view-result"); if (rv && !rv.classList.contains("hidden")) renderResult(); }
 
       var AXES = [
         { k: "sweet", label: "甘辛", note: "高いほど辛口" },
@@ -234,6 +257,7 @@
         $("#app").classList.remove("hidden");
         $("#event-label").textContent = db.event.title;
         $("#me-btn").textContent = "✎ " + user;
+        booted = true;
         renderList();
       }
       $("#enter-btn").addEventListener("click", function () {
@@ -303,7 +327,7 @@
         if (!db.sakes.length) { el.innerHTML = '<p class="empty-note">まだ登録がありません。<br>持ち寄った一本を撮って登録しましょう。</p>'; return; }
         el.innerHTML = db.sakes.map(function (s) {
           var ag = avgAxes(s.id);
-          var mine = (db.ratings[s.id] || {})[user];
+          var mine = (db.ratings[s.id] || {})[ukey(user)];
           var photo = s.photo ? '<div class="photo"><img src="'+s.photo+'" alt=""></div>' : '<div class="photo empty">写真<br>なし</div>';
           return '<article class="sake">'+photo+
             '<div class="meta"><p class="name">'+esc(s.name)+'</p>'+
@@ -315,7 +339,7 @@
             '</div></div></article>';
         }).join("");
         el.querySelectorAll("[data-rate]").forEach(function(b){ b.onclick=function(){ openRate(b.getAttribute("data-rate")); }; });
-        el.querySelectorAll("[data-del]").forEach(function(b){ b.onclick=function(){ if(confirm("この銘柄を削除しますか？")){ db.sakes=db.sakes.filter(function(x){return x.id!==b.getAttribute("data-del");}); delete db.ratings[b.getAttribute("data-del")]; persist(); renderList(); } }; });
+        el.querySelectorAll("[data-del]").forEach(function(b){ b.onclick=function(){ if(confirm("この銘柄を削除しますか？")){ var did=b.getAttribute("data-del"); rtdb.ref("sakes/"+did).remove(); rtdb.ref("ratings/"+did).remove(); } }; });
         el.querySelectorAll("[data-edit]").forEach(function(b){ b.onclick=function(){ openAddEdit(b.getAttribute("data-edit")); }; });
       }
 
@@ -361,16 +385,16 @@
           var name = $("#f-name", modal).value.trim();
           if (!name) { $("#f-name", modal).focus(); return; }
           var by = $("#f-by", modal).value.trim() || user;
-          if (editing) { editing.name=name; editing.by=by; if(photoData) editing.photo=photoData; }
-          else { db.sakes.push({ id: uid(), name: name, by: by, photo: photoData, regby: user }); }
-          persist(); closeModal(); renderList();
+          if (editing) { var up = { name: name, by: by }; if (photoData) up.photo = photoData; rtdb.ref("sakes/" + editing.id).update(up); }
+          else { var nid = uid(); rtdb.ref("sakes/" + nid).set({ id: nid, name: name, by: by, photo: photoData || "", regby: user }); }
+          closeModal();
         };
       }
 
       // ===== Rate =====
       function openRate(sakeId) {
         var s = db.sakes.filter(function(x){return x.id===sakeId;})[0]; if(!s) return;
-        var mine = (db.ratings[sakeId]||{})[user] || { sweet:3, aroma:3, body:3, acidity:3, finish:3, oshi:70, memo:"" };
+        var mine = (db.ratings[sakeId]||{})[ukey(user)] || { sweet:3, aroma:3, body:3, acidity:3, finish:3, oshi:70, memo:"" };
         var sliders = AXES.map(function(a){
           return '<div class="slider-row"><div class="head"><span class="label">'+a.label+(a.note?' <span class="note">'+a.note+'</span>':'')+'</span><span class="val" id="v-'+a.k+'">'+mine[a.k].toFixed(1)+'</span></div>'+
             '<input type="range" min="1" max="5" step="0.5" value="'+mine[a.k]+'" data-axis="'+a.k+'"></div>';
@@ -395,9 +419,9 @@
           var rec = { memo: $("#memo",modal).value.trim() };
           modal.querySelectorAll('input[data-axis]').forEach(function(r){ rec[r.getAttribute("data-axis")]=parseFloat(r.value); });
           rec.oshi = parseInt($("#oshi-range",modal).value,10);
-          db.ratings[sakeId] = db.ratings[sakeId] || {}; db.ratings[sakeId][user]=rec; persist(); closeModal(); renderList();
+          rec.user = user; rtdb.ref("ratings/" + sakeId + "/" + ukey(user)).set(rec); closeModal();
         };
-        $("#del-rate",modal).onclick=function(){ if(db.ratings[sakeId]) delete db.ratings[sakeId][user]; persist(); closeModal(); renderList(); };
+        $("#del-rate",modal).onclick=function(){ rtdb.ref("ratings/" + sakeId + "/" + ukey(user)).remove(); closeModal(); };
       }
 
       function closeModal() { modalRoot.innerHTML = ""; }
@@ -444,12 +468,10 @@
         var title = prompt("新しい会の名前（例：第4回）", "");
         if (!title || !title.trim()) return;
         var date = prompt("日付（例：2026-03-01 ／ 空欄可）", "") || "";
-        db.archives = db.archives || [];
-        db.archives.push({ event: db.event, sakes: db.sakes, ratings: db.ratings });
-        db.event = { title: title.trim(), date: date.trim() };
-        db.sakes = []; db.ratings = {}; persist();
-        $("#event-label").textContent = db.event.title;
-        renderList(); renderResult(); toast("新しい会を始めました（前回はアーカイブ保存）");
+        rtdb.ref("archives").push({ event: db.event, sakes: db.sakes, ratings: db.ratings, at: Date.now() });
+        rtdb.ref("sakes").remove(); rtdb.ref("ratings").remove();
+        rtdb.ref("event").set({ title: title.trim(), date: date.trim() });
+        toast("新しい会を始めました（前回はアーカイブ保存）");
       }
 
       function openExport() {
@@ -465,7 +487,7 @@
           md += "- 推し度：" + (ag.count ? ag.oshi.toFixed(1) : "—") + "（" + ag.count + "人）\n";
           md += "- 甘辛 " + f(ag.sweet) + " ／ 香り " + f(ag.aroma) + " ／ 濃淡 " + f(ag.body) + " ／ 酸味 " + f(ag.acidity) + " ／ 余韻 " + f(ag.finish) + "\n";
           var rs = db.ratings[x.s.id] || {};
-          var memos = Object.keys(rs).map(function (u) { return rs[u].memo ? "「" + rs[u].memo + "」（" + u + "）" : ""; }).filter(Boolean);
+          var memos = Object.keys(rs).map(function (u) { return rs[u].memo ? "「" + rs[u].memo + "」（" + (rs[u].user || u) + "）" : ""; }).filter(Boolean);
           if (memos.length) md += "- メモ：" + memos.join(" ／ ") + "\n";
           md += "\n";
         });
