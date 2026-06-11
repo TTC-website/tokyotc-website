@@ -60,6 +60,13 @@
       .bottle-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 10px; }
       .bottle-award { display: inline-block; align-self: flex-start; padding: 3px 10px; background: #fbf7ec; color: var(--gold); border: 1px solid #e4d3a3; border-radius: 999px; font-size: 12px; font-weight: 700; }
       .bottle-name { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.5; }
+      .score-bars { display: grid; gap: 7px; }
+      .score-row { display: grid; grid-template-columns: 3.4em 1fr 2.2em; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+      .score-track { height: 6px; background: #ece9e2; border-radius: 3px; overflow: hidden; }
+      .score-fill { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+      .bottle-card.is-champion .score-fill { background: var(--gold); }
+      .score-val { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+      .axis-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; }
 
       .back-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
       .btn { display: inline-block; padding: 12px 24px; border: 1px solid var(--accent); color: var(--accent); font-weight: 600; font-size: 15px; border-radius: 999px; }
@@ -96,28 +103,51 @@
           <h2 id="result-title">その日の主役</h2>
           <p class="lead">全員で飲み比べ、感じたことを言葉にしました。順位は価格ではなく、「誰かに飲んでほしいか」で決まります。</p>
           <div class="champion-banner">
-            <p class="award">👑 チャンピオン（平均 86.8 点／総合人気・平均点・常温部門 1位）</p>
-            <p class="name">川鶴 讃岐くらうでぃ</p>
-            <p class="note">飲み始めは白ワインのような飲み口で、余韻は日本酒を思わせる——という二層の味わいが話題になりました。</p>
+            <p class="award">👑 チャンピオン（平均 86.8 点／総合人気・平均点 1位）</p>
+            <p class="name">天美 新酒純米吟醸 にごり生</p>
           </div>
         </div>
       </section>
 
       <section class="section alt" aria-labelledby="lineup-title">
         <div class="wrap">
-          <p class="section-label">LINEUP</p>
+          <p class="section-label">LINEUP &amp; TASTING</p>
           <h2 id="lineup-title">持ち寄った、六本</h2>
-          <p class="lead">それぞれの推しを一本ずつ。写真は横にスワイプできます。</p>
+          <p class="lead">それぞれの推しを、甘辛度・香り・濃淡・酸味・余韻の五軸で。写真は横にスワイプできます。</p>
           <div class="bottle-grid">
 
             <article class="bottle-card is-champion">
+              <div class="bottle-photos">
+                <img src="../../assets/reports/2025-12-17/tenbi.jpg" alt="天美 にごり生のボトル" loading="lazy" decoding="async">
+                <img src="../../assets/reports/2025-12-17/tenbi-2.jpg" alt="天美 にごり生の裏ラベル" loading="lazy" decoding="async">
+              </div>
+              <div class="bottle-body">
+                <span class="bottle-award">👑 最も人気 / 86.8点</span>
+                <h3 class="bottle-name">天美 新酒純米吟醸 にごり生</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:56%"></span></span><span class="score-val">2.8</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:56%"></span></span><span class="score-val">2.8</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:60%"></span></span><span class="score-val">3.0</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:46%"></span></span><span class="score-val">2.3</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:66%"></span></span><span class="score-val">3.3</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bottle-card">
               <div class="bottle-photos">
                 <img src="../../assets/reports/2025-12-17/kawatsuru.jpg" alt="川鶴 讃岐くらうでぃのボトル" loading="lazy" decoding="async">
                 <img src="../../assets/reports/2025-12-17/kawatsuru-2.jpg" alt="川鶴 讃岐くらうでぃの裏ラベル" loading="lazy" decoding="async">
               </div>
               <div class="bottle-body">
-                <span class="bottle-award">👑 チャンピオン / 86.8点</span>
                 <h3 class="bottle-name">川鶴 讃岐くらうでぃ</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:30%"></span></span><span class="score-val">1.5</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:90%"></span></span><span class="score-val">4.5</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:70%"></span></span><span class="score-val">3.5</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:56%"></span></span><span class="score-val">2.8</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:80%"></span></span><span class="score-val">4.0</span></div>
+                </div>
               </div>
             </article>
 
@@ -128,16 +158,13 @@
               </div>
               <div class="bottle-body">
                 <h3 class="bottle-name">仙禽 モダン（オリガラミ）</h3>
-              </div>
-            </article>
-
-            <article class="bottle-card">
-              <div class="bottle-photos">
-                <img src="../../assets/reports/2025-12-17/tenbi.jpg" alt="天美 にごり生のボトル" loading="lazy" decoding="async">
-                <img src="../../assets/reports/2025-12-17/tenbi-2.jpg" alt="天美 にごり生の裏ラベル" loading="lazy" decoding="async">
-              </div>
-              <div class="bottle-body">
-                <h3 class="bottle-name">天美 新酒純米吟醸 にごり生</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:76%"></span></span><span class="score-val">3.8</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:44%"></span></span><span class="score-val">2.2</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:44%"></span></span><span class="score-val">2.2</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:64%"></span></span><span class="score-val">3.2</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:48%"></span></span><span class="score-val">2.4</span></div>
+                </div>
               </div>
             </article>
 
@@ -147,7 +174,15 @@
                 <img src="../../assets/reports/2025-12-17/gakki-2.jpg" alt="楽器正宗 alternative2025の裏ラベル" loading="lazy" decoding="async">
               </div>
               <div class="bottle-body">
+                <span class="bottle-award">💬 いちばん語られた</span>
                 <h3 class="bottle-name">楽器正宗 alternative2025</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:40%"></span></span><span class="score-val">2.0</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:72%"></span></span><span class="score-val">3.6</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:52%"></span></span><span class="score-val">2.6</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:44%"></span></span><span class="score-val">2.2</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:56%"></span></span><span class="score-val">2.8</span></div>
+                </div>
               </div>
             </article>
 
@@ -157,7 +192,15 @@
                 <img src="../../assets/reports/2025-12-17/edokaijo-2.jpg" alt="江戸開城の裏ラベル" loading="lazy" decoding="async">
               </div>
               <div class="bottle-body">
+                <span class="bottle-award">🍶 常温がうまい</span>
                 <h3 class="bottle-name">江戸開城</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:72%"></span></span><span class="score-val">3.6</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:44%"></span></span><span class="score-val">2.2</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:44%"></span></span><span class="score-val">2.2</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:64%"></span></span><span class="score-val">3.2</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:48%"></span></span><span class="score-val">2.4</span></div>
+                </div>
               </div>
             </article>
 
@@ -168,10 +211,18 @@
               </div>
               <div class="bottle-body">
                 <h3 class="bottle-name">紫宙 3.0 純米大吟醸</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:44%"></span></span><span class="score-val">2.2</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:44%"></span></span><span class="score-val">2.2</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:44%"></span></span><span class="score-val">2.2</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:64%"></span></span><span class="score-val">3.2</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:48%"></span></span><span class="score-val">2.4</span></div>
+                </div>
               </div>
             </article>
 
           </div>
+          <p class="axis-note">※ 甘辛度は数値が高いほど辛口寄り。各軸は参加者の採点（5点満点）の平均です。</p>
         </div>
       </section>
 
