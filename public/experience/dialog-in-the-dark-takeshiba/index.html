@@ -331,6 +331,31 @@
         margin-top: 1.35em;
       }
 
+      .story-photo {
+        margin: clamp(32px, 5vw, 58px) 0 0;
+        overflow: hidden;
+        border: 1px solid rgba(173, 146, 86, 0.24);
+        background:
+          linear-gradient(180deg, rgba(255, 244, 213, 0.04), transparent),
+          rgba(255, 255, 255, 0.025);
+      }
+
+      .story-photo img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .story-photo figcaption {
+        margin: 0;
+        padding: 14px 18px 16px;
+        border-left: 1px solid var(--gold);
+        color: var(--muted);
+        font-family: var(--serif);
+        font-size: clamp(13px, 1.15vw, 16px);
+        line-height: 1.85;
+      }
+
       .link-inline {
         border-bottom: 1px solid rgba(173, 146, 86, 0.74);
         color: #fff7df;
@@ -1161,6 +1186,10 @@
           <p>だから、いつか社員にも体験してほしいと思っていた。そして2021年の望年会で、社員全員と竹芝の「対話の森」を訪れた。</p>
           <p>楽しんでもらいたいという気持ちは、もちろんあった。しかし、経営者として別の期待もあった。暗闇の中では、見た目も肩書きも消える。社長も部下もない。先輩も後輩もない。</p>
           <p>一度フラットな状態になれば、普段とは違うコミュニケーションが生まれるのではないか。会社に戻ってからも役に立つ、大切な何かが見つかるのではないか。そんな直感があった。</p>
+          <figure class="story-photo">
+            <img src="assets/takeshiba-sign.jpg" alt="Dialog in the Darkの黒い看板がある竹芝の入口" loading="lazy" decoding="async">
+            <figcaption>東京・竹芝、ダイアログ・ダイバーシティミュージアム「対話の森」。この「Dialog in the Dark」の文字の先へ、社員全員で二度目の暗闇に入った。</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -1428,6 +1457,10 @@
           <p>チームとは、最も速い人の速度で進む集団ではない。仲間を置いていかない集団なのだ。</p>
           <p>チームとは、全員が同じ音を鳴らす集団ではない。それぞれが異なる音を持ちながら、一つの曲を作れる集団なのだ。</p>
           <div class="quote">目に見えないものは、存在しないわけではない。<br>暗闇の中にも、色はある。</div>
+          <figure class="story-photo">
+            <img src="assets/takeshiba-dialogue-forest.jpg" alt="対話の森の館内にカラフルな照明とスクリーンがある風景" loading="lazy" decoding="async">
+            <figcaption>暗闇を抜けて戻ってきた「対話の森」。さっきまでの闇が嘘のように、空間には色があふれていた。</figcaption>
+          </figure>
         </div>
       </section>
 
