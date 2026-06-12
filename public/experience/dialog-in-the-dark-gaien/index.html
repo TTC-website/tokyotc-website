@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dialog in the Dark 外苑前編｜見えていなかったのは世界ではない。｜体験メニュー100</title>
+    <title>Dialog in the Dark 外苑前編｜見えていなかったのは世界ではない。｜体験メニュー</title>
     <meta name="description" content="完全な暗闇の中で、恐怖、信頼、五感、人の価値を身体で学んだ約90分。Dialog in the Dark外苑前会場での体験記。">
     <meta property="og:title" content="Dialog in the Dark 外苑前編｜見えていなかったのは世界ではない。">
     <meta property="og:description" content="完全な暗闇の中で、恐怖、信頼、五感、人の価値を身体で学んだ約90分。Dialog in the Dark外苑前会場での体験記。">
@@ -56,17 +56,17 @@
         {
           "@type": "Question",
           "name": "Dialog in the Dark（ダイアログ・イン・ザ・ダーク）とは何ですか？",
-          "acceptedAnswer": { "@type": "Answer", "text": "完全な暗闇の中を、視覚に頼らず少人数のグループで進む体験型エンターテインメントです。視覚障害のあるアテンドの案内で、約90分かけて暗闇の世界を旅し、五感と人との対話を取り戻します。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "完全な暗闇の中で、視覚障害のあるアテンドに導かれながら、声を掛け合い、見ること以外の感覚を使って進む体験型プログラムです。公式コンセプトでは、暗闇の中では性別、年齢、容姿、障害、肩書きなどの意味が薄れ、誰もが対等になれる場とされています。このページでは、その場で感じた恐怖、信頼、五感の変化を個人の体験記として記録しています。" }
         },
         {
           "@type": "Question",
           "name": "所要時間はどのくらいですか？",
-          "acceptedAnswer": { "@type": "Answer", "text": "約90分です。短い時間ですが、体感としては半日に相当するほど濃密だと感じる人が多い体験です。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "このページで体験した当時は約90分でした。短い時間ですが、体感としては半日に相当するほど濃密に感じた体験です。現在の所要時間や開催内容は、公式サイトでご確認をお願いします。" }
         },
         {
           "@type": "Question",
           "name": "外苑前の会場は、いまもありますか？",
-          "acceptedAnswer": { "@type": "Answer", "text": "このページは2013年の外苑前会場での体験記です。現在、Dialog in the Dark は東京・竹芝の常設会場「対話の森」で体験できます。最新の開催情報は公式サイトでご確認ください。" }
+          "acceptedAnswer": { "@type": "Answer", "text": "このページは2013年の外苑前会場での体験記です。現在は、東京・竹芝の常設会場「対話の森」に加え、東京・高輪のニュウマン高輪 MIMURE 2Fにある「Dialog in the Dark 5-1=∞ Lab.」でもチケットが案内されています。最新の開催情報は公式サイトでご確認をお願いします。" }
         }
       ]
     }
@@ -309,7 +309,7 @@
 
       .threshold-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.42fr);
+        grid-template-columns: minmax(0, 1fr);
         gap: 1px;
         border: 1px solid rgba(173, 146, 86, 0.22);
         background: rgba(173, 146, 86, 0.22);
@@ -325,15 +325,13 @@
       .threshold-photo img {
         display: block;
         width: 100%;
+        max-width: none;
         height: 100%;
         min-height: clamp(360px, 52vw, 620px);
         object-fit: cover;
         filter: saturate(0.78) contrast(1.08) brightness(0.72);
-      }
-
-      .threshold-photo.is-detail img {
-        min-height: clamp(240px, 34vw, 420px);
-        filter: saturate(0.42) contrast(1.15) brightness(0.58);
+        transform: scale(1.1);
+        transform-origin: center;
       }
 
       .threshold-photo figcaption {
@@ -347,6 +345,40 @@
         letter-spacing: 0.06em;
         line-height: 1.6;
         text-shadow: 0 2px 16px rgba(0, 0, 0, 0.82);
+      }
+
+      .afterglow {
+        width: min(860px, calc(100% - 44px));
+      }
+
+      .afterglow-photo {
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid rgba(173, 146, 86, 0.22);
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .afterglow-photo img {
+        display: block;
+        width: 100%;
+        max-width: none;
+        filter: saturate(0.42) contrast(1.14) brightness(0.6);
+        transform: scale(1.18);
+        transform-origin: center;
+      }
+
+      .afterglow-photo figcaption {
+        position: absolute;
+        right: 18px;
+        bottom: 16px;
+        left: 18px;
+        color: rgba(255, 247, 229, 0.82);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        line-height: 1.7;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.86);
       }
 
       .prose {
@@ -703,6 +735,7 @@
 
         .section,
         .threshold,
+        .afterglow,
         .chapters,
         .cta {
           width: calc(100% - 36px);
@@ -747,8 +780,7 @@
           padding-left: 22px;
         }
 
-        .threshold-photo img,
-        .threshold-photo.is-detail img {
+        .threshold-photo img {
           min-height: 280px;
         }
       }
@@ -785,7 +817,7 @@
   <body>
     <header class="site-header">
       <a class="brand" href="/experience/" aria-label="東京トータルコンサルティング 体験メニュートップへ">
-        <img src="/experience/assets/logo-2026.png" alt="Tokyo Total Consulting">
+        <img src="../assets/logo-2026.png" alt="Tokyo Total Consulting">
       </a>
       <nav class="site-nav" aria-label="ページ内ナビゲーション">
         <a href="#darkness">暗闇</a>
@@ -803,7 +835,7 @@
             <p>人生で初めて、<br>本当の暗闇を知った。</p>
           </div>
           <div class="hero-title reveal">
-            <p class="eyebrow">Experience Menu 100 / Hall of Fame</p>
+            <p class="eyebrow">Experience Menu / Hall of Fame</p>
             <h1 id="page-title">Dialog in the Dark</h1>
             <p class="hero-copy">見えていなかったのは、世界ではない。<br>人の価値と信頼を、暗闇の中で学んだ約90分。</p>
             <ul class="meta-strip" aria-label="体験概要">
@@ -833,10 +865,6 @@
           <figure class="threshold-photo">
             <img src="assets/dialog-dark-gaien-entrance.jpg" alt="竹と黒い看板が置かれたDialog in the Dark外苑前会場の入口">
             <figcaption>外苑前会場の入口。ここから先で、見える世界を一度手放した。</figcaption>
-          </figure>
-          <figure class="threshold-photo is-detail">
-            <img src="assets/dialog-dark-gaien-sign.jpg" alt="Dialog in the Darkと白い文字で書かれた黒い看板">
-            <figcaption>暗闇へ入る前、まだ文字を読むことができた最後の場所。</figcaption>
           </figure>
         </div>
       </section>
@@ -1006,6 +1034,14 @@
         </article>
       </div>
 
+      <section class="section afterglow" aria-labelledby="afterglow-title">
+        <p class="section-label" id="afterglow-title">Afterglow</p>
+        <figure class="afterglow-photo">
+          <img src="assets/dialog-dark-gaien-sign.jpg" alt="Dialog in the Darkと白い文字で書かれた黒い看板">
+          <figcaption>暗闇から戻ってきたあと、もう一度見えた文字。見えているのに、入る前とは違って感じられた。</figcaption>
+        </figure>
+      </section>
+
       <section class="section intro" aria-labelledby="reflection-title">
         <p class="section-label">Final Reflection</p>
         <div class="prose">
@@ -1020,7 +1056,7 @@
 
       <section class="section ratings" id="ratings" aria-labelledby="ratings-title">
         <p class="section-label">Experience Score</p>
-        <h2 id="ratings-title" style="margin: 0; color: #fff8e6; font-size: clamp(32px, 4.8vw, 62px); font-weight: 500; line-height: 1.3;">体験メニュー100 評価</h2>
+        <h2 id="ratings-title" style="margin: 0; color: #fff8e6; font-size: clamp(32px, 4.8vw, 62px); font-weight: 500; line-height: 1.3;">体験メニュー 評価</h2>
         <div class="rating-grid" aria-label="三軸評価">
           <article class="rating-card">
             <span>気づく</span>
@@ -1080,15 +1116,15 @@
         <div class="faq">
           <div class="faq-item">
             <h3>Dialog in the Dark（ダイアログ・イン・ザ・ダーク）とは何ですか？</h3>
-            <p>完全な暗闇の中を、視覚に頼らず少人数のグループで進む体験型エンターテインメントです。視覚障害のあるアテンドの案内で、約90分かけて暗闇の世界を旅し、五感と人との対話を取り戻します。</p>
+            <p>完全な暗闇の中で、視覚障害のあるアテンドに導かれながら、声を掛け合い、見ること以外の感覚を使って進む体験型プログラムです。公式コンセプトでは、暗闇の中では性別、年齢、容姿、障害、肩書きなどの意味が薄れ、誰もが対等になれる場とされています。このページでは、その場で感じた恐怖、信頼、五感の変化を個人の体験記として記録しています。</p>
           </div>
           <div class="faq-item">
             <h3>所要時間はどのくらいですか？</h3>
-            <p>約90分です。短い時間ですが、体感としては半日に相当するほど濃密だと感じる人が多い体験です。</p>
+            <p>このページで体験した当時は約90分でした。短い時間ですが、体感としては半日に相当するほど濃密に感じた体験です。現在の所要時間や開催内容は、公式サイトでご確認をお願いします。</p>
           </div>
           <div class="faq-item">
             <h3>外苑前の会場は、いまもありますか？</h3>
-            <p>このページは2013年の外苑前会場での体験記です。現在、Dialog in the Dark は東京・竹芝の常設会場「対話の森」で体験できます。最新の開催情報は公式サイトでご確認ください。</p>
+            <p>このページは2013年の外苑前会場での体験記です。現在は、東京・竹芝の常設会場「対話の森」に加え、東京・高輪のニュウマン高輪 MIMURE 2Fにある「Dialog in the Dark 5-1=∞ Lab.」でもチケットが案内されています。最新の開催情報は公式サイトでご確認をお願いします。</p>
           </div>
         </div>
       </section>
