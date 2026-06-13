@@ -818,14 +818,21 @@
       .experience-card figure {
         min-height: 100%;
         margin: 0;
+        overflow: hidden;
       }
 
       .experience-card img {
+        display: block;
         width: 100%;
         height: 100%;
         min-height: 320px;
         object-fit: cover;
         filter: sepia(0.08) saturate(0.84) contrast(1.04) brightness(0.86);
+      }
+
+      .experience-card img[src*="dialog-dark-gaien-entrance.jpg"] {
+        transform: scale(1.12);
+        transform-origin: center;
       }
 
       .experience-card-body {
