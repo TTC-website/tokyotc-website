@@ -111,7 +111,10 @@
 
       /* News list */
       .news-list { list-style: none; margin: 0; padding: 0; }
-      .news-list li { display: flex; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+      .news-list li { border-bottom: 1px solid var(--line); }
+      .news-list a.news-link { display: flex; gap: 18px; padding: 16px 0; color: inherit; transition: background .15s; }
+      .news-list a.news-link:hover { background: rgba(58,74,58,0.05); }
+      .news-list a.news-link:hover .news-body h3 { color: var(--accent); }
       .news-list time { flex: 0 0 auto; color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
       .news-list .news-body h3 { margin: 0 0 4px; font-size: 16px; }
       .news-list .news-body p { margin: 0; color: var(--muted); font-size: 14px; }
@@ -203,16 +206,28 @@
           <p>次回開催のお知らせは、準備が整いしだい掲載します。これまでの開催の様子は、開催レポートからご覧いただけます。</p>
           <ul class="news-list">
             <li>
-              <time datetime="2025-10-29">2025.10.29</time>
-              <div class="news-body"><h3>第1回</h3><p>清澄庭園 涼亭にて初開催。推しを持ち寄る会が、ここから始まりました。</p></div>
+              <a class="news-link" href="/sake/reports/2025-10-29/">
+                <time datetime="2025-10-29">2025.10.29</time>
+                <div class="news-body"><h3>第1回</h3><p>清澄庭園 涼亭にて初開催。推しを持ち寄る会が、ここから始まりました。</p></div>
+              </a>
             </li>
             <li>
-              <time datetime="2025-12-17">2025.12.17</time>
-              <div class="news-body"><h3>第2回</h3><p>チャンピオンは川鶴 讃岐くらうでぃ。白ワインのような飲み口が話題に。</p></div>
+              <a class="news-link" href="/sake/reports/2025-12-17/">
+                <time datetime="2025-12-17">2025.12.17</time>
+                <div class="news-body"><h3>第2回</h3><p>チャンピオンは天美 新酒純米吟醸 にごり生。総合人気・平均点で1位でした。</p></div>
+              </a>
             </li>
             <li>
-              <time datetime="2026-01-09">2026.01.09</time>
-              <div class="news-body"><h3>第3回</h3><p>最も人気を集めたのは上川大雪 しぼり生。六本を五つの軸で採点しました。</p></div>
+              <a class="news-link" href="/sake/reports/2026-01-09/">
+                <time datetime="2026-01-09">2026.01.09</time>
+                <div class="news-body"><h3>第3回</h3><p>最も人気を集めたのは上川大雪 しぼり生。六本を五つの軸で採点しました。</p></div>
+              </a>
+            </li>
+            <li>
+              <a class="news-link" href="/sake/reports/2026-02-18/">
+                <time datetime="2026-02-18">2026.02.18</time>
+                <div class="news-body"><h3>第4回</h3><p>最も人気を集めたのは天賦。五本を五つの軸で採点しました。</p></div>
+              </a>
             </li>
           </ul>
         </div>
