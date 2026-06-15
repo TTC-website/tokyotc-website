@@ -719,8 +719,9 @@
         }
 
         .hero-photo {
-          inset: 0;
+          inset: 0 0 auto;
           width: 100%;
+          height: 52%;
           opacity: 0.68;
         }
 
@@ -857,11 +858,34 @@
         }
 
         .cta {
-          display: block;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cta > div {
+          order: 1;
+          position: relative;
+          z-index: 1;
+          margin-top: 36px;
+        }
+
+        .cta h2 {
+          margin-top: 0;
+          padding-top: 8px;
         }
 
         .cta-photo {
-          margin-top: 28px;
+          order: 2;
+          position: relative;
+          z-index: 0;
+          margin-top: 42px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .site-nav {
+          display: none;
         }
       }
 
@@ -870,32 +894,45 @@
           width: 144px;
         }
 
-        .site-nav a:nth-child(2),
-        .site-nav a:nth-child(3) {
-          display: none;
-        }
-
         .hero h1 {
           width: 100%;
-          max-width: calc(100vw - 36px);
-          font-size: clamp(30px, 10vw, 39px);
+          max-width: 100%;
+          font-size: clamp(31px, 8.8vw, 36px);
           line-break: anywhere;
-          word-break: break-all;
+          word-break: normal;
         }
 
         .hero-inner > div,
         .lead {
           width: 100%;
-          max-width: calc(100vw - 36px);
+          max-width: 100%;
         }
 
         .section,
         .recipe-band,
         .cta {
-          width: 354px;
-          max-width: calc(100% - 36px);
-          margin-right: 18px;
-          margin-left: 18px;
+          width: min(100% - 36px, 560px);
+          max-width: none;
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .cta {
+          margin-top: 56px;
+          padding-top: 64px;
+        }
+
+        .recipe-band {
+          padding-right: 18px;
+          padding-left: 18px;
+        }
+
+        #recipe-title {
+          font-size: clamp(24px, 6.25vw, 27px);
+        }
+
+        #recipe-title span {
+          white-space: nowrap;
         }
 
         .section > *,
@@ -929,7 +966,7 @@
         .section h2,
         .recipe-band h2,
         .scenes-section h2 {
-          font-size: clamp(27px, 7.6vw, 34px);
+          font-size: clamp(26px, 7.1vw, 31px);
         }
 
         .section h3,
@@ -954,7 +991,7 @@
         .recipe-band h2,
         .scenes-section h2 {
           line-break: anywhere;
-          word-break: break-all;
+          word-break: normal;
         }
 
         .lead,
@@ -1099,7 +1136,7 @@
       <section class="section story-grid" aria-labelledby="story-title">
         <div>
           <p class="section-label">Story</p>
-          <h2 id="story-title">我が家が、春と秋に必ずやること。</h2>
+          <h2 id="story-title">我が家が、<br class="mobile-break"><wbr>春と秋に必ずやること。</h2>
           <div class="prose">
             <p>家から車で何時間も走る必要はありません。飛行機に乗る必要もありません。高級ホテルを予約する必要もありません。</p>
             <p>我が家が毎年春と秋に必ずやることがあります。近所の公園へピクニックに行くことです。場所は猿江恩賜公園。頑張れば家から歩いて行けるくらいの距離にあります。</p>
@@ -1125,7 +1162,7 @@
       <section class="section archive-layout" id="archive" aria-labelledby="archive-title">
         <div>
           <p class="section-label">Family Archive</p>
-          <h2 id="archive-title">同じ場所に通うと、変化が見える。</h2>
+          <h2 id="archive-title">同じ場所に通うと、<br class="mobile-break"><wbr>変化が見える。</h2>
           <div class="prose">
             <p>実際に我が家では、このピクニック専用の写真フォルダを作っています。</p>
             <p>春。秋。また春。また秋。同じ場所で撮った写真が少しずつ増えていく。気づけば何十枚もの記録になっています。</p>
@@ -1142,7 +1179,7 @@
       </section>
 
       <section class="recipe-band" aria-labelledby="recipe-title">
-        <h2 id="recipe-title"><span>高級体験の<br class="mobile-break"><wbr>代替案ではなく、</span><span>生活の中から拾える種。</span></h2>
+        <h2 id="recipe-title"><span>高級体験の代替案ではなく、</span><span>生活の中から拾える種。</span></h2>
         <p>特別な施設へ行く日もいい。でも、この体験はその代わりではありません。天気がいい、少し時間ができた、じゃあ行こうか。その軽さの中に、体験資産の入口がある。</p>
       </section>
 
@@ -1203,7 +1240,7 @@
       <section class="section edit-layout" aria-labelledby="glass-title">
         <div>
           <p class="section-label">Edit 02</p>
-          <h2 id="glass-title">紙コップを、ガラスのグラスに変える。</h2>
+          <h2 id="glass-title">紙コップを、<br class="mobile-break"><wbr>ガラスのグラスに変える。</h2>
           <div class="prose">
             <p>紙コップでも、プラカップでも、飲み物は飲めます。</p>
             <p>割れないものには、割れないものの良さがあります。</p>
@@ -1224,7 +1261,7 @@
       <section class="section edit-layout" aria-labelledby="temaki-title">
         <div>
           <p class="section-label">Edit 03</p>
-          <h2 id="temaki-title">手巻き寿司を、木陰へ持ち出す。</h2>
+          <h2 id="temaki-title">手巻き寿司を、<br class="mobile-break"><wbr>木陰へ持ち出す。</h2>
           <div class="prose">
             <p>これが一番大事です。家ではやらないメニューを選ぶ。</p>
             <p>例えば手巻き寿司。</p>
@@ -1277,7 +1314,7 @@
         <div>
           <div class="section-head">
             <p class="section-label">Lightness</p>
-            <h2 id="light-title">頑張り始めると、人はやらなくなる。</h2>
+            <h2 id="light-title">頑張り始めると、<br class="mobile-break"><wbr>人はやらなくなる。</h2>
           </div>
           <div class="prose">
             <p>この体験の最重要ポイントは、頑張らないことです。</p>
@@ -1303,7 +1340,7 @@
       <section class="section" id="scores" aria-labelledby="scores-title">
         <div class="section-head">
           <p class="section-label">Evaluation</p>
-          <h2 id="scores-title">この体験を、三つの視点で見てみる。</h2>
+          <h2 id="scores-title">この体験を、<br class="mobile-break"><wbr>三つの視点で見てみる。</h2>
         </div>
         <div class="score-grid">
           <article class="score-card">
@@ -1332,7 +1369,7 @@
           <div>
             <div class="section-head">
               <p class="section-label">What Remains</p>
-              <h2 id="memory-title">手が届くから、何度もできる。</h2>
+              <h2 id="memory-title">手が届くから、<br class="mobile-break"><wbr>何度もできる。</h2>
             </div>
             <div class="memory-pair-list">
               <div class="memory-pair">
