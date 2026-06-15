@@ -31,10 +31,15 @@
       }
 
       html {
+        max-width: 100%;
+        overflow-x: hidden;
         scroll-behavior: smooth;
       }
 
       body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
         margin: 0;
         background:
           radial-gradient(circle at 80% 12%, rgba(159, 200, 191, 0.13), transparent 30rem),
@@ -59,6 +64,11 @@
         mask-image: linear-gradient(180deg, black 0%, transparent 78%);
       }
 
+      main {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
       a {
         color: inherit;
         text-decoration: none;
@@ -67,6 +77,10 @@
       img {
         display: block;
         max-width: 100%;
+      }
+
+      br.mobile-break {
+        display: none;
       }
 
       a:focus-visible {
@@ -88,8 +102,12 @@
         transition: transform 0.2s ease;
       }
 
-      .skip-link:focus {
+      .skip-link:focus-visible {
         transform: translateY(0);
+      }
+
+      .skip-link:focus:not(:focus-visible) {
+        transform: translateY(-160%);
       }
 
       .site-header {
@@ -729,6 +747,33 @@
           min-height: 0;
         }
 
+        .hero-inner,
+        .hero-inner > div,
+        .section,
+        .recipe-band,
+        .cta,
+        .section-head,
+        .prose,
+        .seed-list,
+        .seed-item,
+        .tip-grid,
+        .tip-card,
+        .score-grid,
+        .score-card,
+        .memory-grid,
+        .memory-card,
+        .memory-pair,
+        .memory-pair-list,
+        .photo-stack,
+        .photo-card,
+        .gallery,
+        .gallery figure,
+        .cta > div,
+        .cta-photo {
+          min-width: 0;
+          max-width: 100%;
+        }
+
         .hero h1 {
           font-size: clamp(31px, 8vw, 42px);
           overflow-wrap: anywhere;
@@ -738,7 +783,10 @@
         .section h2,
         .section h3,
         .recipe-band h2,
-        .cta h2 {
+        .impact-line,
+        .cta h2,
+        .cta p,
+        .photo-card figcaption {
           overflow-wrap: anywhere;
           word-break: normal;
         }
@@ -756,7 +804,10 @@
         }
 
         .section {
-          width: calc(100% - 36px);
+          width: auto;
+          max-width: none;
+          margin-right: 18px;
+          margin-left: 18px;
           padding: 70px 0;
         }
 
@@ -789,7 +840,10 @@
 
         .recipe-band,
         .cta {
-          width: calc(100% - 36px);
+          width: auto;
+          max-width: none;
+          margin-right: 18px;
+          margin-left: 18px;
         }
 
         .site-footer {
@@ -822,11 +876,110 @@
         }
 
         .hero h1 {
+          width: 100%;
+          max-width: calc(100vw - 36px);
           font-size: clamp(30px, 10vw, 39px);
+          line-break: anywhere;
+          word-break: break-all;
+        }
+
+        .hero-inner > div,
+        .lead {
+          width: 100%;
+          max-width: calc(100vw - 36px);
+        }
+
+        .section,
+        .recipe-band,
+        .cta {
+          width: 354px;
+          max-width: calc(100% - 36px);
+          margin-right: 18px;
+          margin-left: 18px;
+        }
+
+        .section > *,
+        .recipe-band > *,
+        .cta > *,
+        .prose,
+        .seed-list,
+        .tip-grid,
+        .score-grid,
+        .memory-grid,
+        .memory-pair-list,
+        .photo-stack,
+        .photo-card,
+        .gallery {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .lead span {
+          display: block;
         }
 
         .impact-line {
-          font-size: clamp(26px, 8vw, 36px);
+          padding: 24px 18px;
+          font-size: clamp(24px, 7vw, 31px);
+          line-height: 1.42;
+          line-break: anywhere;
+          word-break: break-all;
+        }
+
+        .section h2,
+        .recipe-band h2,
+        .scenes-section h2 {
+          font-size: clamp(27px, 7.6vw, 34px);
+        }
+
+        .section h3,
+        .tip-card h3,
+        .score-card h3,
+        .memory-card h3 {
+          font-size: clamp(20px, 5.8vw, 25px);
+        }
+
+        .cta h2 {
+          font-size: clamp(25px, 7vw, 32px);
+          line-break: anywhere;
+          word-break: break-all;
+        }
+
+        .cta p {
+          font-size: 15px;
+        }
+
+        .section h2,
+        .section h3,
+        .recipe-band h2,
+        .scenes-section h2 {
+          line-break: anywhere;
+          word-break: break-all;
+        }
+
+        .lead,
+        .prose,
+        .prose p,
+        .recipe-band p,
+        .photo-card figcaption,
+        .tip-card p,
+        .score-card p,
+        .memory-card p,
+        .cta p {
+          overflow-wrap: anywhere;
+          line-break: anywhere;
+          word-break: break-all;
+        }
+
+        .photo-card figcaption,
+        .gallery figcaption {
+          font-size: 10px;
+          line-height: 1.7;
+          letter-spacing: 0.04em;
+        }
+
+        br.mobile-break {
+          display: initial;
         }
 
         .seed-list,
@@ -883,12 +1036,12 @@
             <p class="eyebrow">Experience Menu / Everyday Editing</p>
             <h1 id="page-title">
               <span>近所の公園が、</span>
-              <span>最高のレストランになる</span>
+              <span>最高の<br class="mobile-break"><wbr>レストランになる</span>
             </h1>
             <p class="lead">
               <span>遠くへ行かなくてもいい。</span>
               <span>高価な体験を買わなくてもいい。</span>
-              <span>少しだけ日常を編集すると、近所の公園は最高のレストランになる。</span>
+              <span>少しだけ日常を編集すると、<br class="mobile-break">近所の公園は<br class="mobile-break">最高のレストランになる。</span>
             </p>
           </div>
 
@@ -940,7 +1093,7 @@
             <p>布のテーブルクロス</p>
           </article>
         </div>
-        <p class="impact-line">日常は、少しだけ編集できる。</p>
+        <p class="impact-line">日常は、<br class="mobile-break"><wbr>少しだけ編集できる。</p>
       </section>
 
       <section class="section story-grid" aria-labelledby="story-title">
@@ -989,7 +1142,7 @@
       </section>
 
       <section class="recipe-band" aria-labelledby="recipe-title">
-        <h2 id="recipe-title"><span>高級体験の代替案ではなく、</span><span>生活の中から拾える種。</span></h2>
+        <h2 id="recipe-title"><span>高級体験の<br class="mobile-break"><wbr>代替案ではなく、</span><span>生活の中から拾える種。</span></h2>
         <p>特別な施設へ行く日もいい。でも、この体験はその代わりではありません。天気がいい、少し時間ができた、じゃあ行こうか。その軽さの中に、体験資産の入口がある。</p>
       </section>
 
@@ -1095,7 +1248,7 @@
 
       <section class="section scenes-section" aria-labelledby="photos-title">
         <p class="section-label">Scenes</p>
-        <h2 id="photos-title">いつもの公園が、少しだけ別の場所になる。</h2>
+        <h2 id="photos-title">いつもの公園が、<br class="mobile-break"><wbr>少しだけ別の場所になる。</h2>
         <div class="gallery">
           <figure class="gallery-feature">
             <img src="assets/sarue-editing-table.jpg" alt="木陰のテーブルに枝豆、手巻き寿司、グラス、冷えたボトルが並んでいる" loading="lazy" decoding="async">
@@ -1144,7 +1297,7 @@
             <figcaption>コンビニで揃えたものでも、グラスを添えると時間が少し整う。</figcaption>
           </figure>
         </div>
-        <p class="impact-line">やり方が軽いほど、思い出は積み重なる。</p>
+        <p class="impact-line">やり方が軽いほど、<br class="mobile-break"><wbr>思い出は積み重なる。</p>
       </section>
 
       <section class="section" id="scores" aria-labelledby="scores-title">
@@ -1213,7 +1366,7 @@
 
       <section class="cta" aria-labelledby="closing-title">
         <div>
-          <h2 id="closing-title"><span>近所の公園は、案外、</span><span>最高のレストランになります。</span></h2>
+          <h2 id="closing-title"><span>近所の公園は、案外、</span><span>最高の<br class="mobile-break"><wbr>レストランになります。</span></h2>
           <p>近所の公園。ガラスのグラス。布のテーブルクロス。手巻き寿司セット。それだけで、いつもの休日が少し特別になります。そして気がつけば、その思い出が家族の中に積み重なっていきます。</p>
           <p>遠くへ行かなくてもいい。高価な体験を買わなくてもいい。</p>
           <a class="external-link" href="/experience/">体験メニュー一覧へ戻る</a>
