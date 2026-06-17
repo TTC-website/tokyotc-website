@@ -14,26 +14,75 @@ a {
   @apply text-inherit;
 }
 
+.hero-luxury {
+  perspective: 1400px;
+}
+
+.hero-luxury-photo {
+  filter: saturate(1.12) contrast(1.08) brightness(0.66);
+  transform: scale(1.08);
+  animation: luxury-photo-drift 18s ease-in-out infinite alternate;
+}
+
+.hero-luxury-veil {
+  background:
+    linear-gradient(90deg, rgba(5, 11, 22, 0.94) 0%, rgba(5, 11, 22, 0.78) 38%, rgba(5, 11, 22, 0.46) 64%, rgba(5, 11, 22, 0.74) 100%),
+    linear-gradient(180deg, rgba(5, 11, 22, 0.64) 0%, rgba(5, 11, 22, 0.08) 44%, rgba(5, 11, 22, 0.82) 100%);
+}
+
 .hero-luxury::before {
   position: absolute;
   inset: 0;
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.05) 42%, rgba(216, 180, 106, 0.16) 50%, rgba(255, 255, 255, 0.04) 58%, transparent 100%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 34%);
+    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.08) 42%, rgba(241, 213, 138, 0.44) 50%, rgba(255, 255, 255, 0.08) 58%, transparent 100%),
+    repeating-linear-gradient(90deg, rgba(216, 180, 106, 0.08) 0 1px, transparent 1px 140px);
   mix-blend-mode: screen;
-  transform: translateX(-38%);
-  animation: luxury-sheen 12s ease-in-out infinite;
+  transform: translateX(-58%) skewX(-12deg);
+  animation: luxury-sheen 8s ease-in-out infinite;
 }
 
-.luxury-orb {
-  animation: luxury-float 13s ease-in-out infinite;
-  will-change: transform;
+.hero-luxury::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(circle at 52% 52%, transparent 0 34%, rgba(216, 180, 106, 0.15) 35%, transparent 36%, transparent 100%);
+  opacity: 0.7;
+  animation: luxury-pulse-ring 6s ease-in-out infinite;
 }
 
-.luxury-orb-blue {
-  animation-delay: -5s;
+.luxury-gold-lines {
+  background:
+    linear-gradient(90deg, transparent 0 8%, rgba(216, 180, 106, 0.32) 8.2%, transparent 8.5%),
+    linear-gradient(90deg, transparent 0 78%, rgba(216, 180, 106, 0.26) 78.2%, transparent 78.6%),
+    linear-gradient(0deg, transparent 0 18%, rgba(216, 180, 106, 0.22) 18.1%, transparent 18.4%),
+    linear-gradient(0deg, transparent 0 82%, rgba(216, 180, 106, 0.2) 82.1%, transparent 82.4%);
+  opacity: 0.7;
+  transform-origin: center;
+  animation: luxury-lines 10s ease-in-out infinite alternate;
+}
+
+.luxury-spotlight {
+  pointer-events: none;
+  height: 38rem;
+  width: 18rem;
+  background: linear-gradient(90deg, transparent, rgba(216, 180, 106, 0.28), transparent);
+  filter: blur(12px);
+  opacity: 0.66;
+  top: -8rem;
+  transform: rotate(24deg);
+}
+
+.luxury-spotlight-left {
+  left: 15%;
+  animation: luxury-spot-left 9s ease-in-out infinite;
+}
+
+.luxury-spotlight-right {
+  right: 16%;
+  animation: luxury-spot-right 10s ease-in-out infinite;
 }
 
 .luxury-reveal {
@@ -70,18 +119,57 @@ a {
 
 .luxury-pill::after {
   z-index: 0;
-  border: 1px solid rgba(216, 180, 106, 0.32);
+  border: 1px solid rgba(216, 180, 106, 0.54);
+  box-shadow: 0 0 26px rgba(216, 180, 106, 0.24);
   opacity: 1;
 }
 
 .luxury-frame {
-  animation: luxury-float 9s ease-in-out infinite;
+  animation: luxury-float-3d 6s ease-in-out infinite;
 }
 
 .luxury-frame::after {
   z-index: -1;
-  box-shadow: 0 24px 80px rgba(216, 180, 106, 0.22);
+  box-shadow: 0 34px 120px rgba(216, 180, 106, 0.42), 0 0 0 1px rgba(216, 180, 106, 0.22);
   opacity: 1;
+}
+
+.luxury-stage {
+  position: relative;
+  min-height: 620px;
+}
+
+.luxury-stage-ring {
+  position: absolute;
+  inset: 2rem 1.5rem auto auto;
+  height: 31rem;
+  width: 31rem;
+  border: 1px solid rgba(216, 180, 106, 0.32);
+  border-radius: 999px;
+  box-shadow: inset 0 0 90px rgba(216, 180, 106, 0.1), 0 0 90px rgba(216, 180, 106, 0.14);
+  transform: rotateX(64deg) rotateZ(-22deg);
+  animation: luxury-ring 11s linear infinite;
+}
+
+.luxury-stage-ring::before,
+.luxury-stage-ring::after {
+  position: absolute;
+  inset: 9%;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: inherit;
+}
+
+.luxury-stage-ring::after {
+  inset: 22%;
+  border-color: rgba(216, 180, 106, 0.26);
+}
+
+.luxury-hero-card {
+  position: relative;
+  z-index: 2;
+  margin-top: 1rem;
+  transform-style: preserve-3d;
 }
 
 .luxury-gradient-panel {
@@ -93,9 +181,23 @@ a {
   position: absolute;
   inset: -40% -70%;
   content: "";
-  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.68) 50%, transparent 60%);
+  background: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, 0.82) 50%, transparent 62%);
   transform: translateX(-35%);
-  animation: luxury-panel-glint 7s ease-in-out infinite;
+  animation: luxury-panel-glint 4s ease-in-out infinite;
+}
+
+.luxury-title {
+  text-shadow: 0 12px 40px rgba(0, 0, 0, 0.46);
+}
+
+.luxury-title-gold {
+  display: inline-block;
+  background: linear-gradient(110deg, #b88a2d, #fff2b9, #d8b46a, #7d5616);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: luxury-text-gold 3.8s ease-in-out infinite;
 }
 
 .luxury-button {
@@ -107,13 +209,97 @@ a {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.36) 50%, transparent 70%);
+  background: linear-gradient(110deg, transparent 28%, rgba(255, 255, 255, 0.58) 50%, transparent 72%);
   transform: translateX(-120%);
   transition: transform 560ms ease;
 }
 
+.luxury-button-primary {
+  box-shadow: 0 18px 54px rgba(216, 180, 106, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.46);
+  animation: luxury-button-breathe 2.8s ease-in-out infinite;
+}
+
+.luxury-button-outline {
+  box-shadow: inset 0 0 0 1px rgba(216, 180, 106, 0.18);
+  backdrop-filter: blur(10px);
+}
+
 .luxury-button:hover::after {
   transform: translateX(120%);
+}
+
+.luxury-marquee div,
+.luxury-ribbon {
+  display: flex;
+  width: max-content;
+  gap: 2.4rem;
+  white-space: nowrap;
+}
+
+.luxury-marquee div {
+  animation: luxury-marquee 18s linear infinite;
+}
+
+.luxury-ribbon {
+  overflow: hidden;
+  max-width: 100%;
+  background: linear-gradient(90deg, #071529, #1b2540, #b28a36, #071529);
+  color: #fff7d7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  padding: 0.9rem 0;
+  text-transform: uppercase;
+}
+
+.luxury-ribbon span {
+  animation: luxury-ribbon 20s linear infinite;
+}
+
+.luxury-mini-card {
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.luxury-mini-card:hover {
+  box-shadow: 0 18px 44px rgba(11, 31, 58, 0.16);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.luxury-floating-ticket {
+  position: absolute;
+  z-index: 3;
+  min-width: 11rem;
+  border: 1px solid rgba(216, 180, 106, 0.42);
+  border-radius: 1.2rem;
+  background: rgba(7, 21, 41, 0.74);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  color: white;
+  padding: 1rem 1.1rem;
+  backdrop-filter: blur(18px);
+}
+
+.luxury-floating-ticket p {
+  margin-bottom: 0.3rem;
+  color: #f1d58a;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.luxury-floating-ticket strong {
+  font-size: 0.95rem;
+}
+
+.luxury-floating-ticket-top {
+  right: -0.5rem;
+  top: 4rem;
+  animation: luxury-ticket-top 5.2s ease-in-out infinite;
+}
+
+.luxury-floating-ticket-bottom {
+  bottom: 6rem;
+  left: -1rem;
+  animation: luxury-ticket-bottom 5.6s ease-in-out infinite;
 }
 
 .luxury-card,
@@ -140,19 +326,19 @@ a {
 }
 
 .luxury-card::after {
-  box-shadow: 0 18px 60px rgba(11, 31, 58, 0.12);
+  box-shadow: 0 26px 80px rgba(11, 31, 58, 0.16), 0 0 0 1px rgba(216, 180, 106, 0.16);
 }
 
 .luxury-dark-card::after {
-  border: 1px solid rgba(216, 180, 106, 0.24);
-  box-shadow: 0 22px 70px rgba(216, 180, 106, 0.16);
+  border: 1px solid rgba(216, 180, 106, 0.36);
+  box-shadow: 0 26px 90px rgba(216, 180, 106, 0.24);
 }
 
 .luxury-card:hover,
 .luxury-dark-card:hover,
 .luxury-image:hover {
-  box-shadow: 0 18px 60px rgba(11, 31, 58, 0.12);
-  transform: translateY(-4px);
+  box-shadow: 0 26px 80px rgba(11, 31, 58, 0.16);
+  transform: translateY(-8px) scale(1.012);
 }
 
 .luxury-card:hover::after,
@@ -187,6 +373,16 @@ a {
   }
 }
 
+@keyframes luxury-photo-drift {
+  from {
+    transform: scale(1.08) translate3d(-1.2%, 0, 0);
+  }
+
+  to {
+    transform: scale(1.16) translate3d(1.2%, -1.2%, 0);
+  }
+}
+
 @keyframes luxury-float {
   0%,
   100% {
@@ -198,20 +394,31 @@ a {
   }
 }
 
+@keyframes luxury-float-3d {
+  0%,
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotateX(2.4deg) rotateY(-3.2deg) translate3d(0, -18px, 28px);
+  }
+}
+
 @keyframes luxury-sheen {
   0%,
-  46% {
-    transform: translateX(-48%);
+  38% {
+    transform: translateX(-58%) skewX(-12deg);
     opacity: 0;
   }
 
-  58% {
+  48% {
     opacity: 1;
   }
 
-  72%,
+  68%,
   100% {
-    transform: translateX(48%);
+    transform: translateX(58%) skewX(-12deg);
     opacity: 0;
   }
 }
@@ -231,6 +438,160 @@ a {
   100% {
     transform: translateX(34%);
     opacity: 0;
+  }
+}
+
+@keyframes luxury-pulse-ring {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes luxury-lines {
+  from {
+    opacity: 0.48;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0.82;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes luxury-spot-left {
+  0%,
+  100% {
+    transform: translateX(-5rem) rotate(24deg);
+  }
+
+  50% {
+    transform: translateX(13rem) rotate(24deg);
+  }
+}
+
+@keyframes luxury-spot-right {
+  0%,
+  100% {
+    transform: translateX(5rem) rotate(-22deg);
+  }
+
+  50% {
+    transform: translateX(-11rem) rotate(-22deg);
+  }
+}
+
+@keyframes luxury-ring {
+  from {
+    transform: rotateX(64deg) rotateZ(-22deg);
+  }
+
+  to {
+    transform: rotateX(64deg) rotateZ(338deg);
+  }
+}
+
+@keyframes luxury-text-gold {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes luxury-button-breathe {
+  0%,
+  100% {
+    box-shadow: 0 18px 54px rgba(216, 180, 106, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.46);
+  }
+
+  50% {
+    box-shadow: 0 24px 76px rgba(216, 180, 106, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  }
+}
+
+@keyframes luxury-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes luxury-ribbon {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-38rem);
+  }
+}
+
+@keyframes luxury-ticket-top {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(2deg);
+  }
+
+  50% {
+    transform: translate3d(0.4rem, -1.2rem, 0) rotate(-2deg);
+  }
+}
+
+@keyframes luxury-ticket-bottom {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translate3d(-0.5rem, 1rem, 0) rotate(2deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-luxury,
+  .hero-luxury > .relative {
+    min-height: auto;
+  }
+
+  .hero-luxury-photo {
+    filter: saturate(1.04) contrast(1.05) brightness(0.5);
+  }
+
+  .luxury-stage {
+    min-height: auto;
+  }
+
+  .luxury-stage-ring,
+  .luxury-floating-ticket,
+  .luxury-spotlight {
+    display: none;
+  }
+
+  .luxury-title {
+    font-size: clamp(2.8rem, 14vw, 4.2rem);
+  }
+
+  .luxury-frame {
+    animation: none;
+  }
+
+  .luxury-ribbon {
+    font-size: 0.65rem;
   }
 }
 

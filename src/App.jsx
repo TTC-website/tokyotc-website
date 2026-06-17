@@ -218,59 +218,79 @@ export default function App() {
       </header>
 
       <main>
-        <section className="hero-luxury relative overflow-hidden bg-[#0B1F3A] text-white">
-          <div className="absolute inset-0 opacity-20">
-            <div className="luxury-orb luxury-orb-gold absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#D8B46A] blur-3xl" />
-            <div className="luxury-orb luxury-orb-blue absolute bottom-0 left-0 h-96 w-96 rounded-full bg-blue-500 blur-3xl" />
-          </div>
+        <section className="hero-luxury relative min-h-[760px] overflow-hidden bg-[#050b16] text-white md:min-h-[820px]">
+          <img
+            src="/salon/archive-lounge-photo-web.jpg"
+            alt=""
+            aria-hidden="true"
+            className="hero-luxury-photo absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="hero-luxury-veil absolute inset-0" />
+          <div className="luxury-gold-lines absolute inset-0" aria-hidden="true" />
+          <div className="luxury-spotlight luxury-spotlight-left absolute" aria-hidden="true" />
+          <div className="luxury-spotlight luxury-spotlight-right absolute" aria-hidden="true" />
 
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-[1.1fr_0.9fr] md:px-8 md:py-28">
+          <div className="relative mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-5 py-20 md:min-h-[820px] md:grid-cols-[1fr_0.95fr] md:px-8">
             <div className="luxury-reveal">
-              <div className="luxury-pill mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90">
-                <span className="text-[#D8B46A]">✦</span>
+              <div className="luxury-pill mb-6 inline-flex items-center gap-2 rounded-full border border-[#D8B46A]/45 bg-black/30 px-4 py-2 text-sm text-white/90 backdrop-blur-md">
+                <span className="text-[#D8B46A]">Luxury Motion Test</span>
                 お客様のための総合相談パートナー
               </div>
-              <p className="mb-4 text-sm font-semibold tracking-[0.28em] text-[#D8B46A]">TOTAL LIFE CONSULTING</p>
-              <h2 className="max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
+              <p className="mb-4 text-sm font-semibold tracking-[0.34em] text-[#F1D58A]">TOTAL LIFE CONSULTING</p>
+              <h2 className="luxury-title max-w-3xl text-5xl font-semibold leading-tight md:text-7xl">
                 保険・相続・不動産を横断し、
-                <span className="text-[#D8B46A]">本当の安心</span>を手に入れる。
+                <span className="luxury-title-gold text-[#D8B46A]">本当の安心</span>を手に入れる。
               </h2>
-              <p className="mt-7 max-w-2xl text-lg leading-9 text-white/82">
+              <p className="mt-7 max-w-2xl text-lg leading-9 text-white/86">
                 私たちは、保険を売るだけの会社ではありません。お客様が、将来のお金・相続・資産形成・事業承継に不安を残さないための、総合相談パートナーです。
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <a href="#contact" className="luxury-button inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] shadow-xl shadow-black/20 transition hover:translate-y-[-1px] hover:bg-[#e5c77d]">
+                <a href="#contact" className="luxury-button luxury-button-primary inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] shadow-xl shadow-black/20 transition hover:translate-y-[-1px] hover:bg-[#e5c77d]">
                   公式LINEで相談する <span>→</span>
                 </a>
-                <a href="#service" className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
+                <a href="#service" className="luxury-button-outline inline-flex items-center justify-center rounded-full border border-white/35 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
                   相談内容を見る
                 </a>
+              </div>
+              <div className="luxury-marquee mt-12 overflow-hidden border-y border-[#D8B46A]/30 py-3 text-xs font-semibold tracking-[0.28em] text-[#F1D58A]">
+                <div>
+                  <span>INSURANCE</span>
+                  <span>SUCCESSION</span>
+                  <span>REAL ESTATE</span>
+                  <span>ASSET DESIGN</span>
+                  <span>PRIVATE CONSULTING</span>
+                  <span>INSURANCE</span>
+                  <span>SUCCESSION</span>
+                  <span>REAL ESTATE</span>
+                </div>
               </div>
             </div>
 
             <div className="luxury-reveal luxury-reveal-delay relative">
-              <div className="luxury-frame rounded-[2rem] border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur">
-                <div className="rounded-[1.5rem] bg-[#F7F3EA] p-6 text-slate-900">
-                  <div className="luxury-gradient-panel mb-5 h-64 rounded-[1.25rem] bg-gradient-to-br from-slate-200 via-white to-[#E5D3A2] p-6">
-                    <div className="flex h-full flex-col justify-between rounded-2xl border border-white/70 bg-white/60 p-5 backdrop-blur-sm">
+              <div className="luxury-stage">
+                <div className="luxury-stage-ring" aria-hidden="true" />
+                <div className="luxury-frame luxury-hero-card rounded-[2rem] border border-[#D8B46A]/35 bg-white/12 p-4 shadow-2xl backdrop-blur-xl">
+                  <div className="rounded-[1.5rem] bg-[#F7F3EA]/95 p-6 text-slate-900">
+                    <div className="luxury-gradient-panel mb-5 h-72 rounded-[1.25rem] bg-gradient-to-br from-slate-900 via-[#0B1F3A] to-[#D8B46A] p-6 text-white">
+                      <div className="flex h-full flex-col justify-between rounded-2xl border border-[#D8B46A]/50 bg-black/30 p-5 backdrop-blur-sm">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F3A] text-white font-semibold">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D8B46A] text-[#0B1F3A] font-semibold shadow-lg shadow-[#D8B46A]/30">
                           総
                         </div>
                         <div>
-                          <p className="text-xs tracking-[0.2em] text-slate-500">CONSULTING THEME</p>
+                          <p className="text-xs tracking-[0.2em] text-[#F1D58A]">PRIVATE CONSULTING</p>
                           <p className="font-semibold">お客様の未来を守る設計</p>
                         </div>
                       </div>
                       <div>
-                        <p className="mb-2 text-3xl font-semibold text-[#0B1F3A]">Total Life Design</p>
-                        <p className="text-sm leading-7 text-slate-600">保険・相続・不動産・老後資金をひとつの地図にして、次の一手を明確にします。</p>
+                        <p className="mb-2 text-4xl font-semibold text-white">Total Life Design</p>
+                        <p className="text-sm leading-7 text-white/78">保険・相続・不動産・老後資金をひとつの地図にして、次の一手を明確にします。</p>
                       </div>
                     </div>
                   </div>
                   <div className="grid gap-3 sm:grid-cols-2">
                     {strengths.map((item) => (
-                      <div key={item} className="flex items-start gap-2 rounded-2xl bg-white p-4 text-sm shadow-sm">
+                      <div key={item} className="luxury-mini-card flex items-start gap-2 rounded-2xl bg-white p-4 text-sm shadow-sm">
                         <span className="mt-0.5 shrink-0 text-[#B28A36]">✓</span>
                         <span>{item}</span>
                       </div>
@@ -278,9 +298,26 @@ export default function App() {
                   </div>
                 </div>
               </div>
+                <div className="luxury-floating-ticket luxury-floating-ticket-top">
+                  <p>ESTATE</p>
+                  <strong>相続・資産承継</strong>
+                </div>
+                <div className="luxury-floating-ticket luxury-floating-ticket-bottom">
+                  <p>RESERVE</p>
+                  <strong>森下駅 徒歩1分</strong>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+        <div className="luxury-ribbon" aria-hidden="true">
+          <span>Tokyo Total Consulting</span>
+          <span>Private Wealth Design</span>
+          <span>Legacy Planning</span>
+          <span>Tokyo Total Consulting</span>
+          <span>Private Wealth Design</span>
+        </div>
 
         <section id="concept" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
           <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-end">
