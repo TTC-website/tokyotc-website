@@ -1025,7 +1025,7 @@ a {
   }
 
   .luxury-flow-dot {
-    top: 2rem;
+    display: none;
   }
 }
 
