@@ -8,6 +8,7 @@ html, body {
 
 body {
   @apply bg-slate-100 text-slate-900;
+  overflow-x: hidden;
 }
 
 a {
@@ -233,8 +234,7 @@ a {
   transform: translateX(120%);
 }
 
-.luxury-marquee div,
-.luxury-ribbon {
+.luxury-marquee div {
   display: flex;
   width: max-content;
   gap: 2.4rem;
@@ -246,8 +246,11 @@ a {
 }
 
 .luxury-ribbon {
+  display: flex;
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
+  max-width: none;
+  gap: 2.4rem;
   background: linear-gradient(90deg, #071529, #1b2540, #b28a36, #071529);
   color: #fff7d7;
   font-size: 0.78rem;
@@ -650,12 +653,41 @@ a {
     min-height: auto;
   }
 
+  .hero-luxury {
+    overflow: hidden;
+  }
+
+  .hero-luxury > .relative {
+    gap: 2.5rem;
+    padding-bottom: 3.5rem;
+    padding-top: 4rem;
+  }
+
   .hero-luxury-photo {
     filter: saturate(1.04) contrast(1.05) brightness(0.5);
+    object-position: 58% center;
+    transform: scale(1.04);
+    animation: none;
+  }
+
+  .hero-luxury-veil {
+    background:
+      linear-gradient(90deg, rgba(5, 11, 22, 0.92), rgba(5, 11, 22, 0.72)),
+      linear-gradient(180deg, rgba(5, 11, 22, 0.7), rgba(5, 11, 22, 0.52) 48%, rgba(5, 11, 22, 0.9));
+  }
+
+  .hero-luxury::before {
+    animation-duration: 11s;
+    opacity: 0.64;
+  }
+
+  .hero-luxury::after {
+    opacity: 0.26;
   }
 
   .luxury-stage {
     min-height: auto;
+    padding: 0;
   }
 
   .luxury-stage-ring,
@@ -664,8 +696,53 @@ a {
     display: none;
   }
 
+  .luxury-pill {
+    max-width: 100%;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+
   .luxury-title {
-    font-size: clamp(2.8rem, 14vw, 4.2rem);
+    font-size: clamp(2.55rem, 12vw, 3.75rem);
+    line-height: 1.08;
+  }
+
+  .luxury-marquee {
+    margin-top: 2rem;
+    max-width: 100%;
+    font-size: 0.64rem;
+    letter-spacing: 0.2em;
+  }
+
+  .luxury-hero-card {
+    width: min(100%, 24rem);
+  }
+
+  .luxury-hero-card > div {
+    padding: 1rem;
+  }
+
+  .luxury-gradient-panel {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .luxury-gradient-panel > div {
+    min-height: 17rem;
+    padding: 1rem;
+  }
+
+  .luxury-gradient-panel p.text-4xl {
+    font-size: 2.2rem;
+    line-height: 1.08;
+  }
+
+  .luxury-mini-card {
+    padding: 0.9rem;
+    font-size: 0.82rem;
+    line-height: 1.65;
   }
 
   .luxury-frame {
@@ -673,7 +750,10 @@ a {
   }
 
   .luxury-ribbon {
+    width: 100%;
     font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    padding-block: 0.7rem;
   }
 }
 
