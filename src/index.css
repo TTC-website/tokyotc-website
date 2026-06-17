@@ -689,9 +689,9 @@ a {
   z-index: -2;
   content: "";
   background:
-    linear-gradient(115deg, rgba(255, 255, 255, 0.82), rgba(247, 243, 234, 0.9) 42%, rgba(230, 222, 207, 0.88)),
-    radial-gradient(circle at 16% 12%, rgba(216, 180, 106, 0.18), transparent 26%),
-    radial-gradient(circle at 86% 20%, rgba(255, 255, 255, 0.78), transparent 28%);
+    radial-gradient(circle at 16% 10%, rgba(216, 180, 106, 0.13), transparent 28%),
+    radial-gradient(circle at 84% 18%, rgba(255, 255, 255, 0.72), transparent 26%),
+    linear-gradient(115deg, #f9f5eb 0%, #eee6d6 48%, #f6efe2 100%);
 }
 
 .luxury-values-section::after {
@@ -701,11 +701,11 @@ a {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(128deg, transparent 0 24%, rgba(100, 116, 139, 0.11) 24.2%, transparent 24.8%),
-    linear-gradient(142deg, transparent 0 42%, rgba(178, 138, 54, 0.14) 42.2%, transparent 42.8%),
-    linear-gradient(118deg, transparent 0 66%, rgba(100, 116, 139, 0.09) 66.1%, transparent 66.7%),
-    repeating-linear-gradient(118deg, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px 96px);
-  opacity: 0.74;
+    repeating-linear-gradient(0deg, rgba(88, 75, 54, 0.052) 0 1px, transparent 1px 5px),
+    repeating-linear-gradient(90deg, rgba(88, 75, 54, 0.04) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(36deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 18px),
+    linear-gradient(90deg, transparent 0 10%, rgba(178, 138, 54, 0.08) 10.1%, transparent 10.3%, transparent 90%, rgba(178, 138, 54, 0.08) 90.1%, transparent 90.3%);
+  opacity: 0.92;
 }
 
 .luxury-values-heading {
@@ -723,23 +723,34 @@ a {
 
 .luxury-value-card {
   position: relative;
-  border: 1px solid rgba(178, 138, 54, 0.18);
+  border: 1px solid rgba(216, 180, 106, 0.28);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 242, 0.84)),
-    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.94), transparent 34%);
-  box-shadow: 0 24px 90px rgba(11, 31, 58, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+    linear-gradient(145deg, rgba(38, 49, 60, 0.96), rgba(17, 29, 43, 0.98) 54%, rgba(7, 21, 41, 0.96)),
+    radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.16), transparent 34%);
+  color: white;
+  box-shadow: 0 30px 100px rgba(7, 21, 41, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .luxury-value-card::before {
   background:
-    linear-gradient(118deg, transparent 0 36%, rgba(148, 163, 184, 0.12) 36.2%, transparent 37%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.88), transparent 44%, rgba(216, 180, 106, 0.14));
+    linear-gradient(118deg, transparent 0 26%, rgba(255, 255, 255, 0.09) 26.15%, transparent 27%),
+    linear-gradient(146deg, transparent 0 58%, rgba(216, 180, 106, 0.12) 58.2%, transparent 59%),
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 34px),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 42%, rgba(216, 180, 106, 0.12));
   opacity: 1;
 }
 
 .luxury-value-card::after {
-  border: 1px solid rgba(216, 180, 106, 0.2);
-  box-shadow: 0 26px 90px rgba(11, 31, 58, 0.13), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+  border: 1px solid rgba(216, 180, 106, 0.34);
+  box-shadow: 0 28px 100px rgba(7, 21, 41, 0.24), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.luxury-value-card h4 {
+  color: #fff8df;
+}
+
+.luxury-value-card p:not(.luxury-value-number) {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .luxury-value-number {
@@ -1103,7 +1114,7 @@ a {
   }
 
   .luxury-values-section::after {
-    opacity: 0.48;
+    opacity: 0.68;
   }
 
   .luxury-value-card {
