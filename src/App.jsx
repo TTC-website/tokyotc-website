@@ -79,6 +79,13 @@ const values = [
   },
 ];
 
+const whyReasons = [
+  ["total", "総合設計", "法人・個人を問わず全体像から設計", "/luxury-motion/why-total.jpg"],
+  ["peace", "安心設計", "相続・介護・認知症対策まで配慮", "/luxury-motion/why-peace.jpg"],
+  ["network", "専門家連携", "司法書士・税理士等との連携も視野に", "/luxury-motion/why-network.jpg"],
+  ["action", "実行支援", "相談で終わらず手続きまで伴走", "/luxury-motion/why-action.jpg"],
+];
+
 function CircleIcon({ children, dark = false }) {
   return (
     <div className={dark ? "flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0B1F3A] text-lg font-semibold text-white" : "flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F7F3EA] text-lg font-semibold text-[#B28A36]"}>
@@ -333,7 +340,7 @@ export default function App() {
           <span>Private Wealth Design</span>
         </div>
 
-        <section id="concept" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <section id="concept" className="luxury-mission-section mx-auto max-w-7xl px-5 py-20 md:px-8">
           <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-end">
             <div className="luxury-reveal">
               <p className="mb-3 text-sm font-semibold tracking-[0.26em] text-[#B28A36]">OUR MISSION</p>
@@ -341,7 +348,7 @@ export default function App() {
                 知識と考え方で、人生と未来を豊かにする。
               </h3>
             </div>
-            <div className="luxury-card luxury-reveal luxury-reveal-delay rounded-[2rem] bg-white p-8 shadow-sm md:p-10">
+            <div className="luxury-mission-card luxury-card luxury-reveal luxury-reveal-delay rounded-[2rem] bg-white p-8 shadow-sm md:p-10">
               <p className="text-lg leading-9 text-slate-700">
                 所得の多寡だけで幸せが決まるのではなく、知識と考え方によって、人生の選択肢は広がります。私たちは、お客様の価値観を大切にしながら、今すぐ明日から豊かになれる「考え方」と「解決策」を提供します。
               </p>
@@ -349,7 +356,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="bg-white py-20">
+        <section className="luxury-why-section bg-white py-20">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
@@ -361,16 +368,16 @@ export default function App() {
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-4">
-              {[
-                ["total", "総合設計", "法人・個人を問わず全体像から設計"],
-                ["peace", "安心設計", "相続・介護・認知症対策まで配慮"],
-                ["network", "専門家連携", "司法書士・税理士等との連携も視野に"],
-                ["action", "実行支援", "相談で終わらず手続きまで伴走"],
-              ].map(([icon, title, text]) => (
-                <div key={title} className="luxury-card rounded-[1.5rem] border border-slate-100 bg-[#F7F3EA] p-6">
-                  <CircleIcon><WhyIcon type={icon} /></CircleIcon>
-                  <h4 className="mb-3 mt-5 text-xl font-semibold text-[#0B1F3A]">{title}</h4>
-                  <p className="leading-7 text-slate-600">{text}</p>
+              {whyReasons.map(([icon, title, text, image]) => (
+                <div key={title} className="luxury-why-card luxury-card rounded-[1.5rem] border border-slate-100 bg-[#F7F3EA] p-4">
+                  <figure className="luxury-why-media">
+                    <img src={image} alt="" loading="lazy" />
+                    <span className="luxury-why-icon"><WhyIcon type={icon} /></span>
+                  </figure>
+                  <div className="p-2 pt-5">
+                    <h4 className="mb-3 text-xl font-semibold text-[#0B1F3A]">{title}</h4>
+                    <p className="leading-7 text-slate-600">{text}</p>
+                  </div>
                 </div>
               ))}
             </div>
