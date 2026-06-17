@@ -13,3 +13,234 @@ body {
 a {
   @apply text-inherit;
 }
+
+.hero-luxury::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.05) 42%, rgba(216, 180, 106, 0.16) 50%, rgba(255, 255, 255, 0.04) 58%, transparent 100%),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 34%);
+  mix-blend-mode: screen;
+  transform: translateX(-38%);
+  animation: luxury-sheen 12s ease-in-out infinite;
+}
+
+.luxury-orb {
+  animation: luxury-float 13s ease-in-out infinite;
+  will-change: transform;
+}
+
+.luxury-orb-blue {
+  animation-delay: -5s;
+}
+
+.luxury-reveal {
+  animation: luxury-reveal 780ms cubic-bezier(0.2, 0.72, 0.18, 1) both;
+}
+
+.luxury-reveal-delay {
+  animation-delay: 160ms;
+}
+
+.luxury-pill,
+.luxury-frame,
+.luxury-card,
+.luxury-dark-card,
+.luxury-image {
+  position: relative;
+  isolation: isolate;
+}
+
+.luxury-pill::after,
+.luxury-frame::after,
+.luxury-card::after,
+.luxury-dark-card::after,
+.luxury-image::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 360ms ease, transform 360ms ease;
+}
+
+.luxury-pill::after {
+  z-index: 0;
+  border: 1px solid rgba(216, 180, 106, 0.32);
+  opacity: 1;
+}
+
+.luxury-frame {
+  animation: luxury-float 9s ease-in-out infinite;
+}
+
+.luxury-frame::after {
+  z-index: -1;
+  box-shadow: 0 24px 80px rgba(216, 180, 106, 0.22);
+  opacity: 1;
+}
+
+.luxury-gradient-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-gradient-panel::before {
+  position: absolute;
+  inset: -40% -70%;
+  content: "";
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.68) 50%, transparent 60%);
+  transform: translateX(-35%);
+  animation: luxury-panel-glint 7s ease-in-out infinite;
+}
+
+.luxury-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-button::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.36) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 560ms ease;
+}
+
+.luxury-button:hover::after {
+  transform: translateX(120%);
+}
+
+.luxury-card,
+.luxury-dark-card {
+  overflow: hidden;
+  transition: transform 360ms ease, box-shadow 360ms ease, border-color 360ms ease;
+}
+
+.luxury-card > *,
+.luxury-dark-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.luxury-card::before,
+.luxury-dark-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), transparent 42%, rgba(216, 180, 106, 0.12));
+  opacity: 0.62;
+}
+
+.luxury-card::after {
+  box-shadow: 0 18px 60px rgba(11, 31, 58, 0.12);
+}
+
+.luxury-dark-card::after {
+  border: 1px solid rgba(216, 180, 106, 0.24);
+  box-shadow: 0 22px 70px rgba(216, 180, 106, 0.16);
+}
+
+.luxury-card:hover,
+.luxury-dark-card:hover,
+.luxury-image:hover {
+  box-shadow: 0 18px 60px rgba(11, 31, 58, 0.12);
+  transform: translateY(-4px);
+}
+
+.luxury-card:hover::after,
+.luxury-dark-card:hover::after,
+.luxury-image:hover::after {
+  opacity: 1;
+}
+
+.luxury-image img {
+  transition: transform 900ms ease, filter 900ms ease;
+}
+
+.luxury-image:hover img {
+  filter: saturate(1.06) contrast(1.03);
+  transform: scale(1.035);
+}
+
+.luxury-image::after {
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(216, 180, 106, 0.26), transparent 38%, rgba(11, 31, 58, 0.16));
+}
+
+@keyframes luxury-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxury-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes luxury-sheen {
+  0%,
+  46% {
+    transform: translateX(-48%);
+    opacity: 0;
+  }
+
+  58% {
+    opacity: 1;
+  }
+
+  72%,
+  100% {
+    transform: translateX(48%);
+    opacity: 0;
+  }
+}
+
+@keyframes luxury-panel-glint {
+  0%,
+  55% {
+    transform: translateX(-34%);
+    opacity: 0;
+  }
+
+  68% {
+    opacity: 0.72;
+  }
+
+  82%,
+  100% {
+    transform: translateX(34%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

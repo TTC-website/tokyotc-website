@@ -1,5 +1,3 @@
-import React from "react";
-
 const companyLogo = "/logo-horizontal.png";
 const officialLineQr = "https://qr-official.line.me/gs/M_sog7070i_BW.png?oat_content=qr";
 const googleMapUrl = "https://maps.app.goo.gl/WudMb6uoqz1r4xkBA";
@@ -220,15 +218,15 @@ export default function App() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden bg-[#0B1F3A] text-white">
+        <section className="hero-luxury relative overflow-hidden bg-[#0B1F3A] text-white">
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#D8B46A] blur-3xl" />
-            <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-blue-500 blur-3xl" />
+            <div className="luxury-orb luxury-orb-gold absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#D8B46A] blur-3xl" />
+            <div className="luxury-orb luxury-orb-blue absolute bottom-0 left-0 h-96 w-96 rounded-full bg-blue-500 blur-3xl" />
           </div>
 
           <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-[1.1fr_0.9fr] md:px-8 md:py-28">
-            <div>
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90">
+            <div className="luxury-reveal">
+              <div className="luxury-pill mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90">
                 <span className="text-[#D8B46A]">✦</span>
                 お客様のための総合相談パートナー
               </div>
@@ -241,7 +239,7 @@ export default function App() {
                 私たちは、保険を売るだけの会社ではありません。お客様が、将来のお金・相続・資産形成・事業承継に不安を残さないための、総合相談パートナーです。
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <a href="#contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] shadow-xl shadow-black/20 transition hover:translate-y-[-1px] hover:bg-[#e5c77d]">
+                <a href="#contact" className="luxury-button inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] shadow-xl shadow-black/20 transition hover:translate-y-[-1px] hover:bg-[#e5c77d]">
                   公式LINEで相談する <span>→</span>
                 </a>
                 <a href="#service" className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
@@ -250,10 +248,10 @@ export default function App() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="rounded-[2rem] border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur">
+            <div className="luxury-reveal luxury-reveal-delay relative">
+              <div className="luxury-frame rounded-[2rem] border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur">
                 <div className="rounded-[1.5rem] bg-[#F7F3EA] p-6 text-slate-900">
-                  <div className="mb-5 h-64 rounded-[1.25rem] bg-gradient-to-br from-slate-200 via-white to-[#E5D3A2] p-6">
+                  <div className="luxury-gradient-panel mb-5 h-64 rounded-[1.25rem] bg-gradient-to-br from-slate-200 via-white to-[#E5D3A2] p-6">
                     <div className="flex h-full flex-col justify-between rounded-2xl border border-white/70 bg-white/60 p-5 backdrop-blur-sm">
                       <div className="flex items-center gap-3">
                         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0B1F3A] text-white font-semibold">
@@ -286,13 +284,13 @@ export default function App() {
 
         <section id="concept" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
           <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-end">
-            <div>
+            <div className="luxury-reveal">
               <p className="mb-3 text-sm font-semibold tracking-[0.26em] text-[#B28A36]">OUR MISSION</p>
               <h3 className="text-3xl font-semibold leading-tight text-[#0B1F3A] md:text-5xl">
                 知識と考え方で、人生と未来を豊かにする。
               </h3>
             </div>
-            <div className="rounded-[2rem] bg-white p-8 shadow-sm md:p-10">
+            <div className="luxury-card luxury-reveal luxury-reveal-delay rounded-[2rem] bg-white p-8 shadow-sm md:p-10">
               <p className="text-lg leading-9 text-slate-700">
                 所得の多寡だけで幸せが決まるのではなく、知識と考え方によって、人生の選択肢は広がります。私たちは、お客様の価値観を大切にしながら、今すぐ明日から豊かになれる「考え方」と「解決策」を提供します。
               </p>
@@ -318,7 +316,7 @@ export default function App() {
                 ["network", "専門家連携", "司法書士・税理士等との連携も視野に"],
                 ["action", "実行支援", "相談で終わらず手続きまで伴走"],
               ].map(([icon, title, text]) => (
-                <div key={title} className="rounded-[1.5rem] border border-slate-100 bg-[#F7F3EA] p-6">
+                <div key={title} className="luxury-card rounded-[1.5rem] border border-slate-100 bg-[#F7F3EA] p-6">
                   <CircleIcon><WhyIcon type={icon} /></CircleIcon>
                   <h4 className="mb-3 mt-5 text-xl font-semibold text-[#0B1F3A]">{title}</h4>
                   <p className="leading-7 text-slate-600">{text}</p>
@@ -338,7 +336,7 @@ export default function App() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div key={service.title} className="group flex flex-col rounded-[2rem] bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <div key={service.title} className="luxury-card group flex flex-col rounded-[2rem] bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                 <CircleIcon dark><ServiceIcon type={service.icon} /></CircleIcon>
                 {service.tag ? (
                   <p className="mt-5 text-xs font-semibold tracking-[0.22em] text-[#B28A36]">{service.tag}</p>
@@ -366,7 +364,7 @@ export default function App() {
             </div>
             <div className="grid gap-5 md:grid-cols-4">
               {flow.map(([num, title, text]) => (
-                <div key={num} className="rounded-[1.5rem] border border-white/15 bg-white/10 p-6 backdrop-blur">
+                <div key={num} className="luxury-dark-card rounded-[1.5rem] border border-white/15 bg-white/10 p-6 backdrop-blur">
                   <p className="mb-6 text-4xl font-semibold text-[#D8B46A]">{num}</p>
                   <h4 className="mb-3 text-xl font-semibold">{title}</h4>
                   <p className="leading-7 text-white/75">{text}</p>
@@ -387,7 +385,7 @@ export default function App() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-              <figure className="overflow-hidden rounded-[2rem] shadow-sm">
+              <figure className="luxury-image overflow-hidden rounded-[2rem] shadow-sm">
                 <img
                   src="/salon/archive-lounge-photo-web.jpg"
                   alt="東京トータルコンサルティングの相談サロンの様子"
@@ -397,7 +395,7 @@ export default function App() {
               </figure>
 
               <div className="flex flex-col gap-6">
-                <div className="rounded-[2rem] bg-[#F7F3EA] p-8 shadow-sm">
+                <div className="luxury-card rounded-[2rem] bg-[#F7F3EA] p-8 shadow-sm">
                   <p className="mb-4 text-sm font-semibold tracking-[0.2em] text-[#B28A36]">CUSTOMER'S VOICE</p>
                   <blockquote className="leading-8 text-slate-700">
                     「小西さんの話は初めて聞くことばかりで面白いです。お金のことでわからないことが出てきたら、すぐ小西さんに聞くようにしています。」
@@ -436,7 +434,7 @@ export default function App() {
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {values.map((value, index) => (
-              <div key={value.title} className="rounded-[2rem] bg-white p-8 shadow-sm">
+              <div key={value.title} className="luxury-card rounded-[2rem] bg-white p-8 shadow-sm">
                 <p className="mb-6 text-4xl font-semibold text-[#D8B46A]">0{index + 1}</p>
                 <h4 className="mb-4 text-2xl font-semibold text-[#0B1F3A]">{value.title}</h4>
                 <p className="leading-8 text-slate-600">{value.text}</p>
@@ -456,7 +454,7 @@ export default function App() {
             </div>
 
             <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-              <div className="rounded-[2rem] bg-[#F7F3EA] p-8 text-center shadow-sm">
+              <div className="luxury-card rounded-[2rem] bg-[#F7F3EA] p-8 text-center shadow-sm">
                 <p className="mb-4 text-sm font-semibold tracking-[0.2em] text-[#B28A36]">OFFICIAL LINE</p>
                 <div className="mx-auto flex max-w-xs justify-center rounded-[2rem] bg-white p-5 shadow-sm">
                   <img src={officialLineQr} alt="東京トータルコンサルティング公式LINE QRコード" className="h-52 w-52 object-contain" />
@@ -466,7 +464,7 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-xl md:p-10">
+              <div className="luxury-dark-card rounded-[2rem] bg-[#0B1F3A] p-8 text-white shadow-xl md:p-10">
                 <p className="mb-3 text-sm font-semibold tracking-[0.22em] text-[#D8B46A]">RESERVATION</p>
                 <h4 className="text-2xl font-semibold md:text-3xl">相談の第一歩を、もっと気軽に。</h4>
                 <p className="mt-5 leading-8 text-white/75">
