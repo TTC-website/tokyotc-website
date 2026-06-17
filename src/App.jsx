@@ -41,6 +41,15 @@ const services = [
   },
 ];
 
+const heroServiceTickets = [
+  ["保険相談", "INSURANCE", "/insurance/"],
+  ["資産形成", "ASSET", "/asset/"],
+  ["遺言・相続", "SUCCESSION", "/inheritance/"],
+  ["不動産承継", "REAL ESTATE", "/property/"],
+  ["体験メニュー", "EXPERIENCE", "/experience/"],
+  ["イベント", "EVENT", "/events/"],
+];
+
 const strengths = [
   "保険だけで終わらない総合相談",
   "お客様一人ひとりに寄り添う実務感覚",
@@ -271,40 +280,45 @@ export default function App() {
                 <div className="luxury-stage-ring" aria-hidden="true" />
                 <div className="luxury-frame luxury-hero-card rounded-[2rem] border border-[#D8B46A]/35 bg-white/12 p-4 shadow-2xl backdrop-blur-xl">
                   <div className="rounded-[1.5rem] bg-[#F7F3EA]/95 p-6 text-slate-900">
-                    <div className="luxury-gradient-panel mb-5 h-80 rounded-[1.25rem] bg-gradient-to-br from-slate-900 via-[#0B1F3A] to-[#D8B46A] p-6 text-white">
-                      <div className="flex h-full flex-col justify-between rounded-2xl border border-[#D8B46A]/50 bg-black/30 p-5 backdrop-blur-sm">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D8B46A] text-[#0B1F3A] font-semibold shadow-lg shadow-[#D8B46A]/30">
-                          総
+                    <div className="luxury-gradient-panel mb-5 min-h-[22rem] rounded-[1.25rem] bg-gradient-to-br from-slate-900 via-[#0B1F3A] to-[#D8B46A] p-6 text-white">
+                      <div className="flex min-h-[19rem] flex-col justify-between rounded-2xl border border-[#D8B46A]/50 bg-black/30 p-5 backdrop-blur-sm">
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D8B46A] text-[#0B1F3A] font-semibold shadow-lg shadow-[#D8B46A]/30">
+                            総
+                          </div>
+                          <div>
+                            <p className="text-xs tracking-[0.2em] text-[#F1D58A]">PRIVATE CONSULTING</p>
+                            <p className="font-semibold">お客様の未来を守る設計</p>
+                          </div>
                         </div>
                         <div>
-                          <p className="text-xs tracking-[0.2em] text-[#F1D58A]">PRIVATE CONSULTING</p>
-                          <p className="font-semibold">お客様の未来を守る設計</p>
+                          <p className="mb-2 text-4xl font-semibold text-white">Total Life Design</p>
+                          <p className="text-sm leading-7 text-white/78">保険・相続・不動産・老後資金をひとつの地図にして、次の一手を明確にします。</p>
                         </div>
                       </div>
-                      <div>
-                        <p className="mb-2 text-4xl font-semibold text-white">Total Life Design</p>
-                        <p className="text-sm leading-7 text-white/78">保険・相続・不動産・老後資金をひとつの地図にして、次の一手を明確にします。</p>
-                      </div>
+                    </div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {strengths.map((item) => (
+                        <div key={item} className="luxury-mini-card flex items-start gap-2 rounded-2xl bg-white p-4 text-sm shadow-sm">
+                          <span className="mt-0.5 shrink-0 text-[#B28A36]">✓</span>
+                          <span>{item}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {strengths.map((item) => (
-                      <div key={item} className="luxury-mini-card flex items-start gap-2 rounded-2xl bg-white p-4 text-sm shadow-sm">
-                        <span className="mt-0.5 shrink-0 text-[#B28A36]">✓</span>
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
-              </div>
-                <div className="luxury-floating-ticket luxury-floating-ticket-top">
-                  <p>ESTATE</p>
-                  <strong>相続・資産承継</strong>
-                </div>
-                <div className="luxury-floating-ticket luxury-floating-ticket-bottom">
-                  <p>RESERVE</p>
-                  <strong>森下駅 徒歩1分</strong>
+                <div className="luxury-service-tickets" aria-label="相談できること">
+                  {heroServiceTickets.map(([title, label, href], index) => (
+                    <a
+                      key={title}
+                      href={href}
+                      className="luxury-floating-ticket luxury-service-ticket"
+                      style={{ "--ticket-index": index }}
+                    >
+                      <p>{label}</p>
+                      <strong>{title}</strong>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
