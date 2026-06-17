@@ -8,36 +8,42 @@ const services = [
     title: "保険相談・事業承継",
     text: "万一への備え、事業保障、役員退職金、福利厚生、事業承継まで、法人・個人を問わずお客様の安心を守る設計を行います。",
     href: "/insurance/",
+    image: "/luxury-motion/service-insurance.jpg",
   },
   {
     icon: "asset",
     title: "資産形成・老後資金",
     text: "将来のキャッシュフローを見える化し、保険・積立・資産運用を含めて現実的に整理します。",
     href: "/asset/",
+    image: "/luxury-motion/service-asset.jpg",
   },
   {
     icon: "will",
     title: "遺言・相続・任意後見",
     text: "争族防止、認知症対策、親の資産管理など、家族が困らない準備をサポートします。",
     href: "/inheritance/",
+    image: "/luxury-motion/service-inheritance.jpg",
   },
   {
     icon: "realestate",
     title: "不動産・資産承継",
     text: "不動産を含む資産全体を把握し、売却・活用・承継の方向性を一緒に考えます。",
     href: "/property/",
+    image: "/luxury-motion/service-property.jpg",
   },
   {
     icon: "asset",
     title: "体験メニュー",
     text: "旅、学び、味わい、出会った空気。身体で覚えた景色を、人生や仕事の基準に変える体験資産の目録です。",
     href: "/experience/",
+    image: "/luxury-motion/service-experience.jpg",
   },
   {
     icon: "event",
     title: "イベント",
     text: "TTC 日本酒の会をはじめ、セミナーや体験の催しを通じて、人とのつながりや学びの場をつくっています。",
     href: "/events/",
+    image: "/luxury-motion/service-events.jpg",
   },
 ];
 
@@ -85,14 +91,6 @@ const whyReasons = [
   ["network", "専門家連携", "司法書士・税理士等との連携も視野に", "/luxury-motion/why-network.jpg"],
   ["action", "実行支援", "相談で終わらず手続きまで伴走", "/luxury-motion/why-action.jpg"],
 ];
-
-function CircleIcon({ children, dark = false }) {
-  return (
-    <div className={dark ? "flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0B1F3A] text-lg font-semibold text-white" : "flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F7F3EA] text-lg font-semibold text-[#B28A36]"}>
-      {children}
-    </div>
-  );
-}
 
 function ServiceIcon({ type }) {
   const common = "h-8 w-8";
@@ -394,12 +392,16 @@ export default function App() {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div key={service.title} className="luxury-card group flex flex-col rounded-[2rem] bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                <CircleIcon dark><ServiceIcon type={service.icon} /></CircleIcon>
+              <div key={service.title} className="luxury-service-card luxury-card group flex flex-col rounded-[2rem] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <figure className="luxury-service-media">
+                  <img src={service.image} alt="" loading="lazy" />
+                  <span className="luxury-service-icon"><ServiceIcon type={service.icon} /></span>
+                </figure>
+                <div className="flex flex-1 flex-col p-3 pt-6">
                 {service.tag ? (
                   <p className="mt-5 text-xs font-semibold tracking-[0.22em] text-[#B28A36]">{service.tag}</p>
                 ) : null}
-                <h4 className={`mb-4 text-2xl font-semibold text-[#0B1F3A] ${service.tag ? "mt-1" : "mt-6"}`}>{service.title}</h4>
+                <h4 className={`mb-4 text-2xl font-semibold text-[#0B1F3A] ${service.tag ? "mt-1" : "mt-0"}`}>{service.title}</h4>
                 <p className="leading-8 text-slate-600">{service.text}</p>
                 {service.href ? (
                   <a
@@ -409,6 +411,7 @@ export default function App() {
                     詳しく見る <span>→</span>
                   </a>
                 ) : null}
+                </div>
               </div>
             ))}
           </div>
