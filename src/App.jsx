@@ -230,7 +230,7 @@ export default function App() {
           <div className="luxury-spotlight luxury-spotlight-left absolute" aria-hidden="true" />
           <div className="luxury-spotlight luxury-spotlight-right absolute" aria-hidden="true" />
 
-          <div className="relative mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-5 py-20 md:min-h-[820px] md:grid-cols-[1fr_0.95fr] md:px-8">
+          <div className="relative mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-5 py-20 md:min-h-[820px] md:grid-cols-[0.95fr_1.05fr] md:px-8">
             <div className="luxury-reveal">
               <div className="luxury-pill mb-6 inline-flex items-center gap-2 rounded-full border border-[#D8B46A]/45 bg-black/30 px-4 py-2 text-sm text-white/90 backdrop-blur-md">
                 <span className="text-[#D8B46A]">Luxury Motion Test</span>
@@ -271,7 +271,7 @@ export default function App() {
                 <div className="luxury-stage-ring" aria-hidden="true" />
                 <div className="luxury-frame luxury-hero-card rounded-[2rem] border border-[#D8B46A]/35 bg-white/12 p-4 shadow-2xl backdrop-blur-xl">
                   <div className="rounded-[1.5rem] bg-[#F7F3EA]/95 p-6 text-slate-900">
-                    <div className="luxury-gradient-panel mb-5 h-72 rounded-[1.25rem] bg-gradient-to-br from-slate-900 via-[#0B1F3A] to-[#D8B46A] p-6 text-white">
+                    <div className="luxury-gradient-panel mb-5 h-80 rounded-[1.25rem] bg-gradient-to-br from-slate-900 via-[#0B1F3A] to-[#D8B46A] p-6 text-white">
                       <div className="flex h-full flex-col justify-between rounded-2xl border border-[#D8B46A]/50 bg-black/30 p-5 backdrop-blur-sm">
                       <div className="flex items-center gap-3">
                         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D8B46A] text-[#0B1F3A] font-semibold shadow-lg shadow-[#D8B46A]/30">
