@@ -429,7 +429,6 @@ export default function App() {
                     <p className="luxury-flow-num">{num}</p>
                     <span>STEP {num}</span>
                   </div>
-                  <div className="luxury-flow-dot" aria-hidden="true" />
                   <h4 className="mb-3 mt-10 text-xl font-semibold">{title}</h4>
                   <p className="leading-7 text-white/75">{text}</p>
                 </div>
