@@ -247,7 +247,6 @@ export default function App() {
           <div className="relative mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-5 py-20 md:min-h-[820px] md:grid-cols-[0.95fr_1.05fr] md:px-8">
             <div className="luxury-reveal">
               <div className="luxury-pill mb-6 inline-flex items-center gap-2 rounded-full border border-[#D8B46A]/45 bg-black/30 px-4 py-2 text-sm text-white/90 backdrop-blur-md">
-                <span className="text-[#D8B46A]">Luxury Motion Test</span>
                 お客様のための総合相談パートナー
               </div>
               <p className="mb-4 text-sm font-semibold tracking-[0.34em] text-[#F1D58A]">TOTAL LIFE CONSULTING</p>
