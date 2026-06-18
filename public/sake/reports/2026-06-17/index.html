@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>第5回 TTC 日本酒の会（2026年6月17日）| 開催レポート</title>
+    <meta name="description" content="TTC 日本酒の会 第5回（2026年6月17日・清澄庭園 涼亭）の開催レポート。最も人気を集めたのは産土。持ち寄った七本を、甘辛度・香り・濃淡・酸味・余韻の五軸で記録しました。">
+    <meta property="og:title" content="第5回 TTC 日本酒の会（2026年6月17日）| 開催レポート">
+    <meta property="og:description" content="清澄庭園 涼亭で開いた第5回。最も人気を集めたのは産土。七本の推しを写真と五軸で記録した開催レポートです。">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://tokyotc.com/sake/reports/2026-06-17/">
+    <link rel="canonical" href="https://tokyotc.com/sake/reports/2026-06-17/">
+    <style>
+      :root {
+        --ink: #303030; --muted: #6b6b6b; --bg: #ffffff; --soft: #f6f5f2;
+        --line: #e5e7eb; --accent: #3a4a3a; --gold: #9a7b3f;
+        --sans: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+        --header-h: 64px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.9; -webkit-font-smoothing: antialiased; }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      .skip-link { position: absolute; left: -999px; top: 0; background: #fff; padding: 8px 14px; z-index: 100; }
+      .skip-link:focus { left: 8px; top: 8px; }
+
+      .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; height: var(--header-h); padding: 0 clamp(16px, 4vw, 48px); background: rgba(24, 26, 24, 0.42); backdrop-filter: blur(8px); color: #fff; }
+      .brand { font-size: clamp(15px, 2vw, 18px); font-weight: 600; letter-spacing: 0.04em; color: #fff; }
+      .site-nav { display: flex; align-items: center; gap: clamp(14px, 2.6vw, 30px); font-size: 14px; }
+      .site-nav a { color: #fff; opacity: 0.92; padding: 6px 0; border-bottom: 2px solid transparent; }
+      .site-nav a[aria-current="page"] { font-weight: 700; border-bottom-color: #fff; }
+
+      .report-hero { position: relative; min-height: clamp(300px, 44vh, 440px); display: grid; place-items: center; padding-top: var(--header-h); background: #1a1a1a; overflow: hidden; text-align: center; }
+      .report-hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.92; }
+      .report-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.34), rgba(0,0,0,0.5)); }
+      .report-hero .inner { position: relative; z-index: 1; color: #fff; padding: 24px; }
+      .report-hero .kicker { margin: 0 0 12px; color: #e7d6a8; font-size: 13px; letter-spacing: 0.24em; }
+      .report-hero h1 { margin: 0 0 14px; font-size: clamp(30px, 5.5vw, 56px); font-weight: 700; letter-spacing: 0.05em; }
+      .report-hero .meta { margin: 0; color: rgba(255,255,255,0.86); font-size: clamp(14px, 2vw, 17px); }
+
+      .wrap { width: min(1040px, 100%); margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
+      .section { padding: clamp(44px, 6.5vw, 80px) 0; }
+      .section.alt { background: var(--soft); }
+      .section-label { margin: 0 0 8px; color: var(--accent); font-size: 12px; letter-spacing: 0.2em; font-weight: 600; }
+      .section h2 { margin: 0 0 18px; font-size: clamp(22px, 3vw, 32px); font-weight: 700; }
+      .section p.lead { color: #404040; }
+
+      .champion-banner { margin-top: 18px; padding: 18px 22px; background: #fbf7ec; border: 1px solid #e4d3a3; border-radius: 14px; }
+      .champion-banner .award { margin: 0 0 4px; color: var(--gold); font-weight: 700; font-size: 13px; letter-spacing: 0.04em; }
+      .champion-banner .name { margin: 0; font-size: clamp(18px, 2.4vw, 24px); font-weight: 700; }
+
+      .bottle-grid { display: grid; gap: clamp(16px, 2.4vw, 26px); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+      .bottle-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+      .bottle-card.is-champion { border-color: #e4d3a3; box-shadow: 0 8px 24px rgba(154,123,63,0.12); }
+      .bottle-photos { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; background: #f0ede6; }
+      .bottle-photos img { flex: 0 0 100%; scroll-snap-align: center; aspect-ratio: 4 / 5; object-fit: cover; }
+      .bottle-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+      .bottle-award { display: inline-block; align-self: flex-start; padding: 3px 10px; background: #fbf7ec; color: var(--gold); border: 1px solid #e4d3a3; border-radius: 999px; font-size: 12px; font-weight: 700; }
+      .bottle-name { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.5; }
+      .score-bars { display: grid; gap: 7px; }
+      .score-row { display: grid; grid-template-columns: 3.4em 1fr 2.2em; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+      .score-track { height: 6px; background: #ece9e2; border-radius: 3px; overflow: hidden; }
+      .score-fill { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+      .bottle-card.is-champion .score-fill { background: var(--gold); }
+      .score-val { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+      .axis-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; }
+
+      .report-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(10px, 1.6vw, 16px); margin-top: 18px; }
+      .report-gallery figure { margin: 0; overflow: hidden; border-radius: 4px; }
+      .report-gallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+      @media (max-width: 680px) { .report-gallery { grid-template-columns: 1fr 1fr; } }
+
+      .back-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; }
+      .btn { display: inline-block; padding: 12px 24px; border: 1px solid var(--accent); color: var(--accent); font-weight: 600; font-size: 15px; border-radius: 999px; }
+      .btn:hover { background: var(--accent); color: #fff; }
+      .notice { margin-top: 22px; color: var(--muted); font-size: 12.5px; }
+      .site-footer { padding: 30px clamp(16px, 4vw, 48px); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; color: var(--muted); font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header">
+      <a class="brand" href="/sake/">TTC 日本酒の会</a>
+      <nav class="site-nav" aria-label="サイト内ナビゲーション">
+        <a href="/sake/">ホーム</a>
+        <a href="/sake/sake-list/">日本酒図鑑</a>
+        <a href="/sake/reports/" aria-current="page">開催レポート</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="report-hero" aria-labelledby="page-title">
+        <img class="bg" src="../../assets/reports/2026-06-17/hero.jpg" alt="">
+        <div class="inner">
+          <p class="kicker">開催レポート — 第5回</p>
+          <h1 id="page-title">第5回 TTC 日本酒の会</h1>
+          <p class="meta">2026年6月17日（水）／ 清澄庭園 涼亭 ／ 弁当：升本 月替わり弁当</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="result-title">
+        <div class="wrap">
+          <p class="section-label">RESULT</p>
+          <h2 id="result-title">その日の主役</h2>
+          <p class="lead">全員のお酒を飲み比べ、感じたことを言葉と点数にしました。順位は価格ではなく、「誰かに飲んでほしいか」で決まります。</p>
+          <div class="champion-banner">
+            <p class="award">👑 最も人気を集めた一本</p>
+            <p class="name">産土（平均 92.4 点）</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" aria-labelledby="lineup-title">
+        <div class="wrap">
+          <p class="section-label">LINEUP &amp; TASTING</p>
+          <h2 id="lineup-title">持ち寄った、七本</h2>
+          <p class="lead">それぞれの推しを、甘辛度・香り・濃淡・酸味・余韻の五軸で。写真は横にスワイプできます。</p>
+          <div class="bottle-grid">
+
+            <article class="bottle-card is-champion">
+              <div class="bottle-photos">
+                <img src="../../assets/reports/2026-06-17/ubusuna-1.jpg" alt="産土のボトル" loading="lazy" decoding="async">
+                <img src="../../assets/reports/2026-06-17/ubusuna-2.jpg" alt="産土の裏ラベル" loading="lazy" decoding="async">
+              </div>
+              <div class="bottle-body">
+                <span class="bottle-award">👑 最も人気 / 92.4点</span>
+                <h3 class="bottle-name">産土</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:74%"></span></span><span class="score-val">3.7</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:80%"></span></span><span class="score-val">4.0</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:54%"></span></span><span class="score-val">2.7</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:63%"></span></span><span class="score-val">3.1</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:67%"></span></span><span class="score-val">3.3</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bottle-card">
+              <div class="bottle-photos">
+                <img src="../../assets/reports/2026-06-17/tenkyu-1.jpg" alt="天弓 桜雨のボトル" loading="lazy" decoding="async">
+                <img src="../../assets/reports/2026-06-17/tenkyu-2.jpg" alt="天弓 桜雨の裏ラベル" loading="lazy" decoding="async">
+              </div>
+              <div class="bottle-body">
+                <h3 class="bottle-name">天弓 桜雨</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:69%"></span></span><span class="score-val">3.4</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:74%"></span></span><span class="score-val">3.7</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:54%"></span></span><span class="score-val">2.7</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:51%"></span></span><span class="score-val">2.6</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:71%"></span></span><span class="score-val">3.6</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bottle-card">
+              <div class="bottle-photos">
+                <img src="../../assets/reports/2026-06-17/mimurosugi-1.jpg" alt="みむろ杉のボトル" loading="lazy" decoding="async">
+                <img src="../../assets/reports/2026-06-17/mimurosugi-2.jpg" alt="みむろ杉の裏ラベル" loading="lazy" decoding="async">
+              </div>
+              <div class="bottle-body">
+                <h3 class="bottle-name">みむろ杉</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:57%"></span></span><span class="score-val">2.9</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:77%"></span></span><span class="score-val">3.9</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:60%"></span></span><span class="score-val">3.0</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:54%"></span></span><span class="score-val">2.7</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:67%"></span></span><span class="score-val">3.3</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bottle-card">
+              <div class="bottle-photos">
+                <img src="../../assets/reports/2026-06-17/shintsuchida-1.jpg" alt="シン・ツチダのボトル" loading="lazy" decoding="async">
+                <img src="../../assets/reports/2026-06-17/shintsuchida-2.jpg" alt="シン・ツチダの裏ラベル" loading="lazy" decoding="async">
+              </div>
+              <div class="bottle-body">
+                <h3 class="bottle-name">シン・ツチダ</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:63%"></span></span><span class="score-val">3.1</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:60%"></span></span><span class="score-val">3.0</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:83%"></span></span><span class="score-val">4.1</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:54%"></span></span><span class="score-val">2.7</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:76%"></span></span><span class="score-val">3.8</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bottle-card">
+              <div class="bottle-photos">
+                <img src="../../assets/reports/2026-06-17/kudokijouzu-1.jpg" alt="くどき上手 生詰のボトル" loading="lazy" decoding="async">
+                <img src="../../assets/reports/2026-06-17/kudokijouzu-2.jpg" alt="くどき上手 生詰の裏ラベル" loading="lazy" decoding="async">
+              </div>
+              <div class="bottle-body">
+                <h3 class="bottle-name">くどき上手 生詰</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:69%"></span></span><span class="score-val">3.4</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:83%"></span></span><span class="score-val">4.1</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:71%"></span></span><span class="score-val">3.6</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:57%"></span></span><span class="score-val">2.9</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:81%"></span></span><span class="score-val">4.1</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bottle-card">
+              <div class="bottle-photos">
+                <img src="../../assets/reports/2026-06-17/chochin-1.jpg" alt="長珍 純米60 生無濾過のボトル" loading="lazy" decoding="async">
+                <img src="../../assets/reports/2026-06-17/chochin-2.jpg" alt="長珍 純米60 生無濾過の裏ラベル" loading="lazy" decoding="async">
+              </div>
+              <div class="bottle-body">
+                <h3 class="bottle-name">長珍 純米60【生無濾過】</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:77%"></span></span><span class="score-val">3.9</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:51%"></span></span><span class="score-val">2.6</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:74%"></span></span><span class="score-val">3.7</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:66%"></span></span><span class="score-val">3.3</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:90%"></span></span><span class="score-val">4.5</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bottle-card">
+              <div class="bottle-photos">
+                <img src="../../assets/reports/2026-06-17/hassen-1.jpg" alt="八仙 夏吟醸のボトル" loading="lazy" decoding="async">
+                <img src="../../assets/reports/2026-06-17/hassen-2.jpg" alt="八仙 夏吟醸の裏ラベル" loading="lazy" decoding="async">
+              </div>
+              <div class="bottle-body">
+                <h3 class="bottle-name">八仙 夏吟醸</h3>
+                <div class="score-bars">
+                  <div class="score-row"><span>甘辛</span><span class="score-track"><span class="score-fill" style="width:74%"></span></span><span class="score-val">3.7</span></div>
+                  <div class="score-row"><span>香り</span><span class="score-track"><span class="score-fill" style="width:63%"></span></span><span class="score-val">3.1</span></div>
+                  <div class="score-row"><span>濃淡</span><span class="score-track"><span class="score-fill" style="width:51%"></span></span><span class="score-val">2.6</span></div>
+                  <div class="score-row"><span>酸味</span><span class="score-track"><span class="score-fill" style="width:71%"></span></span><span class="score-val">3.6</span></div>
+                  <div class="score-row"><span>余韻</span><span class="score-track"><span class="score-fill" style="width:57%"></span></span><span class="score-val">2.9</span></div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+          <p class="axis-note">※ 甘辛度は数値が高いほど辛口寄り。各軸は参加者の採点の平均（5点満点。余韻はアプリの3段階評価を5点満点に換算）です。</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="gallery-title">
+        <div class="wrap">
+          <p class="section-label">GALLERY</p>
+          <h2 id="gallery-title">その日の景色</h2>
+          <div class="report-gallery" aria-label="第5回の写真">
+            <figure><img src="../../assets/reports/2026-06-17/venue-garden.jpg" alt="清澄庭園と涼亭" loading="lazy" decoding="async"></figure>
+            <figure><img src="../../assets/reports/2026-06-17/sake-chilled.jpg" alt="冷やされた日本酒" loading="lazy" decoding="async"></figure>
+            <figure><img src="../../assets/reports/2026-06-17/goods.jpg" alt="日本酒の会のグッズ" loading="lazy" decoding="async"></figure>
+            <figure><img src="../../assets/reports/2026-06-17/bento.jpg" alt="升本 月替わり弁当" loading="lazy" decoding="async"></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" aria-labelledby="close-title">
+        <div class="wrap">
+          <p class="section-label">ARCHIVE</p>
+          <h2 id="close-title">飲んだ一本を、記録に残す</h2>
+          <p class="lead">その日の推し、点数、語られた言葉。酒は消えても、こうして残しておけば、次の一本を選ぶときの手がかりになります。</p>
+          <div class="back-row">
+            <a class="btn" href="/sake/reports/">開催レポート一覧へ</a>
+            <a class="btn" href="/sake/">日本酒の会トップへ</a>
+          </div>
+          <p class="notice">お酒は20歳になってから。飲酒運転は法律で禁止されています。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>TTC 日本酒の会 / 清澄庭園 涼亭</span>
+      <span>東京トータルコンサルティング</span>
+    </footer>
+  </body>
+</html>
