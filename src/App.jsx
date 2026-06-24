@@ -307,7 +307,7 @@ export default function App() {
               <h2 className="luxury-title luxury-title-final max-w-3xl text-[2.35rem] font-semibold leading-tight md:text-[2.85rem] lg:text-[3rem]">
                 <span className="block">保険・相続・不動産を、</span>
                 <span className="block"><span className="luxury-title-gold text-[#D8B46A]">ひとつの窓口</span>で。</span>
-                <span className="mt-6 block md:mt-7"><span className="block md:inline">家族と会社の</span><span className="luxury-title-gold text-[#D8B46A]">「あとで困る」</span>を、</span>
+                <span className="mt-7 block md:mt-8"><span className="block md:inline">家族と会社の</span><span className="luxury-title-gold text-[#D8B46A]">「あとで困る」</span>を、</span>
                 <span className="block">先に整える相談室です。</span>
               </h2>
               <p className="mt-7 max-w-2xl text-lg leading-9 text-white/86">
