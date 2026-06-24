@@ -304,10 +304,13 @@ export default function App() {
                 <span className="block">先に整える相談室です。</span>
               </h2>
               <p className="mt-7 max-w-2xl text-lg leading-9 text-white/86">
-                私たちは、保険を売るだけの会社ではありません。保険・相続・不動産を横断し、家族・会社・資産・相続にまたがる不安を、まず一緒に整理する総合相談パートナーです。
+                <span className="block">保険・相続・不動産は、それぞれ別の話に見えて、実は深くつながっています。</span>
+                <span className="block">だから私たちは、ひとつの窓口で全体像を見える化し、必要な備えを一緒に整理します。</span>
               </p>
-              <p className="mt-5 inline-flex max-w-2xl rounded-2xl border border-[#D8B46A]/35 bg-black/28 px-5 py-3 text-sm leading-7 text-white/84 backdrop-blur-md">
-                売り込み前提ではなく、まずは状況整理から始めます。初回相談だけでも大丈夫です。契約を迫ることはありません。
+              <p className="mt-5 inline-flex max-w-2xl flex-col rounded-2xl border border-[#D8B46A]/35 bg-black/28 px-5 py-3 text-sm leading-7 text-white/84 backdrop-blur-md">
+                <span className="font-semibold text-[#F1D58A]">初回相談は完全無料です。</span>
+                <span className="mt-1">まずは、お客様のお話をじっくり伺い、</span>
+                <span>現在の状況や不安を丁寧に受け止めるところから始めます。</span>
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a href="#contact" className="luxury-button luxury-button-primary inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] shadow-xl shadow-black/20 transition hover:translate-y-[-1px] hover:bg-[#e5c77d]">
@@ -470,10 +473,7 @@ export default function App() {
                 <p className="mb-3 text-sm font-semibold tracking-[0.22em] text-[#B28A36]">FIRST CONSULTATION</p>
                 <h3 className="text-2xl font-semibold leading-tight text-[#0B1F3A] md:text-4xl">初回相談は、状況整理から始めます</h3>
                 <p className="mt-5 leading-8 text-slate-600">
-                  いきなり商品をおすすめするのではなく、まずは家族構成、会社の状況、資産、不動産、相続の不安を一緒に整理します。必要なこと、急がなくてよいこと、専門家につなぐべきことを分けて考えます。
-                </p>
-                <p className="mt-4 rounded-2xl bg-[#0B1F3A] px-4 py-3 text-sm leading-7 text-white/82">
-                  初回相談だけでも大丈夫です。契約を迫ることはありません。状況整理の場としてご利用ください。
+                  いきなり商品をおすすめするのではなく、まずは家族構成、会社の状況、資産、不動産、相続の不安を一緒に整理します。必要なこと、急がなくてよいこと、専門家につなぐべきことを分けて考えます。初回相談だけでも大丈夫です。契約を迫ることはありません。
                 </p>
               </div>
               <ol className="consultation-step-list grid gap-4">
