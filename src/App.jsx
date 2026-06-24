@@ -620,12 +620,12 @@ export default function App() {
                 </p>
                 <dl className="mt-6 grid gap-3 rounded-2xl bg-white/10 p-4 text-sm leading-7 text-white/72 sm:grid-cols-2">
                   <div>
-                    <dt className="text-xs font-semibold tracking-[0.18em] text-[#D8B46A]">代表者</dt>
-                    <dd className="mt-1">代表取締役 小西弘高</dd>
+                    <dt className="text-xs font-semibold tracking-[0.18em] text-[#D8B46A]">代表取締役社長</dt>
+                    <dd className="mt-1">小西 弘高</dd>
                   </div>
                   <div>
                     <dt className="text-xs font-semibold tracking-[0.18em] text-[#D8B46A]">取扱領域</dt>
-                    <dd className="mt-1">保険・FP・遺言書作成サポート</dd>
+                    <dd className="mt-1">保険・相続・不動産・資産形成</dd>
                   </div>
                 </dl>
                 <div className="mt-8 grid grid-cols-2 gap-3">
