@@ -198,33 +198,37 @@ a {
 @media (min-width: 768px) {
   .luxury-hero-card-muted {
     z-index: 1;
-    opacity: 0.68;
-    filter: saturate(0.82) contrast(0.95);
+    opacity: 0.5;
+    filter: blur(0.75px) saturate(0.72) contrast(0.9);
     transform: translateX(4.6rem) scale(0.94);
   }
 
   .luxury-hero-card-muted::after {
-    opacity: 0.36;
+    opacity: 0.2;
+  }
+
+  .luxury-hero-card-muted > div {
+    background: rgba(247, 243, 234, 0.5);
   }
 
   .luxury-hero-card-muted .luxury-gradient-panel > div {
-    border-color: rgba(216, 180, 106, 0.24);
-    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(216, 180, 106, 0.16);
+    background: rgba(0, 0, 0, 0.14);
   }
 
   .luxury-hero-card-muted .luxury-gradient-panel p,
   .luxury-hero-card-muted .luxury-gradient-panel .font-semibold {
-    opacity: 0.18;
-    filter: blur(0.2px);
+    opacity: 0.08;
+    filter: blur(0.35px);
   }
 
   .luxury-hero-card-muted .luxury-gradient-panel p.text-4xl {
-    opacity: 0.1;
+    opacity: 0.04;
   }
 
   .luxury-hero-card-muted .luxury-mini-card {
-    opacity: 0.42;
-    filter: blur(0.1px);
+    opacity: 0.25;
+    filter: blur(0.35px);
   }
 }
 
@@ -290,6 +294,10 @@ a {
   width: max-content;
   gap: 2.4rem;
   white-space: nowrap;
+}
+
+.luxury-marquee {
+  opacity: 0.58;
 }
 
 .luxury-marquee div {

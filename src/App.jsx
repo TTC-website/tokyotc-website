@@ -307,14 +307,14 @@ export default function App() {
               <h2 className="luxury-title luxury-title-final max-w-3xl text-[2.35rem] font-semibold leading-tight md:text-[2.85rem] lg:text-[3rem]">
                 <span className="block">保険・相続・不動産を、</span>
                 <span className="block"><span className="luxury-title-gold text-[#D8B46A]">ひとつの窓口</span>で。</span>
-                <span className="mt-5 block"><span className="block md:inline">家族と会社の</span><span className="luxury-title-gold text-[#D8B46A]">「あとで困る」</span>を、</span>
+                <span className="mt-6 block md:mt-7"><span className="block md:inline">家族と会社の</span><span className="luxury-title-gold text-[#D8B46A]">「あとで困る」</span>を、</span>
                 <span className="block">先に整える相談室です。</span>
               </h2>
               <p className="mt-7 max-w-2xl text-lg leading-9 text-white/86">
                 私たちは、保険を売るだけの会社ではありません。保険・相続・不動産を横断し、家族・会社・資産・相続にまたがる不安を、まず一緒に整理する総合相談パートナーです。
               </p>
               <p className="mt-5 inline-flex max-w-2xl rounded-2xl border border-[#D8B46A]/35 bg-black/28 px-5 py-3 text-sm leading-7 text-white/84 backdrop-blur-md">
-                売り込み前提ではなく、まずは状況整理から始めます。初回相談だけで契約を迫ることはありません。
+                売り込み前提ではなく、まずは状況整理から始めます。初回相談だけでも大丈夫です。契約を迫ることはありません。
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a href="#contact" className="luxury-button luxury-button-primary inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] shadow-xl shadow-black/20 transition hover:translate-y-[-1px] hover:bg-[#e5c77d]">
@@ -493,7 +493,7 @@ export default function App() {
                   いきなり商品をおすすめするのではなく、まずは家族構成、会社の状況、資産、不動産、相続の不安を一緒に整理します。必要なこと、急がなくてよいこと、専門家につなぐべきことを分けて考えます。
                 </p>
                 <p className="mt-4 rounded-2xl bg-[#0B1F3A] px-4 py-3 text-sm leading-7 text-white/82">
-                  初回相談だけで契約を迫ることはありません。状況整理だけでも大丈夫です。
+                  初回相談だけでも大丈夫です。契約を迫ることはありません。状況整理の場としてご利用ください。
                 </p>
               </div>
               <ol className="consultation-step-list grid gap-4">
