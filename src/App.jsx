@@ -6,54 +6,102 @@ const services = [
   {
     icon: "insurance",
     title: "保険相談・事業承継",
-    text: "万一への備え、事業保障、役員退職金、福利厚生、事業承継まで、法人・個人を問わずお客様の安心を守る設計を行います。",
+    tag: "法人・個人対応",
+    text: "「今の保険が本当に合っているか」「会社と家族の保障に抜けがないか」を、法人・個人を横断して整理します。",
+    examples: [
+      "今の保険が会社と家族に合っているか確認したい",
+      "役員退職金や事業承継の備えを整理したい",
+    ],
+    cta: "保険相談の内容を見る",
+    ariaLabel: "保険相談・事業承継の内容を見る",
     href: "/insurance/",
     image: "/luxury-motion/service-insurance.jpg",
+    imageAlt: "保険相談・事業承継の相談イメージ",
   },
   {
     icon: "asset",
     title: "資産形成・老後資金",
-    text: "将来のキャッシュフローを見える化し、保険・積立・資産運用を含めて現実的に整理します。",
+    tag: "家族向け",
+    text: "老後資金、教育費、退職金、資産運用をまとめて見える化し、「どこまで備えれば安心か」を一緒に整理します。",
+    examples: [
+      "老後資金や教育費をどのくらい準備すればよいか知りたい",
+      "保険・積立・資産運用のバランスを整理したい",
+    ],
+    cta: "資産形成の相談例を見る",
+    ariaLabel: "資産形成・老後資金の相談例を見る",
     href: "/asset/",
     image: "/luxury-motion/service-asset.jpg",
+    imageAlt: "資産形成・老後資金の相談イメージ",
   },
   {
     icon: "will",
     title: "遺言・相続・任意後見",
-    text: "争族防止、認知症対策、親の資産管理など、家族が困らない準備をサポートします。",
+    tag: "相続前の準備",
+    text: "親の相続、自分の相続、認知症への備え。家族が困らないために、早めに準備できることを整理します。",
+    examples: [
+      "親が高齢になり、相続や認知症への備えを始めたい",
+      "遺言、民事信託、任意後見の違いを整理したい",
+    ],
+    cta: "相続相談の進め方を見る",
+    ariaLabel: "遺言・相続・任意後見の進め方を見る",
     href: "/inheritance/",
     image: "/luxury-motion/service-inheritance.jpg",
+    imageAlt: "遺言・相続・任意後見の相談イメージ",
   },
   {
     icon: "realestate",
     title: "不動産・資産承継",
-    text: "不動産を含む資産全体を把握し、売却・活用・承継の方向性を一緒に考えます。",
+    tag: "不動産承継",
+    text: "実家、賃貸物件、遊休不動産などを「売る・貸す・残す・分ける」の視点で、相続や生活設計と一緒に考えます。",
+    examples: [
+      "実家や相続不動産をどうすればよいか相談したい",
+      "売却、賃貸、保有、承継の選択肢を比較したい",
+    ],
+    cta: "不動産承継の相談を見る",
+    ariaLabel: "不動産・資産承継の相談を見る",
     href: "/property/",
     image: "/luxury-motion/service-property.jpg",
+    imageAlt: "不動産・資産承継の相談イメージ",
   },
   {
     icon: "asset",
     title: "体験メニュー",
+    tag: "体験資産",
     text: "旅、学び、味わい、出会った空気。身体で覚えた景色を、人生や仕事の基準に変える体験資産の目録です。",
+    examples: [
+      "学びや体験を、人生や仕事の判断軸にしたい",
+      "TTCの体験メニューを一覧で見たい",
+    ],
+    cta: "体験メニューを見る",
+    ariaLabel: "体験メニューを見る",
     href: "/experience/",
     image: "/luxury-motion/service-experience.jpg",
+    imageAlt: "体験メニューのイメージ",
   },
   {
     icon: "event",
     title: "イベント",
+    tag: "学びと交流",
     text: "TTC 日本酒の会をはじめ、セミナーや体験の催しを通じて、人とのつながりや学びの場をつくっています。",
+    examples: [
+      "開催中・開催予定のイベントを知りたい",
+      "人とのつながりや学びの場に参加したい",
+    ],
+    cta: "イベント情報を見る",
+    ariaLabel: "イベント情報を見る",
     href: "/events/",
     image: "/luxury-motion/service-events.jpg",
+    imageAlt: "イベントのイメージ",
   },
 ];
 
 const heroServiceTickets = [
-  ["保険相談", "INSURANCE", "/insurance/"],
-  ["資産形成", "ASSET", "/asset/"],
-  ["遺言・相続", "SUCCESSION", "/inheritance/"],
-  ["不動産承継", "REAL ESTATE", "/property/"],
-  ["体験メニュー", "EXPERIENCE", "/experience/"],
-  ["イベント", "EVENT", "/events/"],
+  ["保険相談", "Insurance", "/insurance/"],
+  ["資産形成", "Asset", "/asset/"],
+  ["遺言・相続", "Succession", "/inheritance/"],
+  ["不動産相談", "Real Estate", "/property/"],
+  ["体験メニュー", "Experience", "/experience/"],
+  ["イベント", "Event", "/events/"],
 ];
 
 const strengths = [
@@ -68,6 +116,12 @@ const flow = [
   ["02", "見える化", "家計・会社・資産・相続の課題を整理します。"],
   ["03", "ご提案", "保険・相続・不動産を横断して解決策を設計します。"],
   ["04", "実行支援", "専門家連携も含めて、実行まで伴走します。"],
+];
+
+const reassuranceSteps = [
+  ["1", "現状を聞く", "家族・会社・資産・不動産・相続の状況を確認します。"],
+  ["2", "不安を整理する", "今すぐ必要なこと、後でよいこと、専門家連携が必要なことを分けます。"],
+  ["3", "選択肢を提示する", "保険・相続・不動産を横断して、現実的な選択肢を提示します。"],
 ];
 
 const values = [
@@ -223,7 +277,7 @@ export default function App() {
           <Logo />
           <nav className="hidden items-center gap-8 text-sm text-white/85 md:flex">
             <a href="#concept" className="hover:text-[#D8B46A]">私たちについて</a>
-            <a href="#service" className="hover:text-[#D8B46A]">相談できること</a>
+            <a href="#consultation-menu" className="hover:text-[#D8B46A]">相談できること</a>
             <a href="#flow" className="hover:text-[#D8B46A]">相談の流れ</a>
             <a href="/experience/" className="hover:text-[#D8B46A]">体験メニュー</a>
             <a href="#contact" className="rounded-full bg-[#D8B46A] px-5 py-2 font-semibold text-[#0B1F3A] hover:bg-[#e5c77d]">公式LINEで相談</a>
@@ -250,18 +304,23 @@ export default function App() {
                 お客様のための総合相談パートナー
               </div>
               <p className="mb-4 text-sm font-semibold tracking-[0.34em] text-[#F1D58A]">TOTAL LIFE CONSULTING</p>
-              <h2 className="luxury-title max-w-3xl text-5xl font-semibold leading-tight md:text-7xl">
-                保険・相続・不動産を横断し、
-                <span className="luxury-title-gold text-[#D8B46A]">本当の安心</span>を手に入れる。
+              <h2 className="luxury-title max-w-3xl text-5xl font-semibold leading-tight md:text-6xl">
+                <span className="block">売る前に、</span>
+                <span className="block">整理する。</span>
+                <span className="block"><span className="luxury-title-gold text-[#D8B46A]">家族と事業の安心</span>を</span>
+                <span className="block">設計する。</span>
               </h2>
               <p className="mt-7 max-w-2xl text-lg leading-9 text-white/86">
-                私たちは、保険を売るだけの会社ではありません。お客様が、将来のお金・相続・資産形成・事業承継に不安を残さないための、総合相談パートナーです。
+                私たちは、保険を売るだけの会社ではありません。保険・相続・不動産を横断し、家族・会社・資産・相続にまたがる不安を、まず一緒に整理する総合相談パートナーです。
+              </p>
+              <p className="mt-5 inline-flex max-w-2xl rounded-2xl border border-[#D8B46A]/35 bg-black/28 px-5 py-3 text-sm leading-7 text-white/84 backdrop-blur-md">
+                売り込み前提ではなく、まずは状況整理から始めます。初回相談だけで契約を迫ることはありません。
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a href="#contact" className="luxury-button luxury-button-primary inline-flex items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] shadow-xl shadow-black/20 transition hover:translate-y-[-1px] hover:bg-[#e5c77d]">
                   公式LINEで相談する <span>→</span>
                 </a>
-                <a href="#service" className="luxury-button-outline inline-flex items-center justify-center rounded-full border border-white/35 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
+                <a href="#consultation-menu" className="luxury-button-outline inline-flex items-center justify-center rounded-full border border-white/35 px-7 py-4 font-semibold text-white transition hover:bg-white/10">
                   相談内容を見る
                 </a>
               </div>
@@ -311,19 +370,20 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-                <div className="luxury-service-tickets" aria-label="相談できること">
-                  {heroServiceTickets.map(([title, label, href], index) => (
-                    <a
-                      key={title}
-                      href={href}
-                      className="luxury-floating-ticket luxury-service-ticket"
-                      style={{ "--ticket-index": index }}
-                    >
-                      <p>{label}</p>
-                      <strong>{title}</strong>
-                    </a>
-                  ))}
-                </div>
+              </div>
+              <div className="luxury-service-tickets" aria-label="相談できること">
+                <p className="luxury-service-ticket-heading">相談できること</p>
+                {heroServiceTickets.map(([title, label, href], index) => (
+                  <a
+                    key={title}
+                    href={href}
+                    className="luxury-floating-ticket luxury-service-ticket"
+                    style={{ "--ticket-index": index }}
+                  >
+                    <strong>{title}<span>→</span></strong>
+                    <p>{label}</p>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -381,38 +441,80 @@ export default function App() {
           </div>
         </section>
 
-        <section id="service" className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <section id="consultation-menu" className="relative mx-auto max-w-7xl px-5 py-20 md:px-8">
+          <span id="service" className="anchor-offset" aria-hidden="true" />
           <div className="mb-12 text-center">
             <p className="mb-3 text-sm font-semibold tracking-[0.26em] text-[#B28A36]">SERVICE</p>
-            <h3 className="text-3xl font-semibold text-[#0B1F3A] md:text-5xl">相談できること</h3>
+            <h3 className="text-3xl font-semibold text-[#0B1F3A] md:text-5xl">あなたの不安に近いものを選んでください</h3>
             <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-600">
-              漠然とした不安を、見える課題に変える。保険・相続・不動産・資産形成を横断して、今必要な一手を一緒に考えます。
+              まだ言葉になっていない状態でも大丈夫です。保険・相続・不動産・資産形成を横断して、今必要な整理から一緒に始めます。
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div key={service.title} className="luxury-service-card luxury-card group flex flex-col rounded-[2rem] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <a
+                key={service.title}
+                href={service.href}
+                className="luxury-service-card luxury-card group flex flex-col rounded-[2rem] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                aria-label={service.ariaLabel}
+              >
                 <figure className="luxury-service-media">
-                  <img src={service.image} alt="" loading="lazy" />
+                  <img src={service.image} alt={service.imageAlt} loading="lazy" />
                   <span className="luxury-service-icon"><ServiceIcon type={service.icon} /></span>
                 </figure>
                 <div className="flex flex-1 flex-col p-3 pt-6">
-                {service.tag ? (
-                  <p className="mt-5 text-xs font-semibold tracking-[0.22em] text-[#B28A36]">{service.tag}</p>
-                ) : null}
-                <h4 className={`mb-4 text-2xl font-semibold text-[#0B1F3A] ${service.tag ? "mt-1" : "mt-0"}`}>{service.title}</h4>
-                <p className="leading-8 text-slate-600">{service.text}</p>
-                {service.href ? (
-                  <a
-                    href={service.href}
-                    className="mt-6 inline-flex items-center gap-2 self-start rounded-full border border-[#B28A36] px-5 py-2 text-sm font-semibold text-[#B28A36] transition hover:bg-[#B28A36] hover:text-[#0B1F3A]"
-                  >
-                    詳しく見る <span>→</span>
-                  </a>
-                ) : null}
+                  <p className="service-tag mb-3 self-start rounded-full border border-[#B28A36]/35 bg-[#F8F6F0] px-3 py-1 text-xs font-semibold text-[#8A6927]">{service.tag}</p>
+                  <h4 className="mb-4 text-2xl font-semibold text-[#0B1F3A]">{service.title}</h4>
+                  <p className="leading-8 text-slate-600">{service.text}</p>
+                  <div className="consultation-examples mt-5 rounded-2xl bg-[#F8F6F0] p-4">
+                    <p className="mb-2 text-xs font-semibold tracking-[0.14em] text-[#B28A36]">こんな相談に対応しています</p>
+                    <ul className="grid gap-2 text-sm leading-7 text-slate-600">
+                      {service.examples.map((example) => (
+                        <li key={example}>{example}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <span className="service-card-cta mt-6 inline-flex items-center gap-2 self-start rounded-full border border-[#B28A36] px-5 py-2 text-sm font-semibold text-[#B28A36] transition">
+                    {service.cta} <span aria-hidden="true">→</span>
+                  </span>
                 </div>
-              </div>
+              </a>
             ))}
+          </div>
+          <div className="consultation-reassurance mt-12 rounded-[2rem] border border-[#D8B46A]/25 bg-white p-6 shadow-sm md:p-8">
+            <div className="grid gap-8 md:grid-cols-[0.82fr_1.18fr] md:items-center">
+              <div>
+                <p className="mb-3 text-sm font-semibold tracking-[0.22em] text-[#B28A36]">FIRST CONSULTATION</p>
+                <h3 className="text-2xl font-semibold leading-tight text-[#0B1F3A] md:text-4xl">初回相談は、状況整理から始めます</h3>
+                <p className="mt-5 leading-8 text-slate-600">
+                  いきなり商品をおすすめするのではなく、まずは家族構成、会社の状況、資産、不動産、相続の不安を一緒に整理します。必要なこと、急がなくてよいこと、専門家につなぐべきことを分けて考えます。
+                </p>
+                <p className="mt-4 rounded-2xl bg-[#0B1F3A] px-4 py-3 text-sm leading-7 text-white/82">
+                  初回相談だけで契約を迫ることはありません。状況整理だけでも大丈夫です。
+                </p>
+              </div>
+              <ol className="consultation-step-list grid gap-4">
+                {reassuranceSteps.map(([num, title, text]) => (
+                  <li key={num} className="rounded-2xl border border-slate-100 bg-[#F8F6F0] p-5">
+                    <span className="consultation-step-num">{num}</span>
+                    <div>
+                      <h4 className="text-lg font-semibold text-[#0B1F3A]">{title}</h4>
+                      <p className="mt-2 leading-7 text-slate-600">{text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+          <div className="consultation-line-cta mt-8 rounded-[2rem] bg-[#0B1F3A] p-6 text-white shadow-xl md:flex md:items-center md:justify-between md:gap-8 md:p-8">
+            <div>
+              <p className="mb-2 text-sm font-semibold tracking-[0.2em] text-[#D8B46A]">LINE CONSULTATION</p>
+              <h3 className="text-2xl font-semibold">どれに当てはまるかわからない場合も、まずはLINEでご相談ください。</h3>
+              <p className="mt-3 leading-7 text-white/74">内容が整理できていなくても大丈夫です。近いテーマを一緒に確認します。</p>
+            </div>
+            <a href="#contact" className="mt-6 inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#D8B46A] px-7 py-4 font-semibold text-[#0B1F3A] transition hover:bg-[#e5c77d] md:mt-0">
+              公式LINEで相談する <span>→</span>
+            </a>
           </div>
         </section>
 
@@ -533,6 +635,16 @@ export default function App() {
                 <p className="mt-5 leading-8 text-white/75">
                   公式LINEでは、相談予約・オンライン面談の調整・資料のやり取りまで、スムーズに進められます。お電話でのご連絡も可能です。
                 </p>
+                <dl className="mt-6 grid gap-3 rounded-2xl bg-white/10 p-4 text-sm leading-7 text-white/72 sm:grid-cols-2">
+                  <div>
+                    <dt className="text-xs font-semibold tracking-[0.18em] text-[#D8B46A]">代表者</dt>
+                    <dd className="mt-1">代表取締役 小西弘高</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-semibold tracking-[0.18em] text-[#D8B46A]">取扱領域</dt>
+                    <dd className="mt-1">保険・FP・遺言書作成サポート</dd>
+                  </div>
+                </dl>
                 <div className="mt-8 grid grid-cols-2 gap-3">
                   <a href="https://lin.ee/tT6CaJn" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 whitespace-nowrap rounded-full bg-[#D8B46A] px-3 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c77d]">
                     公式LINE <span>→</span>
