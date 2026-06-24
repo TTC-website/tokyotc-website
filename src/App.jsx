@@ -473,7 +473,7 @@ export default function App() {
                 <p className="mb-3 text-sm font-semibold tracking-[0.22em] text-[#B28A36]">FIRST CONSULTATION</p>
                 <h3 className="text-2xl font-semibold leading-tight text-[#0B1F3A] md:text-4xl">初回相談は、状況整理から始めます</h3>
                 <p className="mt-5 leading-8 text-slate-600">
-                  いきなり商品をおすすめするのではなく、まずは家族構成、会社の状況、資産、不動産、相続の不安を一緒に整理します。必要なこと、急がなくてよいこと、専門家につなぐべきことを分けて考えます。初回相談だけでも大丈夫です。契約を迫ることはありません。
+                  いきなり商品をおすすめするのではなく、まずは家族構成、会社の状況、資産、不動産、相続の不安を一緒に整理します。必要なこと、急がなくてよいこと、専門家につなぐべきことを分けて考えます。初回相談だけでも大丈夫ですのでご安心ください。
                 </p>
               </div>
               <ol className="consultation-step-list grid gap-4">
